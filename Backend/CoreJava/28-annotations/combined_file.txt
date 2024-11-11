@@ -1,0 +1,677 @@
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+@interface A
+{
+	void test1();
+}
+/*
+ 1. Annotations are introduced in JDK 1.5
+ 2. To develop annotation we need to use @interface
+ 3. Annotation can become a member of the java file.
+ 4. while compiling compiler generates class file for annotation also.
+ 5. inside annotation only method declarations are allowed
+ 6. every method declaration should have return type other than void.
+ 7. annotation method can return any primitive datatype,
+    any enum type, string type, any annotation type
+    Class type and arrays of all these.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+@interface B
+{
+	Integer test1();
+	Boolean test2();
+}
+//annotation method cannot return wrapper type.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+//while defining annotation for this annotation we are providing
+  //description to another annotation
+  //this type of annotations are called as meta annotations
+//through this Target annotation we are specifying L annotation
+  //only used for method
+@Target(ElementType.TYPE)
+@interface L
+{
+	String message();
+}
+//@Target is one of the built-in annotation
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+@Retention(RetentionPolicy.CLASS)//another meta annotation
+@interface M 
+{
+	String message();
+}
+/*
+1. through retention annotation retention can be move to the class
+2. 3 different types of retention policy SOURCE, CLASS, RUNTIME
+3. If it is CLASS retention policy will move to the class file as well
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+@interface C
+{	
+	//method declaration and method return type is String
+	String someDesc();
+}
+
+//through return type we can provide a description
+@C(someDesc="some desc about C")
+class M1
+{
+	@C(someDesc="some desc about main")
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+/* 
+1. Annotations are used for providing some kind of description.
+   to class, to a method, to a local variable, to a field likewise
+   we can give description to several places.
+2. through annotation we cannot achieve execution of logic.
+   annotations are only used for providing a description.
+3. first compiler will check whether this particular annotation 
+   is available or not inside that the method declaration is 
+   available or not then checks for that declaration what is the
+   return type. this description verified by the compiler.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+@interface K
+{
+	//annotations can have return type as primitive array
+	int[] versions();
+}
+
+@K(versions =  {1, 2, 3})
+class M10
+{
+	@K(versions = {1, 2, 3, 4})
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+//CTE
+@L(message = "abc")
+class M11
+{	
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class M12
+{
+	@L(message = "abc")
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+//this annotation moving into class file also, i,e not limited to source file
+@M(message = "abc")
+class M13 
+{
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+//by default annotations are remains in source file not in class file
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+@N(message = "abc")
+class M14
+{
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+/*
+1. while compiling, message = "abc" moving to the class file
+2. while running when M14 loading to the memory along with the 
+   class, message = abc also loading.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Annotation;
+
+
+//@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
+@interface O
+{
+	String message();
+}
+
+//@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
+@interface P
+{
+	String message();
+}
+
+//loading while M15 is loading to memory
+@O(message = "abc")
+@P(message = "xyz")
+class M15
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class c1 = Class.forName("M15");//loading explicitely
+		Annotation[] annotations = c1.getAnnotations();
+		for(Annotation annotation : annotations)
+		{
+			System.out.println(annotation);
+		}
+	}
+}
+//Mainly annotations used in spring and hibernate
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Inherited;
+
+
+
+@Retention(RetentionPolicy.RUNTIME)
+@Inherited //meta annotation
+@interface Q
+{
+	String message();
+}
+
+
+@Retention(RetentionPolicy.RUNTIME)
+@interface R
+{
+	String message();
+}
+
+@Q(message = "abc")
+@R(message = "xyz")
+class S
+{
+}
+
+class M16 extends S //only Q is inherited not R
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class c1 = Class.forName("M16");//loading explicitely
+		Annotation[] annotations = c1.getAnnotations();
+		for(Annotation annotation : annotations)
+		{
+			System.out.println(annotation);
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class T
+{
+	void test1()
+	{
+	}
+}
+class U extends T
+{
+	//built-in annotation
+	//it is only allowed to use override a method
+	@Override
+	void test1()
+	{
+	}
+
+	@Override// CTE // its not overrided
+	void test2()
+	{
+	}
+}
+class M17 {
+
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class V
+{
+	@Deprecated
+	void test1()
+	{
+	}
+	void test2()
+	{
+	}
+
+	//finalize is the inbuilt method which got deprecated in JDK 9.0
+	//public void finalize()
+	//{
+	//}
+}
+class M18
+{
+	//to avoid the warnings by the compiler
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args)
+	{
+		V v1 = new V();
+		v1.test1();
+		v1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+class M19
+{
+	//@SuppressWarnings("deprecation")
+	//@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		list.add(90);
+		list.add(90);
+		list.add(900);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+@interface D
+{
+	int someDesc();
+}
+
+@D(someDesc = 100)
+class M2
+{
+	@D(someDesc = 20)
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+@SuppressWarnings({"unchecked", "deprecation"})
+class M20
+{
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(90);
+		list.add(900);
+		System.out.println(list);
+		Thread t1 = new Thread();
+		//deprecated in JDK 1.1
+		t1.stop();//deprecated method
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+@interface E
+{
+	int version();
+	String author();
+}
+
+@E(version = 3, author =  "abc")
+class M3
+{
+	@E(version = 4, author =  "xyz")
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+
+//inside annotation any no. of method declaration we can have
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+@interface F
+{
+	int version();
+	String author();
+}
+
+@F(version = 3, author =  "abc")
+class M4
+{
+	//CTE
+	@F(version = 4)
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+@interface G
+{
+	int version();
+	String author();
+}
+
+//CTE
+@G(author =  "abc")
+class M5
+{
+	@G(author = "abc", version = 4)
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+@interface H
+{
+	int version() default 1;//while declaring setting default value
+	String author();
+}
+//now version is optional
+@H(author =  "abc")
+class M6
+{
+	//here we are overriding the default value to 4
+	//for the main method version return value is 4
+	@H(author =  "abc", version = 4)
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+//while using annotation default value given method can be skipped
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+@interface I
+{
+	int version() default 1;
+	String author() default "vijay";
+}
+
+@I(author =  "abc")
+class M7
+{
+	//both can be skipped bcz of default values
+	@I
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+@interface J
+{
+	int version() default 1;
+	String author() default "vijay";
+	String platform() default "windows";
+}
+
+@J(author =  "abc")
+class M8
+{
+	@J(author = "Manu")
+	public static void main(String[] args)
+	{
+		System.out.println("done");
+	}
+}
+
+//all the methods are now optional
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+//moving to the class file also
+@Retention(RetentionPolicy.RUNTIME)//another meta annotation
+@interface N
+{
+	String message();
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

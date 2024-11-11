@@ -1,0 +1,856 @@
+<br />
+<article class="topic app">
+<h2>01-is-a</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A  
+{
+	int i;
+}
+class B extends A
+{
+	int j;
+
+	public static void main(String[] args) 
+	{
+		B b1 = new B();
+		System.out.println(b1.i);
+		System.out.println(b1.j);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	void test1()
+	{
+		System.out.println("from test1()");
+	}
+}
+class D extends C
+{
+	void test2()
+	{
+		System.out.println("from test2()");
+	}
+
+	public static void main(String[] args) 
+	{
+		D d1 = new D();
+		d1.test1();
+		d1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("from E main");
+	}
+}
+class F extends E
+{
+	static int j;
+
+	static 
+	{
+		F obj = new F();
+		obj.main(null);
+	}
+
+	
+	public static void main(String[] args) 
+	{
+		System.out.println("from F main");
+		F f1 = new F();
+		System.out.println(f1.i);
+		System.out.println(f1.j);
+		System.out.println("-------------");
+		System.out.println(F.i);
+		System.out.println(F.j);
+	}
+}
+class G
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(F.i);
+		System.out.println(F.j);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class G
+{
+	static void test1()
+	{
+		System.out.println("from class G.test1()");
+	}
+}
+class H extends G
+{
+	static void test2()
+	{
+		System.out.println("from class H.test2()");
+	}
+}
+class I extends H
+{
+	static void test3()
+	{
+		System.out.println("from class I.test3()");
+	}
+}
+class J extends I 
+{
+	static void test4()
+	{
+		System.out.println("from class J.test4()");
+	}
+
+	public static void main(String[] args) 
+	{
+		J obj = new J();
+		obj.test1();
+		obj.test2();
+		obj.test3();
+		obj.test4();
+		System.out.println("----------");
+		J.test1();
+		J.test2();
+		J.test3();
+		J.test4();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class K
+{
+	int i;
+	static int j;
+
+	void test1()
+	{
+		System.out.println("from test1()");
+	}
+
+	static void test2()
+	{
+		System.out.println("from test2()");
+	}
+}
+class L extends K
+{
+	public static void main(String[] args) 
+	{
+		L obj = new L();
+		System.out.println(obj.i);
+		System.out.println(L.j);
+		obj.test1();
+		L.test2();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class DriverClass 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello from Driver Class");
+	}
+}
+class Derived1 extends DriverClass
+{
+	static int i;
+	static
+	{
+		Derived1.main(null);
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello from Derived1 Class");
+	}
+}
+class Derived2 extends DriverClass
+{
+	static int j;
+	static
+	{
+		Derived2.main(null);
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello from Derived2 Class");
+	}
+}
+class MainClass 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("MainClass begin");
+		System.out.println(Derived1.i);
+		System.out.println(Derived2.j);
+		System.out.println("MainClass end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class M 
+{
+	M()
+	{
+		System.out.println("M()");
+	}
+}
+class N extends M
+{
+	N()
+	{
+		System.out.println("N()");
+	}
+
+	public static void main(String[] args) 
+	{
+		N n1 = new N();
+		System.out.println("from N main");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class O
+{
+	O()
+	{
+		System.out.println("O()");
+	}
+}
+class P extends O
+{
+	P()
+	{
+		System.out.println("P()");
+	}
+}
+class Q extends P
+{
+	Q()
+	{
+		System.out.println("Q()");
+	}
+}
+class R extends Q
+{
+	R()
+	{
+		System.out.println("R()");
+	}
+}
+class S extends R
+{
+	S()
+	{
+		System.out.println("S()");
+	}
+
+	public static void main(String[] args) 
+	{
+		O o1 = new O();
+		System.out.println("-----------");
+		P p1 = new P();
+		System.out.println("-----------");
+		Q q1 = new Q();
+		System.out.println("-----------");
+		R r1 = new R();
+		System.out.println("-----------");
+		S s1 = new S();
+		System.out.println("-----------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	A()
+	{
+		System.out.println("A()");
+	}
+
+	A(int i)
+	{
+		System.out.println("A(int)");
+	}
+}
+class B extends A 
+{
+	B()
+	{
+		super(10);
+		System.out.println("B()");
+	}
+
+	B(int i)
+	{
+		System.out.println("B(int)");
+	}
+}
+class C extends B 
+{
+	C()
+	{
+		super(10);
+		System.out.println("C()");
+	}
+
+	C(int i)
+	{
+		super(i);
+		System.out.println("C(int)");
+	}
+}
+class T extends C 
+{
+	T()
+	{
+		super(100);
+		System.out.println("T()");
+	}
+
+	T(int i)
+	{
+		super(200);
+		System.out.println("T(int)");
+	}
+
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		System.out.println("------------");
+		B b1 = new B();
+		System.out.println("------------");
+		C c1 = new C();
+		System.out.println("------------");
+		T t1 = new T();
+		System.out.println("------------");
+		
+		A a2 = new A(10);
+		System.out.println("------------");
+		B b2 = new B(20);
+		System.out.println("------------");
+		C c2 = new C(30);
+		System.out.println("------------");
+		T t2 = new T(40);
+		System.out.println("------------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	A()
+	{
+		System.out.println("A()");
+	}
+
+	A(int i)
+	{
+		this();
+		System.out.println("A(int)");
+	}
+}
+class B extends A 
+{
+	B()
+	{
+		super(10);
+		System.out.println("B()");
+	}
+
+	B(int i)
+	{
+		this();
+		System.out.println("B(int)");
+	}
+}
+class C extends B 
+{
+	C()
+	{
+		this(10);
+		System.out.println("C()");
+	}
+
+	C(int i)
+	{
+		super(i);
+		System.out.println("C(int)");
+	}
+}
+class U extends C 
+{
+	U()
+	{
+		this(90);
+		System.out.println("U()");
+	}
+
+	U(int i)
+	{
+		super(200);
+		System.out.println("U(int)");
+	}
+
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		System.out.println("------------");
+		B b1 = new B();
+		System.out.println("------------");
+		C c1 = new C();
+		System.out.println("------------");
+		U u1 = new U();
+		System.out.println("------------");
+		
+		A a2 = new A(10);
+		System.out.println("------------");
+		B b2 = new B(20);
+		System.out.println("------------");
+		C c2 = new C(30);
+		System.out.println("------------");
+		U u2 = new U(40);
+		System.out.println("------------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	static
+	{
+		System.out.println("A-SIB");
+	}
+
+	A()
+	{
+		System.out.println("A()");
+	}
+
+	A(int i)
+	{
+		this();
+		System.out.println("A(int)");
+	}
+
+	{
+		System.out.println("A-IIB");
+	}
+}
+class B extends A 
+{
+	static
+	{
+		System.out.println("B-SIB");
+	}
+
+	B()
+	{
+		super(10);
+		System.out.println("B()");
+	}
+
+	B(int i)
+	{
+		this();
+		System.out.println("B(int)");
+	}
+
+	{
+		System.out.println("B-IIB");
+	}
+}
+class C extends B 
+{
+	static
+	{
+		System.out.println("C-SIB");
+	}
+
+	C()
+	{
+		this(10);
+		System.out.println("C()");
+	}
+
+	C(int i)
+	{
+		super(i);
+		System.out.println("C(int)");
+	}
+
+	{
+		System.out.println("C-IIB");
+	}
+}
+class V extends C 
+{
+	static
+	{
+		System.out.println("V-SIB");
+	}
+
+	V()
+	{
+		this(90);
+		System.out.println("V()");
+	}
+
+	V(int i)
+	{
+		super(200);
+		System.out.println("V(int)");
+	}
+
+	{
+		System.out.println("V-IIB");
+	}
+
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		System.out.println("------------");
+		B b1 = new B();
+		System.out.println("------------");
+		C c1 = new C();
+		System.out.println("------------");
+		V v1 = new V();
+		System.out.println("------------");
+		
+		A a2 = new A(10);
+		System.out.println("------------");
+		B b2 = new B(20);
+		System.out.println("------------");
+		C c2 = new C(30);
+		System.out.println("------------");
+		V v2 = new V(40);
+		System.out.println("------------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	A(int i)
+	{
+		System.out.println("A(int)");
+	}
+}
+class W extends A 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	
+}
+class X extends A 
+{
+	X(int i)
+	{
+		System.out.println("X(int)");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	
+}
+class Y extends A 
+{
+	Y(int i)
+	{
+		super(10);
+		System.out.println("Y(int)");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+class A
+{	
+}
+class Z extends A 
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+class A
+{	
+}
+class Z1 
+{
+}
+class Z2 extends A, Z1
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>02-has-a</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	int i;
+
+	void test1()
+	{
+		System.out.println("C-test1()");
+	}
+}
+class B
+{
+	A obj;
+
+	B(A ref)
+	{
+		this.obj = ref;
+	}
+
+	void test2()
+	{
+		System.out.println("B-test2()");
+		System.out.println(obj.i);
+		obj.test1();
+	}
+
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		B b1 = new B(a1);
+		b1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class Car
+{
+	String color;
+
+	String engineVarient;
+
+	void engine()
+	{
+		System.out.println("Car-engine()");
+	}
+}
+class Kia
+{
+	Car carRef1;
+
+	Kia(Car carRef2)
+	{
+		this.carRef1 = carRef2;
+	}
+
+	void sonet()
+	{
+		System.out.println("Kia-sonet()");
+		carRef1.color = "White";
+		System.out.print(carRef1.color + ", ");
+		carRef1.engineVarient = "Turbo 1.0";
+		System.out.print(carRef1.engineVarient + ", ");
+		carRef1.engine();
+	}
+
+	public static void main(String[] args) 
+	{
+		Car car = new Car();
+		Kia kiaModel = new Kia(car);
+		kiaModel.sonet();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

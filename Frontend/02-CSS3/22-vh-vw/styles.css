@@ -1,0 +1,29 @@
+/* 
+VIEWPORT UNITS
+vh - height - percent of the screen, 
+vw - width - percent of the screen
+
+*/
+*
+{
+  margin: 0;
+}
+
+.orange
+{
+  background: orange;
+  height: 33.33vh;
+  width: 100vw;
+}
+.white
+{
+  background: white;
+  height: 33.33vh;
+  width: 100vw;
+}
+.green
+{
+  background: green;
+  height: 33.33vh;
+  width: 100vw;
+}

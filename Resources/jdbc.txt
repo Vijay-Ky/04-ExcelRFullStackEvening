@@ -1,0 +1,8 @@
+https://dev.mysql.com/downloads/connector/j/
+
+com.mysql.jdbc.Driver;
+
+D:\DevelopmentSoftwares\mysql-connector-j-8.3.0\mysql-connector-j-8.3.0.jar;.
+
+javap com.mysql.jdbc.Driver;
+

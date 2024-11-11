@@ -1,0 +1,22 @@
+Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/excelr", "president", "admin"); 
+
+
+INSERT INTO PERSON VALUES(" + 100 + ", '" + vijay +"'," + 99 +")
+
+String id = args[0];//first cmd line arg into id
+String name = args[1];//second cmd line arg into name
+String age = args[2];//third comd line arg into age
+
+INSERT INTO PERSON VALUES(100, 'vijay', 99);
+
+INSERT INTO PERSON VALUES(id, name, age);
+
+INSERT INTO PERSON VALUES(" + id + ", '" + name +"'," + age +")
+
+
+ "INSERT INTO PERSON VALUES(" + id + ", '" + name +"'," + age +")";
+
+O/P
+INSERT INTO PERSON VALUES(100,'vijay',99)
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>servlets registration form</title>
+	</head>
+	<body>
+		<img src="./candidates.jpg" alt="candidates" width="500" height="300" />
+		
+			<form action="reg">
+				<table>
+					<tr>
+						<td>First Name</td>
+						<td><input type="text" name="firstName" /></td>
+					</tr>
+					<tr>
+						<td>Last Name</td>
+						<td><input type="text" name="lastName" /></td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td><input type="text" name="age" /></td>
+					</tr>
+					<tr>
+						<td>Address</td>
+						<td><textarea name="address" cols="15" rows="5"></textarea></td>
+					</tr>
+					<tr>
+						<td>Gender</td>
+						<td>
+							<input type="radio" name="gender" value="M" /> Male &nbsp;&nbsp;
+							<input type="radio" name="gender" value="F" /> Female
+						</td>
+					</tr>
+					<tr>
+						<td>Skills</td>
+						<td>
+							<input type="checkbox" name="skill1" value="C" />C &nbsp;&nbsp;
+							<input type="checkbox" name="skill2" value="CPP" />C++ &nbsp;&nbsp;
+							<input type="checkbox" name="skill3" value="JAVA" />Java
+							&nbsp;&nbsp;
+							<input type="checkbox" name="skill4" value="ANGULAR" />Angular
+						</td>
+					</tr>
+					<tr>
+						<td>Education</td>
+						<td>
+							<select name="education">
+								<option value="BE">BE</option>
+								<option value="MCA">MCA</option>
+								<option value="MBA">MBA</option>
+							</select>
+						</td>
+					</tr>
+					<hr />
+					<tr>
+						<td><input type="reset" value="CLEAR" /></td>
+						<td><input type="submit" value="submit" /></td>
+					</tr>
+				</table>
+			</form>
+		
+	</body>
+</html>

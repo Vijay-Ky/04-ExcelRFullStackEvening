@@ -1,0 +1,923 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A
+{
+    public static void main(String[] args)
+    {
+        int i = 10;
+		final int j = 20;
+
+        System.out.println(i);
+        System.out.println(j);
+
+        i = 15;
+        System.out.println(i);
+        j = 25;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class B
+{
+    public static void main(String[] args)
+    {
+        final int i;
+        i = 10;
+        System.out.println(i);
+		i = 20;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class C
+{
+    public static void main(String[] args)
+    {
+        final int i = 10;
+        int j = i;
+        System.out.println(i);
+        System.out.println(j);
+        int k = (i + 10);
+        System.out.println(i);
+        System.out.println(j);
+        System.out.println(k);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class D
+{
+    public static void main(String[] args)
+    {
+        final int i = 10;
+        i++;// i = i + 1;
+        System.out.println(i);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class E
+{
+    public static void main(String[] args)
+    {
+        final E e1;
+		e1 = new E();
+		e1 = null;
+		e1 = new E();
+        System.out.println("done");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class F
+{
+    public static void main(String[] args)
+    {
+        F f1 = new F();
+        final F f2 = new F();
+		f1 = f2;
+		f2 = f1;
+		f2 = null;
+		f2 = new F();
+        System.out.println("done");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class G
+{
+    public static void main(String[] args)
+    {
+        final byte i = 10;
+        final short j = 10;
+        final int k = 10;
+        final long l = 10;
+        final float m = 10.0f;
+        final double n = 10.0d;
+        final char ch = 'a';
+        final boolean b1 = false;
+        final String str = "abc";
+        final Thread t1 = null;
+        final G g1 = new G();
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class H
+{
+    public static void main(String[] args)
+    {
+        final int[] x = new int[6];
+        x[0] = 1;
+        x[1] = 11;
+        x[2] = 111;
+        x[3] = 1111;
+        x[4] = 11111;
+        x[5] = 111111;
+        System.out.println("done");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class I
+{
+    public static void main(String[] args)
+    {
+        final int[] x = new int[10];
+		x = null;
+		x = new int[20];
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class K
+{
+    public static void test(final int i, int j)
+    {
+		i = 10;	
+        j = 20;
+        System.out.println(i);
+        System.out.println(j);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class L
+{
+    public static void main(final String[] args)
+    {
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class M
+{
+    public static void main(final String[] args)
+    {
+       args = new String[20];
+	   args = null;
+	   String[] s2 =  new String[10];
+	   args = s2;
+       System.out.println("done");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class N
+{
+    final int i = 10;
+
+    public static void main(String[] args)
+    {
+        N n1 = new N();
+        n1 = new N();
+        System.out.println("done");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class O
+{
+    final int i = 10;
+
+    public static void main(String[] args)
+    {
+        O o1 = new O();
+		o1.i = 20;
+        System.out.println(o1.i);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+class P
+{
+    int i = 10;
+    int j = 10;
+
+    public static void main(String[] args)
+    {
+        final P p1 = new P();
+        p1.i = 20;
+        p1.j = 20;
+        System.out.println(p1.i);
+        System.out.println(p1.j);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+class Q
+{
+	final int i;
+	
+	void test()
+	{
+		i = 10;
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+class R
+{
+   final int i;
+
+   R()
+   {
+	   	//this(10, 20);
+		i = 10;
+   }
+
+   R(int j, int k)
+   {
+	   i = 10;
+   }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class S
+{
+    final int x = 10;
+
+    {
+		x = 20;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+class T
+{
+	final int i;
+
+    public static void main(String[] args)
+    {
+        T t1 = new T();
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+class U
+{
+    final int x = 10;
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+class V
+{
+    final int i;
+    V()
+    {
+        i = 10;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+class W
+{
+    final int i;
+
+    {
+        i = 20;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+class X
+{
+    final int x;
+
+    X()
+    {
+		x = 200;
+    }
+
+    {
+        x = 150;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class Y
+{
+	final int x;
+
+    Y(int x)
+    {
+        x = 10;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+class Z
+{
+    final int x;
+
+	Z(int x)
+    {
+        this.x = 10;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	public static void main(String[] args) 
+	{
+		//local variables cant be static
+		static int i = 10;
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+class B
+{
+	final static int i = 10;
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	final static int i;
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+class D
+{
+	final int i;
+}
+
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+interface E
+{
+	int i;
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+interface F
+{
+	int i = 10;
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+class G
+{
+	static
+	{
+		i = 10;
+	}
+
+	static final int i;
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+class H
+{
+	static final int i;
+
+	static
+	{
+		i = 10;
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+class I
+{
+	static final int i = 5;
+
+	static
+	{
+		i = 10;
+	} 
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+class J
+{
+	static
+	{
+		System.out.println(i);
+	}
+
+	static final int i = 100; 
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+class K
+{
+	static
+	{
+		System.out.println(i = 20);//cannot assign a value to final variable i
+	}
+
+	static final int i; 
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+class L
+{
+	final static int CON = 100;
+	final static String DRIVER = "driver name";
+
+	public static void main(String[] args) 
+	{
+		System.out.println(CON);
+		System.out.println(DRIVER);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+class M
+{
+	//final methods cant be overrided
+	final void test1()
+	{
+	}
+	void test2()
+	{
+	}
+}
+class N extends M
+{
+	void test1()
+	{
+	}
+	void test2()
+	{
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+abstract class O
+{
+	abstract final void test1();
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+final class P
+{
+}
+class Q extends P
+{
+}
+//final classes cannot be extended further
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+abstract final class R
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+private class S
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+protected class T
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+static class U
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 45</h3>
+<pre class="prettyprint linenums">
+class W
+{
+	static class X
+	{
+	}
+	private class Y
+	{
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

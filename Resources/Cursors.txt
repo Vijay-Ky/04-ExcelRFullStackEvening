@@ -1,0 +1,26 @@
+3 Cursors in Java
+------------------
+1. Enumerator - enum 
+2. Iterator
+3. List Iterator
+
+Iterator
+-----------
+it will be proceeding in the forward direction direction
+- we can use this Iterator on any collection object
+- while the Iterator is traversing if we try to add (modify) the list the we get CuncurrentModificationException
+- Ex: 3 members are there in the car and car is moving then another person trys to enter the car which is not possible. 
+
+ListIterator
+--------------
+ListItertor is a bi-directional cursor. It can go either in the forward direction or in the backward direction.
+
+Drawback of ListIterator
+- we can use ListIterator only on List implemented class objects.
+  ArrayList
+  LinkedList
+  Stack
+  Vector
+- if the cursor is in the beggining if you try to add the element to the list it will be added to the beggining of the list
+- if the cursor is in the end if you try to add the element to the list it will be added to the end of the list
+- if the cursor is in the middle if you try to add the element to the list it will be added to that index only and the remaining elements moved forward locations.

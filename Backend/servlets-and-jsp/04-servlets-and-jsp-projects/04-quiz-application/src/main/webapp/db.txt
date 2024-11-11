@@ -1,0 +1,37 @@
+-- Database creation is omitted assuming you have already created a database named 'your_database_name'
+create database quizapp;
+use quizapp;
+-- Admin table creation
+CREATE TABLE admintable (
+    userid VARCHAR(20),
+    password VARCHAR(20),
+    PRIMARY KEY (userid)
+);
+
+-- Inserting data into admin table
+INSERT INTO admintable (userid, password) VALUES ('vijay', 'admin');
+
+-- Student table creation
+CREATE TABLE studenttable (
+    userid VARCHAR(20),
+    password VARCHAR(20),
+    name VARCHAR(20),
+    PRIMARY KEY (userid)
+);
+
+-- Instruction table creation
+CREATE TABLE instructiontable (
+    instruction VARCHAR(35)
+);
+
+-- Question table creation
+CREATE TABLE questiontable (
+    question VARCHAR(40),
+    a VARCHAR(40),
+    b VARCHAR(40),
+    c VARCHAR(40),
+    d VARCHAR(40),
+    answer VARCHAR(20)
+);
+
+

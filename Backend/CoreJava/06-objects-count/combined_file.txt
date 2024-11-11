@@ -1,0 +1,269 @@
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A 
+{
+	static int x;
+
+	A()
+	{
+		//IIB
+		x += 10;//x = x + 10 ==> 20 + 10 == 30
+	}
+
+	{
+		x += 20;// x = x + 20
+	}
+
+	void test1()
+	{
+		x += 30;// x = x + 30 ==> 30 + 30 == 60
+	}
+
+	static void test2()
+	{
+		x += 40;// x = x + 40 ==> 60 + 40 == 100
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("A: " + x);
+		A a1 = new A();
+		System.out.println("B: " + x);
+		a1.test1();
+		System.out.println("C: " + x);
+		a1.test2();//==>A.test2();
+		System.out.println("D: " + x);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class B 
+{
+	static int x;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("A: " + x);// 0
+		System.out.println("B: " + B.x);// 0
+
+		//for both the objects static int x would be common(are part) same static int x
+		B b1 = new B();
+		B b2 = new B();
+
+		System.out.println("C: " + b1.x);// 0
+		System.out.println("D: " + b2.x);// 0
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class C 
+{
+	int counter;
+
+	C()
+	{
+		counter++;
+	}
+
+	public static void main(String[] args) 
+	{
+		C obj1 = new C();
+		System.out.println("A-----------------A: " + obj1.counter);//1
+		C obj2 = new C();
+		System.out.println("B-----------------B: " + obj2.counter);//1
+		C obj3 = new C();
+		System.out.println("C-----------------C: " + obj3.counter);//1
+		C obj4 = new C();
+		System.out.println("D-----------------D: " + obj4.counter);//1
+		C obj5 = new C();
+		System.out.println("D-----------------D: " + obj5.counter);//1
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class D 
+{
+	static int counter;
+
+	D()
+	{
+		counter++;
+	}
+
+	public static void main(String[] args) 
+	{
+		D obj1 = new D();
+		System.out.println("A-----------------A: " + obj1.counter);//
+		D obj2 = new D();
+		System.out.println("B-----------------B: " + obj2.counter);//
+		D obj3 = new D();
+		System.out.println("C-----------------C: " + obj3.counter);//
+		D obj4 = new D();
+		System.out.println("D-----------------D: " + obj4.counter);//
+		D obj5 = new D();
+		System.out.println("E-----------------E: " + obj5.counter);//
+		System.out.println("------------------");
+		System.out.println("Final ------ Final: " + obj1.counter);
+		System.out.println("Final ------ Final: " + obj2.counter);
+		System.out.println("Final ------ Final: " + obj3.counter);
+		System.out.println("Final ------ Final: " + obj4.counter);
+		System.out.println("Final ------ Final: " + obj5.counter);
+
+
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class E 
+{
+	//counter = 0, 10, 20, 40, 80
+	static int counter = 10;
+
+	E()
+	{
+		counter *= 2;//counter = counter * 2;//counter = 10 * 2; ==> 20
+	}
+
+	E(int i)
+	{
+		counter *= 2;//counter = counter * 2;//counter = 20 * 2; ==> 40
+	}
+
+	E(int i, int j)
+	{
+		counter *= 2;//counter = counter * 2;//counter = 40 * 2; ==> 80
+	}
+
+	public static void main(String[] args) 
+	{
+		E obj1 = new E();
+		E obj2 = new E(10);
+		E obj3 = new E(10, 20);
+		System.out.println("A: " + obj1.counter);
+		System.out.println("B: " + obj2.counter);
+		System.out.println("C: " + obj3.counter);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class F 
+{
+	static int counter;
+
+	{
+		counter++;
+	}
+
+	{
+		counter++;
+	}
+
+	F()
+	{
+		counter++;
+	}
+
+	F(int i)
+	{
+		counter++;
+	}
+
+	F(int i, int j)
+	{
+		counter++;
+	}
+
+	public static void main(String[] args) 
+	{
+		F obj1 = new F();
+		F obj2 = new F(10);
+		F obj3 = new F(10, 20);
+		System.out.println("A: " + obj1.counter);
+		System.out.println("B: " + obj2.counter);
+		System.out.println("C: " + obj3.counter);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class G 
+{
+	static int counter;
+
+	{
+		counter++;//0-1//1-2//2-3//3-4//4-5//5-6
+	}
+
+	public static void main(String[] args) 
+	{
+		G obj1 = new G();
+		G obj2 = new G();
+		G obj3 = new G();
+		G obj4 = new G();
+		G obj5 = new G();
+		G obj6 = new G();
+		System.out.println("Number of Objects that got created for G class is: " + counter);//6
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

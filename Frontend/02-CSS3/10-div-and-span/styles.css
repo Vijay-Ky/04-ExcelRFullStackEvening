@@ -1,0 +1,99 @@
+/* Div and Span */
+/* Div - used for grouping other elements
+       - div can contain any number of elements inside it
+       - as a code-block of elements
+       - inside the div we can nest any no. of elements
+       - used to group multiple elements
+       - div is a block-level element
+       - block level elemets are always starts on new line and takes up the entire width of the screen
+Ex: 
+<div>: The generic container element used for grouping and styling content.
+
+<p>: Represents a paragraph of text.
+
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>: Heading elements from most important (h1) to least important (h6).
+
+<ul>: Represents an unordered list, typically rendered as a bulleted list.
+
+<ol>: Represents an ordered list, typically rendered as a numbered list.
+
+<li>: Represents a list item within <ul> or <ol>.
+
+<blockquote>: Indicates that the enclosed text is a block quotation.
+
+<pre>: Represents preformatted text, preserving both spaces and line breaks.
+
+<table>: Represents tabular data.
+
+<figure>: Represents self-contained content, often with a caption (<figcaption>).
+
+<form>: Represents a form, containing interactive controls for user input.
+
+<header>, <footer>, <nav>, <article>, <section>: HTML5 introduced semantic  */
+/* Span - used to specify inline content
+        - span is a inline-level element
+        - inline-level elments doesnt start on a new line and it takes only as much  as space it is required. 
+Ex:
+<span>: The generic inline container element used for styling and grouping inline elements.
+
+<a>: Creates hyperlinks to other web pages, files, locations within the same page, or other URLs.
+
+<strong>: Represents strong importance, typically rendered as bold text.
+
+<em>: Represents emphasized text, typically rendered as italicized text.
+
+<img>: Embeds an image into the HTML document.
+
+<br>: Inserts a single line break.
+
+<input>: Creates form controls for user input, such as text fields, checkboxes, radio buttons, etc.
+
+<label>: Associates a label with a form control.
+
+<select>: Creates a drop-down list.
+
+<option>: Defines an option in a <select> element.
+
+<textarea>: Creates a multi-line text input control.
+
+<abbr>: Represents an abbreviation or acronym.
+
+<cite>: Represents the title of a work (e.g., a book, a movie, a painting).
+
+<code>: Represents a fragment of computer code.
+
+<q>: Represents a short inline quotation.
+
+<time>: Represents a specific period in time or a date.
+        */
+/*  */
+
+
+.green
+{
+    color: green;
+    background: yellow;
+}
+
+.red
+{
+    color: red;
+    background-color: black;
+}
+
+.uppercase
+{
+    text-transform: uppercase;
+}
+
+.text
+{
+    background: white;
+    color: blue;
+}
+
+.white
+{
+    color: white;
+    background: black;
+}

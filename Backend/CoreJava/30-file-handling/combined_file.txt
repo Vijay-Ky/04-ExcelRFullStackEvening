@@ -1,0 +1,1207 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>directory</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+class F1 
+{
+	public static void main(String[] args) //throws Exception
+	{
+		//empty file abc.txt - No.
+		//its not going to create a physical file
+		//it creates Java file object to represent name abc.txt
+		//does not create a new file. Instead, it creates a new File object named file that represents a file named "abc.txt".
+		//public File(String pathname) - throws NullPointerException - If the pathname argument is null
+		File file = new File("abc.txt");
+		System.out.println("done");
+	}
+}
+/*
+java.io package
+1. File - create file, create directory, check how many files, directories
+2. FileWriter - write 
+3. FileReader - read
+4. BufferedWriter - to overcome problems with FileWriter
+5. BufferedReader - to overcome problems with FileReader
+6. PrintWriter - Advance Level
+
+File file = new File("abc.txt");
+
+- This line wont create any physical file, first it will check is there any physical file already available with abc.txt name or not.
+- If it is already available then file will be pointing to that file.
+- if it is not already available this line wont create any physical file and just it creates a Java file object to represent the name abc.txt.
+
+File file = new File("abc.txt");
+System.out.println(file.exists());//false
+file.createNewFile();
+System.out.println(file.exists())//true
+firstrun:
+false
+true
+secondrun:
+true
+true
+
+- we can use Java file object to represent directory also
+File file = new File("vijay007");
+System.out.println(file.exists())//false
+file.mkdir();
+System.out.println(file.exists())//true
+
+Note:
+- Java file i/o concept is implemented based on UNIX operating system and in UNIX everything is treated as a File. Hence we can use Java file object to represent both files and directories
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.IOException;	
+
+class F10
+{
+	public static void main(String[] args)
+	{
+		//constructors takes two arguments 
+		//one takes path, another creates file
+		//the path should be available
+		//1st constructor
+		//File(File parent, String child)
+		//Creates a new File instance from a parent abstract pathname and a child pathname string:
+		File file = new File("D:\\FileHandling", "test3.txt");
+		System.out.println("a: " + file.exists());
+		try
+		{
+			System.out.println("b: " + file.createNewFile());
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("c: " + file.exists());
+		System.out.println("done:");
+	}
+}
+
+/*
+1st constructor
+File(File parent, String child)
+Creates a new File instance from a parent abstract pathname and a child pathname string:
+File parentDirectory = new File("D:\\ParentDirectory");
+String childFileName = "test.txt";
+File file = new File(parentDirectory, childFileName);
+
+2nd constructor
+File(String parent, String child)
+Creates a new File instance from a parent pathname string and a child pathname string:
+String parentPath = "D:\\ParentDirectory";
+String childFileName = "test.txt";
+File file = new File(parentPath, childFileName);
+
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.IOException;	
+
+class F11
+{
+	public static void main(String[] args)
+	{
+		File directory = new File("D://FileHandling");
+		//several constructors
+		//location we are supplying through another file object
+		File file = new File(directory, "test4.txt");
+		System.out.println("a: " + file.exists());
+		try
+		{
+			System.out.println("b: " + file.createNewFile());
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("c: " + file.exists());
+		System.out.println("done:");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.IOException;	
+
+class F12
+{
+	public static void main(String[] args)
+	{
+		File directory = new File("D://FileHandling");
+		File file = new File(directory, "test4.txt");
+		System.out.println("a: " + file.exists());
+		try
+		{
+			System.out.println("b: " + file.createNewFile());
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("c: " + file.exists());
+		System.out.println("done:");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F13
+{
+	public static void main(String[] args)
+	{
+		//File can create both file and directory.
+		//create a directory in the current working folder.
+		File file = new File("directory");
+		//to create the directory
+		//doesnt requres try/catch or throws
+		file.mkdir();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F14
+{
+	public static void main(String[] args)
+	{
+		File file = new File("directory");
+		System.out.println("a: " + file.exists());
+		//file.mkdir() - returns a boolean value
+		System.out.println("b: " + file.mkdir());
+		System.out.println("c: " + file.exists());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F15
+{
+	public static void main(String[] args)
+	{
+		//absolute path
+		File file = new File("D:/FileHandling/directory1");
+		System.out.println("a: " + file.exists());
+		System.out.println("b: " + file.mkdir());
+		System.out.println("c: " + file.exists());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F16
+{
+	public static void main(String[] args)
+	{
+		//absolute path
+		//default is project folder
+		//path and directory
+		File file = new File("D:/FileHandling", "directory2");
+		System.out.println("a: " + file.exists());
+		System.out.println("b: " + file.mkdir());
+		System.out.println("c: " + file.exists());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F17
+{
+	public static void main(String[] args)
+	{
+		File directory = new File("D:/FileHandling");
+		//path refered through reference variable
+		File file = new File(directory, "directory3");
+		System.out.println("a: " + file.exists());
+		System.out.println("b: " + file.mkdir());
+		System.out.println("c: " + file.exists());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F18
+{
+	public static void main(String[] args)
+	{
+		File directory = new File("D:/Folders");
+		//path refered through reference variable
+		File file = new File(directory, "directory4");
+		System.out.println("a: " + file.exists());
+		//if the path didnt exists simply you get false not exception
+		System.out.println("b: " + file.mkdir());
+		System.out.println("c: " + file.exists());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F19
+{
+	public static void main(String[] args)
+	{
+		//if you want to check for these files and folders it should be available otherwise simply you will get false.
+		File file = new File("xyz.txt");
+		File directory = new File("directory");
+		//to check whether file object is file or folder
+		System.out.println("file.isFile(): " + file.isFile());
+		System.out.println("directory.isFile(): " + directory.isFile());
+		System.out.println("file.isDirectory: " + file.isDirectory());
+		System.out.println("directory.isDirectory: " + directory.isDirectory());		
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+class F2
+{
+	public static void main(String[] args) throws Exception
+	{
+		//empty file abc.txt - No.
+		//its not going to create a physical file
+		//it creates Java file object to represent name abc.txt
+		//does not create a new file. Instead, it creates a new File object named file that represents a file named "abc.txt".
+		//public File(String pathname) - NullPointerException - If the pathname argument is null
+		File file = new File("abc.txt");
+		System.out.println(file.exists());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F20
+{
+	public static void main(String[] args)
+	{
+		//if you want to check for these files and folders it should be available otherwise simply you will get false.
+		File file = new File("com.txt");
+		File directory = new File("folder");
+		//to check whether file object is file or folder
+		System.out.println("file.isFile(): " + file.isFile());
+		System.out.println("directory.isFile(): " + directory.isFile());
+		System.out.println("file.isDirectory: " + file.isDirectory());
+		System.out.println("directory.isDirectory: " + directory.isDirectory());			
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F21
+{
+	public static void main(String[] args)
+	{
+		File file = new File("D:\\FileHandling");
+		//reading all the mebers of the directory
+		File[] members = file.listFiles();
+		for(File member : members)
+		{
+			//you will get file names with extensions
+			System.out.println(member.getName());
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F22
+{
+	public static void main(String[] args)
+	{
+		File src = new File("D:\\FileHandling");
+		File[] members = src.listFiles();		
+		for(File member : members)
+		{
+			//print whether file or directory
+			System.out.println(member.getName() + ":" + (member.isFile() ? " a file " : " a directory ")) ;
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F23
+{
+	public static void main(String[] args)
+	{
+		File src = new File("D:\\FileHandling");
+		File[] members = src.listFiles();
+		int dirCount = 0, fileCount = 0;
+		for(File member : members)
+		{
+			if(member.isFile())
+			{
+				fileCount ++;
+			}
+
+			else
+			{
+				dirCount ++;
+			}
+		}
+		System.out.println("files count: " + fileCount) ;
+		System.out.println("dir count: " + dirCount);	
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+class F3
+{
+	//to address both NullPointerExcpetion and IOException we can use Exception
+	public static void main(String[] args) throws Exception
+	{
+		//by default creates file in the project folder
+		//its a relative path reperesents the current working folder
+		//throws NullPointerException
+		File file = new File("abc.txt");
+		//checks that file is there or not in the current working folder
+		System.out.println(file.exists());
+		//A physical file is going to be created
+		//file reference will be pointing to this file
+		//throws IOException - checked exception
+		file.createNewFile();
+		System.out.println(file.exists());
+		System.out.println("done");
+	}
+} 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+class F4
+{
+	public static void main(String[] args) throws Exception
+	{
+		//if file is already exists then it wont create another file in the same directory.
+		File file = new File("abc.txt");
+		System.out.println(file.exists());
+		boolean flag = file.createNewFile();
+		System.out.println(flag);
+		System.out.println(file.exists());
+		System.out.println("done");
+	}
+} 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+
+public class F5
+{
+	public static void main(String[] args) throws Exception
+	{	
+		//you can create literally any kind of file
+		File file = new File("xyz.java");
+		//returns boolean value
+		//second time returns false
+		boolean flag = file.createNewFile();
+		System.out.println(flag);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+//Exception is a part of java.lang package but IOException we should import
+import java.io.IOException;	
+
+class F6
+{
+	public static void main(String[] args)
+	{
+		File file = null; 
+		try
+		{
+			file = new File("xyz.txt");
+		}
+		catch (NullPointerException ex)
+		{
+			System.out.println("from catch: " + ex);
+		}
+		System.out.println("a: " + file.exists());
+		//instead of throws
+		try
+		{
+			System.out.println("b: " + file.createNewFile());
+		}
+		catch(IOException ex)
+		{
+			System.out.println("from catch: " + ex);
+		}
+		System.out.println("c: " + file.exists());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+class F7
+{
+	public static void main(String[] args)
+	{
+		// Explicitly casting null to String
+		// otherwise if you just supply null you wil get reference to File is ambiguous.  both constructor File(String) in File and constructor File(URI) in File match
+		// for this you will get NullPointerExcpetion
+		//File file = new File(null); 
+		File file = new File((String)null); 
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.IOException;	
+
+class F8
+{
+	public static void main(String[] args)
+	{
+		//if you want to create a file in specific location 
+		//you should provide absolute path
+		//public File(String pathname)
+		File file = new File("D:\\FileHandling\\test1.txt");
+		System.out.println("a: " + file.exists());
+		try
+		{
+			System.out.println("b: " + file.createNewFile());
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("c: " + file.exists());
+		System.out.println("done:");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.IOException;	
+
+class F9
+{
+	public static void main(String[] args)
+	{
+		//if you want to create a file in specific location 
+		//you should provide absolute path
+		File file = new File("D:/FileHandling/test2.txt");
+		System.out.println("a: " + file.exists());
+		try
+		{
+			System.out.println("b: " + file.createNewFile());
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("c: " + file.exists());
+		System.out.println("done:");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class F1 
+{
+	public static void main(String[] args) throws IOException
+	{
+		//it wont create physical file
+		//File f1 = new File("D:/FileHandlingNew/test1.txt");
+		File f1 = new File("D:/FileHandling/test1.txt");
+		//now it create physical file 
+		//if the file not available file will be created
+		//folder must be existing otherwise you will get FileNotFoundException
+		FileWriter out = new FileWriter(f1);
+		//starts writing doesnt give any space or line break
+		out.write("Hello");
+		out.write("test");
+		out.write("\n");
+		out.write("abc");
+		out.write("xyz");
+		out.write("end");
+		out.flush();
+		out.close();
+		System.out.println("done");
+	}
+}
+
+
+/*
+We can use File Writer Object to write characters(text data) to the file
+
+constructors:
+
+1. FileWriter fw = nw FileWriter(String name);
+2. FileWriter fw = new FileWriter(File f);
+
+The above 2 constructors meant for overriding existing data
+instead of overriding, if we want to perform append operation then we have to use the following two constructors
+
+1. FileWriter fw = nw FileWriter(String name, boolean append);
+2. FileWriter fw = new FileWriter(File f, boolean append);
+
+Note: if the specified File is not already available then all the above constructors will create that file.
+
+Methods of FileWriter class:
+
+1. write(int ch) - to write a single character to the file
+
+2. write(char[] ch) - to write an array of characters to the file
+
+3. write(String s) - to write a String to the file.
+
+4. flush() - to give the guarantee that total data including last character written properly to the file
+
+5 close()
+
+
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class F10
+{
+	public static void main(String[] args)  throws IOException
+	{
+		//creates a new file is not exists
+		FileWriter out = new FileWriter("test6.txt", true);
+		BufferedWriter bout = new BufferedWriter(out);
+		bout.write("test");
+		bout.write("test");
+		bout.newLine();
+		bout.write("test");
+		bout.write("test");
+		bout.newLine();
+		bout.write("test");
+		bout.write("test");
+		bout.newLine();
+		bout.write("test");
+		bout.write("test");
+		bout.flush();
+		bout.close();
+		out.close();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class F11
+{
+	public static void main(String[] args) throws IOException
+	{
+		File f1 = new File("test6.txt");
+		FileReader fin = new FileReader(f1);
+		BufferedReader bin = new BufferedReader(fin);
+		String s1 = bin.readLine();
+		while(s1 != null)
+		{
+			System.out.println(s1);
+			s1 = bin.readLine();
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class F2
+{
+	public static void main(String[] args) throws IOException
+	{
+		File f1 = new File("D:/FileHandling/test2.txt");
+		FileWriter out = new FileWriter(f1);
+		//write(int ch) - to write a single character to the file
+		out.write(10000);
+		out.flush();
+		out.close();
+		System.out.println("done");
+	}
+}
+
+
+/*
+We can use File Writer Object to write characters(text data) to the file
+
+constructors:
+
+1. FileWriter fw = nw FileWriter(String name);
+2. FileWriter fw = new FileWriter(File f);
+
+The above 2 constructors meant for overriding existing data
+instead of overriding, if we want to perform append operation then we have to use the following two constructors
+
+1. FileWriter fw = nw FileWriter(String name, boolean append);
+2. FileWriter fw = new FileWriter(File f, boolean append);
+
+Note: if the specified File is not already available then all the above constructors will create that file.
+
+Methods of FileWriter class:
+
+1. write(int ch) - to write a single character to the file
+
+2. write(char[] ch) - to write an array of characters to the file
+
+3. write(String s) - to write a String to the file.
+
+4. flush() - to give the guarantee that total datat including last character written properly to the file
+
+5 close()
+
+
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class F3
+{
+	public static void main(String[] args) throws IOException
+	{
+		File f1 = new File("D:/FileHandling/test3.txt");
+		FileWriter out = new FileWriter(f1);
+		//char to int convertion
+		out.write('a');
+		out.flush();
+		out.close();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class F4
+{
+	public static void main(String[] args) throws IOException
+	{
+		//FileWriter out = new FileWriter("test1.txt", true);
+		FileWriter out = new FileWriter("test1.txt", false);
+		out.write("Hello4444444");
+		out.write("test");
+		out.write("abc444444");
+		out.write("\n");
+		out.write("xyz");
+		out.write("end444444444");
+		out.flush();
+		out.close();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class F5
+{
+	public static void main(String[] args)
+	{
+		File f1 = new File("test4.txt");
+		FileWriter out = null;
+		try
+		{
+			out = new FileWriter(f1);
+			out.write("hello");
+			out.write("test");
+			out.write("end");
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			if(out != null)
+			{
+				try
+				{
+					out.flush();
+					out.close();
+				}
+				catch(IOException ex)
+				{
+					ex.printStackTrace();
+				}
+			}
+		}
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class F6
+{
+	public static void main(String[] args)
+	{
+		File f1 = new File("test5.txt");
+
+		try (FileWriter out = new FileWriter(f1))  //JDK1.7
+		{
+			out.write("hello");
+			out.write("test");
+			out.write("end");
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class F7
+{
+	public static void main(String[] args) throws IOException
+	{
+		File file = new File("test3.txt");
+		char[] chars = new char[50];
+		FileReader fileReader = new FileReader(file);
+		fileReader.read(chars);
+		fileReader.close();
+		String s1 = new String(chars);
+		System.out.println(s1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class F8
+{
+	public static void main(String[] args)
+	{
+		File f1 = new File("test3.txt");
+		FileReader fin = null;
+		System.out.println("no of characters in this file: "  + (int)f1.length());
+
+		char[] chars = new char[(int)f1.length()];
+		try
+		{
+			fin = new FileReader(f1);
+			fin.read(chars);
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		finally
+		{
+			if(fin != null)
+			{
+				try
+				{
+					fin.close();
+				}
+				catch(IOException ex)
+				{
+					ex.printStackTrace();
+				}
+			}
+		}
+		String s1 = new String(chars);
+		System.out.println(s1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class F9
+{
+	public static void main(String[] args)
+	{
+		File f1 = new File("test3.txt");
+		
+		try (FileReader fin = new FileReader(f1))
+		{
+			char[] chars = new char[110];
+			fin.read(chars);
+			String s1 = new String(chars);
+			System.out.println(s1);
+		}
+		catch(IOException ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

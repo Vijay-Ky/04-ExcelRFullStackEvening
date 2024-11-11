@@ -1,0 +1,126 @@
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from main1: " + args);
+		System.out.println("from main2: " + args.length);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class B
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from main1: " + args[0]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Total No. of arguments: " + args.length);
+		for(String str: args)
+		{
+			System.out.println("argument: " + str);
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class D
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		String s1 = args[0];
+		System.out.println("--------0--------");
+		String s2 = args[1];
+		System.out.println("--------1--------");
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class E 
+{
+	public static void main(String[] args) 
+	{
+		int i = Integer.parseInt(args[0]);
+		int j = Integer.parseInt(args[1]);
+		int k = i + j;
+		System.out.println("addition of " + i + " and " + j + " is: " + k);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class F
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Total No. of arguments: " + args.length);
+
+		for(int i = 0; i < args.length; i++)
+		{
+			System.out.println("argument: " + args[i]);
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

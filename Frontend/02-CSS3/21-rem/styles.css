@@ -1,0 +1,25 @@
+/* 
+rem - RELATIVE, depends on root
+1rem = base value (16px) * number (1)
+*/
+html
+{
+  font-size: 32px;
+}
+
+div
+{
+  font-size: 5px;
+}
+
+.relative
+{
+  font-size: 2rem;
+}
+
+.absolute
+{
+  font-size: 32px;
+}
+
+

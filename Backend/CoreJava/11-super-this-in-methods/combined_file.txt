@@ -1,0 +1,370 @@
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	public void test()
+	{
+		System.out.println("from A test()");
+	}
+}
+class B extends A
+{
+	public void test(int i)
+	{
+		super.test();
+		System.out.println("from B test(int)");
+	}
+
+	public static void main(String[] args) 
+	{
+		B obj = new B();
+		obj.test();
+		obj.test(10);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	public void test()
+	{
+		System.out.println("from C test()");
+	}
+}
+class D extends C
+{
+	public void test(int i)
+	{
+		System.out.println("from D test(int) begin");
+		super.test();
+		System.out.println("from D test(int) end");
+	}
+
+	public static void main(String[] args) 
+	{
+		D obj = new D();
+		obj.test();
+		obj.test(10);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	public void test()
+	{
+		System.out.println("from E test()");
+	}
+}
+class F extends E
+{
+	public static void test(int i)
+	{
+		super.test();
+		System.out.println("from F test(int)");
+	}
+
+	public static void main(String[] args) 
+	{
+		F obj = new F();
+		obj.test();
+		obj.test(10);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class G
+{
+	public static void test()
+	{
+		System.out.println("from G test()");
+	}
+}
+class H extends G
+{
+	public void test(int i)
+	{
+		super.test();
+		System.out.println("from H test(int)");
+	}
+
+	public static void main(String[] args) 
+	{
+		H obj = new H();
+		obj.test();
+		obj.test(10);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class I
+{
+	static int i;
+	boolean k;
+}
+class J extends I
+{
+	J()
+	{
+		super();
+		System.out.println("J() begin");
+		System.out.println(super.i);
+		System.out.println(super.k);
+		System.out.println("J() end");
+	}
+
+	{
+		//super();
+		System.out.println("J-IIB begin");
+		System.out.println(super.i);
+		System.out.println(super.k);
+		System.out.println("J-IIB end");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		J obj = new J();
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class K 
+{
+	public void test()
+	{
+		this.test(10);
+		System.out.println("from K test()");
+	}
+
+	public void test(int i)
+	{
+		System.out.println("from K test(int i)");
+	}
+
+	public static void main(String[] args) 
+	{
+		K obj = new K();
+		obj.test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class L
+{
+	public static void test()
+	{
+		this.test(10);
+		System.out.println("from L test()");
+	}
+
+	public void test(int i)
+	{
+		System.out.println("from L test(int i)");
+	}
+
+	public static void main(String[] args) 
+	{
+		L obj = new L();
+		obj.test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class M
+{
+	public void test()
+	{
+		this.test(10);
+		System.out.println("from M test()");
+	}
+
+	public static void test(int i)
+	{
+		System.out.println("from M test(int i)");
+	}
+
+	public static void main(String[] args) 
+	{
+		M obj = new M();
+		obj.test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class N
+{
+	public void test()
+	{
+		System.out.println("froN N test() begin");
+		this.test(10);
+		System.out.println("froN N test() end");
+	}
+
+	public static void test(int i)
+	{
+		System.out.println("from N test(int i)");
+	}
+
+	public static void main(String[] args) 
+	{
+		N obj = new N();
+		obj.test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class O
+{
+	public void test()
+	{
+		System.out.println("from O test()");
+	}
+
+	O()
+	{
+		this.test();
+	}
+
+	{
+		this.test();
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		O obj = new O();
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class P
+{
+	static String str = "abc";
+	int i = 10;
+
+	public void test()
+	{
+		System.out.println("from P test() begin");
+		System.out.println(this.str);
+		System.out.println(this.i);
+		System.out.println("from P test() end");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		P obj = new P();
+		obj.test();
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

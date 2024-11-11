@@ -1,0 +1,1298 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+enum A
+{
+}
+/*
+- "An enum is an ordered collection of fixed number of same type of constants"
+ - An enumeration is a complete, ordered listing of all the items in a collection.
+- Enums allow you to define a set of named constants.
+- An enum is an ordered collection of all the items of same type.
+- introduced in JDK 1.5
+- enums are mainly used for grouping similar kind of and fixed number of constants.
+- Ex: all days in a week, all the months in a year
+- enum can become a member of java file
+- for enum also compiler will be generating a .class file
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+enum B
+{
+}
+
+class C
+{
+}
+
+interface D
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+package app1;
+
+import java.lang.reflect.Method;
+class Example
+{
+    public static void main(String[] args) throws Exception
+    {
+        int count = 0;
+        Class c1 = Class.forName("app1.Month");
+        Method[] m1 = c1.getDeclaredMethods();
+        for(Method method : m1)
+        {
+            count++;
+            System.out.println(method.getName());
+        }
+        System.out.println("The Number of methods: " + count);
+    }
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+enum Enum1
+{
+    C1, C2, C3, C4;
+}
+class F
+{
+    public static void main(String[] args)
+    {
+        System.out.println(Enum1.C1);
+        System.out.println(Enum1.C3);
+    }
+}
+/*
+- by using enum reference we can access enum constants.
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+enum G
+{
+    //if enum contains only constants then ";" is optional
+    CON1, CON2, CON3, CON4
+}
+class H
+{
+    public static void main(String[] args)
+    {
+        //if any type is class, interface or enum then it comes
+        //under derived datatype
+        G g1 = G.CON1;
+        G g2 = G.CON2;
+        System.out.println(g1);
+        System.out.println(g2);
+    }
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+enum I
+{
+    //every constant should be a valid java identifier.
+    test1, test2, test3;
+}
+class J
+{
+    public static void main(String[] args)
+    {
+        I ref1 = I.test3;
+        System.out.println(ref1);
+        ref1 = I.test1;
+        System.out.println(ref1);
+    }
+}
+//enum can be used to specify the datatype
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+enum K
+{
+    T1, T2, T3, T4;
+}
+class L
+{
+    public static void main(String[] args)
+    {
+        K k1 = K.T3;
+        System.out.println(k1);
+        k1 = K.T4;
+        System.out.println(k1);
+        //while accessing from the enum that constant should be
+        //available in the enum
+        k1 = K.T5;
+        System.out.println(k1);
+    }
+}
+//by using enum name, we can access only available constant of the same enum.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class M
+{
+    enum Enum1
+    {
+        C1, C2, C3, C4;
+    }
+    enum Enum2
+    {
+        T1, T2, T3, T4;
+    }
+    public static void main(String[] args)
+    {
+        Enum1 e1 = Enum1.C4;
+        System.out.println(e1);
+        Enum1 e2 = Enum1.C3;
+        System.out.println(e2);
+        System.out.println("-----------");
+        Enum2 e3 = Enum2.T1;
+        System.out.println(e3);
+        Enum2 e4 = Enum2.T2;
+        System.out.println(e4);
+    }
+}
+//enum can become a member of the class also
+//we can develop an enum inside a class as a member of the class
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+import java.lang.reflect.Method;
+
+enum Month// this is type of Enum
+{
+
+    JAN, FEB, MAR, APR, MAY, JUN,
+    JUL, AUG, SEP, OCT, NOV, DEC;
+	/*
+	public static void main(String[] args)
+    {
+		Class<?> enumClass = Month.class;
+
+        System.out.println("Methods in enum " + enumClass.getSimpleName() + ":");
+        Method[] methods = enumClass.getMethods();
+
+        for (Method method : methods) {
+            System.out.println(method.getName());
+        }
+	}*/
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+import java.lang.reflect.Method;
+interface InterfaceMethods
+{
+	
+}
+class MyDriver
+{
+	public static void main(String[] args)
+    {
+		Class<?> ref = InterfaceMethods.class;
+
+        System.out.println("Methods in class " + ref.getSimpleName() + ":");
+        Method[] methods = ref.getMethods();
+
+        for (Method method : methods) {
+            System.out.println(method.getName());
+        }
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class N
+{
+    public static void main(String[] args)
+    {
+        //enums contains some built-in methods.
+        //values is a static method.
+        //by using values we can read all the constants of enum
+        Month[] all = Month.values();
+
+        for(Month list : all)
+        {
+            System.out.println(list);
+        }
+		/*
+        System.out.println("------------" + all);
+		for(int i = 0; i < all.length; i++)
+		{
+			System.out.println(all[i]);
+		}*/
+    }
+}
+
+//values() method is a built-in and its return type is an array of the same enum type. it returns all constants of the same enum.
+/*
+ You can't see this method in javadoc because it's added by the compiler.
+
+Documented in three places :
+
+Enum Types, from The Java Tutorials
+The compiler automatically adds some special methods when it creates an enum.
+ For example, they have a static values method that returns an array containing
+  all of the values of the enum in the order they are declared. This method is
+   commonly used in combination with the for-each construct to iterate over the
+  values of an enum type.
+  */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class O
+{
+    public static void main(String[] args)
+    {
+        Month t1 = Month.JAN;
+        Month t2 = Month.DEC;
+
+        System.out.println(t1);
+        System.out.println(t2);
+        //we can find out the order in enum Month
+        System.out.println(t1.ordinal());
+        System.out.println(t2.ordinal());
+        System.out.println(Month.OCT.ordinal());
+
+        int i = Month.FEB.ordinal();
+        System.out.println(i);
+    }
+}
+//every enum constant will be having unique index value.
+//we can find out that by ordinal()
+
+//ordinal() method is used for identifying order of the constant(index of the constant)
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class P
+{
+    public static void main(String[] args)
+    {
+        Month p1 = Month.valueOf("JAN");
+        System.out.println(p1);
+        Month p2 = Month.valueOf("FEB");
+        System.out.println(p2);
+		try
+		{
+			Month p3 = Month.valueOf("jul");//RE(IAE)
+		}
+		catch (IllegalArgumentException ex)
+		{
+		}
+        System.out.println("end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class Q
+{
+    enum En
+    {
+        C1, C2, C3, C4;
+    }
+}
+class R
+{
+    public static void main(String[] args)
+    {
+        //En should be refered through Q
+        //its like inner class
+        Q.En e1 = Q.En.C4;
+        Q.En e2 = Q.En.C2;
+        System.out.println(e1);
+        System.out.println(e2);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+enum Day
+{
+    MON, TUE, WED, THU, FRI, SAT, SUN;
+}
+class S
+{
+    public static void main(String[] args)
+    {
+        Day d1 = Day.SAT;
+        System.out.println(d1);
+        Day d2 = Day.SUN;
+        System.out.println(d2);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+import java.lang.reflect.Method;
+class TotalMethods 
+{
+	public static void main(String[] args)
+    {
+		Class<?> ref = TotalMethods.class;
+
+        System.out.println("Methods in class " + ref.getSimpleName() + ":");
+        Method[] methods = ref.getMethods();
+
+        for (Method method : methods) {
+            System.out.println(method.getName());
+        }
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+//enum advanced
+enum V
+{
+    C1, C2, C3;
+    V()
+    {
+        System.out.println("V()");
+    }
+    {
+        System.out.println("IIB");
+    }
+    static
+    {
+        System.out.println("SIB: " + V.C1);
+    }
+
+}
+class A
+{
+    public static void main(String[] args)
+    {
+        V v1 = V.C3;
+        System.out.println(v1);
+    }
+}
+/*
+ 1. if you dont provide the constructor compiler only providing
+    the constructor. its similar to class
+ 2. when enum loading to the memory
+ 3. while using the enum, enum has to load to the memory.
+    all 3 constants has to load to the memory.
+ 4. for every constant constructor will execute.
+ 5. in case of class when an object is creating constructor
+    executes. in case of enum while loading a constant
+    constructor will execute.
+ 6. every enum should have one constructor, if there is no
+    constructor then compiler only keeps no-arg constructor.
+ 7. all enum constants are static, when enum is loading
+    at that time all enum static constants are loaded.
+ 8. for every enum constant constructor will execute.
+ */
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class B
+{
+    enum A
+    {
+        CON(100), TEST(200, "true");
+        A(int i)
+        {
+            System.out.println("A(int): " + i);
+        }
+
+		A(int i, String str)
+        {
+            System.out.println("A(int, String): " + i + ": " + str);
+        }
+    }
+    public static void main(String[] args)
+    {
+        A a1 = A.TEST;
+       //A a2 = new A();
+        System.out.println(a1);
+    }
+}
+/*
+1. here argument constructor is mandatory, bcz every construtor
+   taking one argument.
+2. enum constants can take arguments.
+3. first CON is loading even though we are not using CON.
+4. while loading CON 100 is assigning to i and prints 100
+   while loading TEST 200 is assigning to i and prints 200
+5. ";" is mandatory after list of constants bcz of constructor.
+6. enum types may not be instantiated ==> cant create an object to the enum
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+class C
+{
+    enum A
+    {
+        CON1, CON2(90), CON3, CON4("ABC");
+        A()
+        {
+            System.out.println("A()");
+        }
+        A(int i)
+        {
+            System.out.println("A(int): " + i);
+        }
+        A(String s1)
+        {
+            System.out.println("A(String): " + s1);
+        }
+    }
+    public static void main(String[] args)
+    {
+        A a1 = A.CON4;
+        System.out.println("------------");
+        System.out.println(a1);
+    }
+}
+/*
+1. enum constructor can be overloaded based on the type
+   constructor will execute.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+class D
+{
+    enum B
+    {
+        CON1(10), CON2(30), CON4(50);
+
+        int i;//its part of CON1, CON2, CON4
+
+		static 
+		{
+			System.out.println("SIB" + CON1.i);
+		}
+
+        B(int i)
+        {
+            System.out.println("B(int): " + (this.i = i));
+        }
+
+		{
+			System.out.println("IIB: " + i);
+		}
+    }
+    public static void main(String[] args)
+    {
+        B b1 = B.CON4;
+        System.out.println(b1);
+        System.out.println(b1.i);//b1 pointing CON4 and that internally has copy of i
+        B b2 = B.CON2;
+        System.out.println(b2);
+        System.out.println(b2.i);
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+class E
+{
+    enum C
+    {
+        T1, T2, T3, T4, T5;
+        static void test1()
+        {
+            System.out.println("from test1");
+        }
+
+		void test2()
+        {
+            System.out.println("from test2");
+        }
+    }
+    public static void main(String[] args)
+    {
+        C c1 = C.T3;
+        c1.test1();
+        c1.test2();
+        System.out.println("-------------");
+        C c2 = C.T4;
+        c2.test1();
+        c2.test2();
+        System.out.println("-------------");
+    }
+}
+/*
+ 1. all constants required no-arg constructor, and compiler keeps no-arg
+    constructor.
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+class F
+{
+    enum D
+    {
+        CON(10), CON1(90), CON2(80);
+        int i;
+        D(int i)
+        {
+            this.i = i;
+        }
+        int test1()
+        {
+            return i;
+        }
+    }
+    public static void main(String[] args)
+    {
+        D d1 = D.CON2;
+        System.out.println(d1);
+        System.out.println(d1.i);
+        System.out.println(d1.test1());
+        D d2 = D.CON1;
+        System.out.println(d2);
+        System.out.println(d2.i);
+        System.out.println(d2.test1());
+    }
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+class G
+{
+    enum E
+    {
+        t1, t2, t3, t4;
+        void method1()
+        {
+            System.out.println("method1");
+        }
+    }
+    public static void main(String[] args)
+    {
+        E e1 = E.t1;
+        System.out.println(e1);
+        e1.method1();
+        E e2 = E.t2;
+        System.out.println(e2);
+        e2.method1();
+    }
+}
+
+/* for all the constants common method implementation*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class H
+{
+    enum F
+    {
+        t1, t2,
+        t3//specific method for t3
+                {//constant specific class body
+                    void method1()
+                    {
+                        System.out.println("inner");
+                    }
+                }, t4, t5;
+        void method1()
+        {
+            System.out.println("General");
+        }
+    }
+    public static void main(String[] args)
+    {
+        F f1 = F.t1;
+        F f2 = F.t2;
+        F f3 = F.t3;
+        F f4 = F.t4;
+        F f5 = F.t5;
+        f1.method1();
+        f2.method1();
+        f3.method1();
+        f4.method1();
+        f5.method1();
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+class I
+{
+    enum X
+    {
+        A, B, C, D;
+    }
+    public static void main(String[] args)
+    {
+        X x1 = X.C;
+        switch(x1)
+        {
+            case A:
+            {
+                System.out.println("in A");
+                break;
+            }
+            case B:
+            {
+                System.out.println("in B");
+                break;
+            }
+			/*
+            case C:
+            {
+                System.out.println("in C");
+                break;
+            }*/
+			case D:
+            {
+                System.out.println("in D");
+                break;
+            }
+			default:
+			{
+				System.out.println("default");
+			}
+        }
+    }
+
+}
+/*
+ 1. in JDK 1.5 switch case has been improved which can take enum constant as
+    an argument.
+ 2. if switch argument is an enum constant, then every case should be with
+    the same enum constants.
+*/
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+class J
+{
+    public static void main(String[] args)
+    {
+        Thread.State[] states = Thread.State.values();
+        for(int i = 0; i < states.length; i++)
+        {
+            System.out.println(states[i]);
+        }
+    }
+}
+/*
+1. inside Thread class there is an enum with a name State
+2. we get the lifecycle states of every thread
+ The compiler automatically adds some special methods when it creates an enum. For example, they have a static values method that returns an array containing all of the values of the enum in the order they are declared. This method is commonly used in combination with the for-each construct to iterate over the values of an enum type.
+
+Enum.valueOf class
+(The special implicit values method is mentioned in description of valueOf method)
+All the constants of an enum type can be obtained by calling the implicit public static T[] values() method of that type.
+
+*/
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app3</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>app4</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+
+//EnumSet is a part of java.util
+import java.util.EnumSet;
+enum B
+{
+    ABC, XYZ, TEST, COM, RST;
+}
+class A
+{
+    public static void main(String[] args)
+    {
+        //EnumSet is an abstract class
+        //EnumSet used for making a group of few constants of an enum or all constants of an enum
+        //EnumSet is introduced to store one enum constant or all enum constant
+        EnumSet<B> set = EnumSet.of(B.TEST, B.XYZ, B.ABC);
+        for(B b1 : set)
+        {
+            System.out.println(b1);
+        }
+    }
+}
+/*
+EnumSet is used to group few or all constants of an enum
+*/
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+import java.util.EnumSet;
+
+enum D
+{
+	abc, xyz, test;
+}
+enum E
+{
+	con1, con2, con3;
+}
+class C
+{
+	public static void main(String[] args)
+	{
+		EnumSet<D> set1 = EnumSet.of(D.xyz, D.abc);
+		for(D en : set1)
+		{
+			System.out.println(en);
+		}
+		System.out.println("----------------------");
+		EnumSet<E> set2 = EnumSet.of(E.con2, E.con1);
+		for(E en : set2)
+		{
+			System.out.println(en);
+		}
+		//we cant store constants of diff enums in one Enumset
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+enum F
+{
+	void test()
+	{
+	}
+}
+//inside an enum without declaring constants straight away developing methods not allowed.
+//enum should have a minimum one constant to provide an attribute or a method
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+enum G
+{
+	G()
+	{
+	}
+}
+//without having any constants also, we can have an explicit no-arg constructor. 
+//inside an enum without declaring constants straight away developing methods not allowed.
+//enum should have a minimum one constant to provide an attribute or a method
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+enum H
+{
+	CON1;
+	{
+	}
+}
+//inside an enum without declaring constants straight away developing methods not allowed.
+//enum should have a minimum one constant to provide an attribute or a method
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+enum I
+{
+	;
+	int i;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	void test()
+	{
+	}
+}
+//there is an indirect way, ";" acting as an ending of list of constants.
+//enum should have a minimum one constant to provide an attribute or a method
+  //or at least there should be semi colon before starting an attribute or a method.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+enum J
+{
+	C1, C2, C3;
+	private J()
+	{
+		
+	}
+}
+//for the constructor of the enum the only access specifier allowed is private
+//we cant specify protected or public
+//why bcz the constructor is calling while loading the constants into the memory.
+//enum constructor access level is private.
+//it allows only private to specify explicitly. 
+//enum constructor executes while loading a enum constant. enum constructor
+  //available in the enum body itself. enum constructor will not be called from outside
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+enum K
+{
+	c1, c2, c3;
+	protected K()
+	{
+		
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+enum L
+{
+	c1, c2, c3;
+	public L()
+	{
+		
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+enum M
+{
+	;
+	public static void main(String[] args)
+	{
+		System.out.println("From main.M");
+	}
+}
+//we can have main method in enum but ";" is mandatory
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+class N
+{
+	
+}
+enum O extends N
+{
+
+}
+//every enum is extending with java.lang.Enum
+//enum cant be a sub-class to any other class.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+enum O
+{
+}
+class P extends O
+{
+}
+//every enum is extending with java.lang.Enum
+//every enum is a final
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+protected enum P
+{
+}
+//every enum is extending with java.lang.Enum
+//protected modifier not allowed for an enum
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+protected class Q
+{
+}
+//protected modifier not allowed for an class
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+protected interface R
+{
+}
+//protected modifier not allowed for an interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+interface S
+{
+	int i = 10;
+	void test1();
+}
+enum T implements S
+{
+	CON1, CON2, CON3;
+
+	public void test1()
+	{
+		System.out.println("from test1");
+	}
+
+	public int test2()
+	{
+		return i;
+	}
+}
+class Z
+{
+	public static void main(String[] args)
+	{
+		T t1 = T.CON1;
+		t1.test1();
+		System.out.println(t1.test2());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+abstract enum U
+{
+}
+//abstract modifier is not allowed in enum
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

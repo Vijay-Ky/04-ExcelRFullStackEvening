@@ -1,0 +1,2370 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class A 
+{
+	public static void main(String[] args) throws Exception
+	{
+		String sql1 = "DROP TABLE IF EXISTS TEST10";
+		String sql2 = "CREATE TABLE TEST10(ID INTEGER)";
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/excelr", "president", "admin"); 
+		Statement stmt = con.createStatement();
+		stmt.execute(sql1);
+		stmt.execute(sql2);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class B 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/excelr", "president", "admin"); 
+		Statement stmt = con.createStatement();
+		String sql = "INSERT INTO TEST10 VALUES(1000)";
+		stmt.execute(sql);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class C 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/excelr", "president", "admin"); 
+		Statement stmt = con.createStatement();
+		//String sql1 = "DROP TABLE PERSON CASCADE CONSTRAINTS";
+		String sql2 = "CREATE TABLE PERSON (ID INTEGER, NAME VARCHAR(90), AGE INTEGER)";
+		//stmt.execute(sql1);
+		stmt.execute(sql2);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class D 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		String sql1 = "INSERT INTO PERSON VALUES(1, 'ABC', 22)";
+		String sql2 = "INSERT INTO PERSON VALUES(2, 'XYZ', 25)";
+		String sql3 = "INSERT INTO PERSON VALUES(3, 'RAMU', 20)";
+		String sql4 = "INSERT INTO PERSON VALUES(4, 'VIJAY', 21)";
+		String sql5 = "INSERT INTO PERSON VALUES(5, 'KIRAN', 29)";
+		String sql6 = "INSERT INTO PERSON VALUES(6, 'BABU', 29)";
+		String sql7 = "INSERT INTO PERSON VALUES(7, 'NAVEEN', 24)";
+		String sql8 = "INSERT INTO PERSON VALUES(8, 'MANU', 26)";
+		stmt.execute(sql1);
+		stmt.execute(sql2);
+		stmt.execute(sql3);
+		stmt.execute(sql4);
+		stmt.execute(sql5);
+		stmt.execute(sql6);
+		stmt.execute(sql7);
+		stmt.execute(sql8);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class E
+{
+	public static void main(String[] args) throws Exception
+	{
+		//if less than 3 arguments returns to main().we dont get anything
+		if(args.length < 3)
+		{	
+			System.out.println("Please supply 3 command line args");
+			return;
+		}
+		String id = args[0];//first cmd line arg into id
+		String name = args[1];//second cmd line arg into name
+		String age = args[2];//third comd line arg into age
+		//id is a numeric no single qoute is required.
+		//name is varchar so including single quote.
+		//age is a numeric no single qoute is required.
+		String sql = "INSERT INTO PERSON VALUES(" + id + ", '" + name +"'," + age +")";
+		Class.forName("oracle.jdbc.driver.OracleDriver");//registering driver
+		//establish a database connection.
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		//get the statement object
+		Statement stmt = con.createStatement();
+		//sending sql command to database using statement object. 
+		stmt.execute(sql);
+		System.out.println("done");
+	}
+}
+// in the previous program we were hard coded data in the sql commands.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+import java.util.Scanner;
+class F 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);//creating the scanner object
+		System.out.println("Please enter id");
+		String id = sc.next();
+		System.out.println("Please enter name");
+		String name = sc.next();
+		System.out.println("Please enter age");
+		String age = sc.next();
+		String sql = "INSERT INTO PERSON VALUES(" + id + ", '" + name +"'," + age +")";
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		stmt.execute(sql);
+		System.out.println("done");
+	}
+}
+/*
+1.SQL Developer completely written in Java.
+
+
+Important Notes for Working on JDBC with MySQL
+-----------------------------------------------
+1. Download and install mysql-installer-community-8.0.12.0 
+   https://downloads.mysql.com/archives/get/p/25/file/mysql-installer-community-8.0.12.0.msi
+   (go for customized installation)
+   (click on execute)
+   (Download and Install VC_redist.x64.exe 2015 and 2017 )
+2. Download JDBC connector from https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.12
+3. set the classpath for jar file in the env variables
+   CLASSPATH=C:\Program Files\MySQL\mysql-connector-java-8.0.12.jar
+4. check the class path by using 
+   javap com.mysql.jdbc.Driver
+5. use the directory structure app1/src classes
+   javac -d ../classes File.java
+   (dont use -cp bcz it will override the classpath)
+   go to classes folder instead 
+   cd ../classes
+   classes> FileName
+6. Example 
+import java.sql.*;  
+class A{  
+public static void main(String args[]){  
+try{  
+Class.forName("com.mysql.jdbc.Driver");  
+Connection con=DriverManager.getConnection(  
+"jdbc:mysql://localhost:3306/Aptech","root","admin");  
+//here Aptech is database name, root is username and password  
+Statement stmt=con.createStatement();  
+String sql1 = "INSERT INTO STUDENT VALUES(101,'vijay')";
+//"INSERT INTO STUDENT VALUES(" + 101 + ", '" + vijay +"')";  
+stmt.execute(sql1);
+con.close();  
+}catch(Exception e){ System.out.println(e);}  
+}  
+}  
+
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+import java.util.Scanner;
+class G 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		Scanner sc = new Scanner(System.in);//creating the scanner object
+		String id, name, age, sql;
+		do
+		{
+			System.out.println("Please enter id");
+			id = sc.next();
+			System.out.println("Please enter name");
+			name = sc.next();
+			System.out.println("Please enter age");
+			age = sc.next();
+			sql = "INSERT INTO PERSON VALUES(" + id + ", '" + name +"'," + age +")";
+			stmt.execute(sql);
+			System.out.println("do you want to insert one more(yes/no)?");
+		}
+		while ("yes".equalsIgnoreCase(sc.next()));
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+import java.io.*;//to interact with the file system
+class H 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		//reading data from the text file
+		//this text file should be in the java file location where we trigger  java command i,e in classes folder
+		FileReader fin = new FileReader("data.txt");
+		//because of BufferedReader we can read the data line by line
+		BufferedReader bin = new BufferedReader(fin);
+		String record = bin.readLine();//to readline
+		String id, name, age, sql, data[];
+		while(record != null)//checking whether first line is available or not
+		{
+			//spliting that line using cmn field seperator i,e ;
+			//split method returns multiple splits from the first row
+			//that we are assigning to data[] array
+			data = record.split(";");
+			//from the data array read the first element and assign that to id
+			//trim()is a built-in method that eliminates leading and trailing spaces. 
+			id = data[0].trim();
+			name = data[1].trim();
+			age = data[2].trim();
+			sql = "INSERT INTO PERSON VALUES(" + id + ", '" + name +"'," + age +")";
+			stmt.execute(sql);
+			//reading 2,3,4,5 but for 6th row record will be null
+			//if record is null comes out of while
+			record = bin.readLine();
+		}
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class I 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		String sql = "UPDATE PERSON SET NAME = 'MANOHAR' WHERE ID = 5";
+		stmt.execute(sql);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class J 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		String sql = "DELETE FROM PERSON WHERE ID = 5";
+		stmt.execute(sql);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M1
+{
+	public static void main(String[] args) throws Exception
+	{
+		String sql1 = "DROP TABLE IF EXISTS TEST10";
+		String sql2 = "CREATE TABLE TEST10(ID INTEGER)";
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/excelr", "president", "admin"); 
+		Statement stmt = con.createStatement();
+		stmt.execute(sql1);
+		stmt.execute(sql2);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M1 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		String sql = "SELECT * FROM PERSON";
+		//for select command we need to call executeQuery() of statement object
+		//executeQuery returns resultset
+		//we need to supply select cmd to the executeQuery()
+		//ResultSet will be having all the records which are returning by select command	
+		//in the ResultSet there is a cursor concept
+		//initialy cursor will be on top of the resultset
+		ResultSet rs = stmt.executeQuery(sql);
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		while(rs.next())
+		{
+			//first record id column
+			System.out.print(rs.getInt("id") + ", ");
+			//first record name column
+			System.out.print(rs.getString("name") + ", ");
+			//first record age column
+			System.out.print(rs.getInt("age") + ", ");
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M2 
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		String sql = "SELECT * FROM PERSON";
+		//for select command we need to call executeQuery() of statement object
+		//executeQuery returns resultset
+		//we need to supply select cmd to the executeQuery()
+		//ResultSet will be having all the records which are returning by select command	
+		//in the ResultSet there is a cursor concept
+		//initialy cursor will be on top of the resultset
+		ResultSet rs = stmt.executeQuery(sql);
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		while(rs.next())	
+		{
+			//we can supply column indexes rather than column name
+			//column indexes are starting from 1
+			//first record column id index
+			System.out.print(rs.getInt(1) + ", ");
+			//first record coulumn name index
+			System.out.print(rs.getString(2) + ", ");
+			//first record column age index
+			System.out.print(rs.getInt(3) + ", ");
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M3
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		String sql = "SELECT * FROM PERSON";
+		//for select command we need to call executeQuery() of statement object
+		//executeQuery returns resultset
+		//we need to supply select cmd to the executeQuery()
+		//ResultSet will be having all the records which are returning by select command	
+		//in the ResultSet there is a cursor concept
+		//initialy cursor will be on top of the resultset
+		ResultSet rs = stmt.executeQuery(sql);
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		while(rs.next())
+		{
+			//any datatype of the column we can read in the form of String
+			//getString() is applicable for any datatype of the column
+			//we can supply column indexes rather than column name
+			//column indexes are starting from 1
+			//first record column id index
+			System.out.print(rs.getString(1) + ", ");
+			//first record coulumn name index
+			System.out.print(rs.getString(2) + ", ");
+			//first record column age index
+			System.out.print(rs.getString(3) + ", ");
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M4
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		//we are selecting only two columns
+		String sql = "SELECT id, age FROM PERSON";
+		//for select command we need to call executeQuery() of statement object
+		//executeQuery returns resultset
+		//we need to supply select cmd to the executeQuery()
+		//ResultSet will be having all the records which are returning by select command	
+		//in the ResultSet there is a cursor concept
+		//initialy cursor will be on top of the resultset
+		ResultSet rs = stmt.executeQuery(sql);
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		while(rs.next())
+		{
+			//any datatype of the column we can read in the form of String
+			//getString() is applicable for any datatype of the column
+			//we can supply column indexes rather than column name
+			//we need to call only two getString method
+			//column indexes are starting from 1
+			//first record column id index
+			System.out.print(rs.getString(1) + ", ");
+			//first record coulumn name index
+			System.out.print(rs.getString(2) + ", ");
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M5
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		//we are selecting only two columns
+		//giving aliasing name for the columns
+		String sql = "SELECT id p_id, age person_age FROM PERSON";
+		//for select command we need to call executeQuery() of statement object
+		//executeQuery returns resultset
+		//we need to supply select cmd to the executeQuery()
+		//ResultSet will be having all the records which are returning by select command	
+		//in the ResultSet there is a cursor concept
+		//initialy cursor will be on top of the resultset
+		ResultSet rs = stmt.executeQuery(sql);
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		while(rs.next())
+		{
+			//any datatype of the column we can read in the form of String
+			//getString() is applicable for any datatype of the column
+			//we can supply column indexes rather than column name
+			//we need to call only two getString method
+			//column indexes are starting from 1
+			//first record column id index
+			//if you are using aliasing names in select cmd then you should supply alias names only. not original column names.
+			System.out.print(rs.getString(1) + ", ");
+			//first record coulumn name index
+			System.out.print(rs.getString(2) + ", ");
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M6
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		//we are selecting only two columns
+		//giving aliasing name for the columns
+		String sql = "SELECT id p_id, age person_age FROM PERSON";
+		//for select command we need to call executeQuery() of statement object
+		//executeQuery returns resultset
+		//we need to supply select cmd to the executeQuery()
+		//ResultSet will be having all the records which are returning by select command	
+		//in the ResultSet there is a cursor concept
+		//initialy cursor will be on top of the resultset
+		ResultSet rs = stmt.executeQuery(sql);
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		while(rs.next())
+		{
+			//any datatype of the column we can read in the form of String
+			//getString() is applicable for any datatype of the column
+			//we can supply column indexes rather than column name
+			//we need to call only two getString method
+			//column indexes are starting from 1
+			//first record column id index
+			//if you are using aliasing names in select cmd then you should supply alias names only. not original column names.
+			System.out.print(rs.getString(1) + ", ");
+			//first record coulumn name index
+			System.out.print(rs.getString(2) + ", ");
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+class M7
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		//we are selecting only two columns
+		//giving aliasing name for the columns
+		String sql = "SELECT id p_id, age person_age FROM PERSON";
+		//for select command we need to call executeQuery() of statement object
+		//executeQuery returns resultset
+		//we need to supply select cmd to the executeQuery()
+		//ResultSet will be having all the records which are returning by select command	
+		//in the ResultSet there is a cursor concept
+		//initialy cursor will be on top of the resultset
+		ResultSet rs = stmt.executeQuery(sql);
+		//meta-data of the ResultSet
+		//the meta-data of ResultSet is extracted to ResultSetMetadata
+		//in case of ResultSet meta-data is nothing but columns information
+		ResultSetMetaData rsmd = rs.getMetaData();
+		System.out.println(rsmd.getColumnCount());
+		System.out.println(rsmd.getColumnName(1));
+		System.out.println(rsmd.getColumnName(2));
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		while(rs.next())
+		{
+			//any datatype of the column we can read in the form of String
+			//getString() is applicable for any datatype of the column
+			//we can supply column indexes rather than column name
+			//we need to call only two getString method
+			//column indexes are starting from 1
+			//first record column id index
+			//if you are using aliasing names in select cmd then you should supply alias names only. not original column names.
+			System.out.print(rs.getString(1) + ", ");
+			//first record coulumn name index
+			System.out.print(rs.getString(2) + ", ");
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+import java.util.Scanner;
+class M8
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter table name");
+		//reading table name while at program is running
+		String tableName = sc.next();
+		//same table name specifiying in the select command.
+		//table name is not hardcoded.
+		String sql = "SELECT * FROM " + tableName;
+		ResultSet rs = stmt.executeQuery(sql);
+		//meta-data of the ResultSet
+		//the meta-data of ResultSet is extracted to ResultSetMetadata
+		//in case of ResultSet meta-data is nothing but columns information
+		ResultSetMetaData rsmd = rs.getMetaData();
+		//to find out how many columns are there in the table
+		int cols = rsmd.getColumnCount();
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		//row wise iteration
+		while(rs.next())
+		{
+			//in a particular row column wise iteration
+			for (int i = 1; i <= cols; i++)
+			{
+				System.out.print(rs.getString(i) + ", ");
+			}
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+import java.sql.*;
+import java.util.Scanner;
+class M9
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system","admin");
+		Statement stmt = con.createStatement();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter table name");
+		//reading table name while at program is running
+		String tableName = sc.next();
+		//same table name specifiying in the select command.
+		//table name is not hardcoded.
+		String sql = "SELECT * FROM " + tableName;
+		ResultSet rs = stmt.executeQuery(sql);
+		//meta-data of the ResultSet
+		//the meta-data of ResultSet is extracted to ResultSetMetadata
+		//in case of ResultSet meta-data is nothing but columns information
+		ResultSetMetaData rsmd = rs.getMetaData();
+		//to find out how many columns are there in the table
+		int cols = rsmd.getColumnCount();
+		for (int i = 1; i <= cols; i++)
+		{
+			//reading only column names.
+			//column names as a header
+			System.out.print(rsmd.getColumnName(i) + "\t");
+		}
+		System.out.println();
+		System.out.println("-----------------------------");
+		//while calling the next() method cursor will be comming to the first record.
+		//checks whether first record available or not
+		//row wise iteration
+		while(rs.next())
+		{
+			//in a particular row column wise iteration
+			for (int i = 1; i <= cols; i++)
+			{
+				System.out.print(rs.getString(i) + "\t");
+			}
+			System.out.println();
+		}
+		System.out.println("done");
+	}
+}
+//for both DDL and DML we can use execute method
+//A ResultSet object maintains a cursor pointing to its current row of data. Initially the cursor is positioned before the first row.
+//java.sql.ResultSet//its an Interface
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app3</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;//interface
+class M1 
+{
+	//no need of keeping throws Exception bcz of keeping try and catch
+	//if you did not keep throws Exception
+	  // should keep try catch wherever checked type of exception is there
+	public static void main(String[] args) 
+	{
+		//1. Registering driver
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}
+		catch (ClassNotFoundException ex)
+		{
+			ex.printStackTrace();
+		}
+		//if any member declare before try that can be used inside a try and also inside a finally
+		//these are local variables.
+		//we cant initialize DriverManager straightaway here
+		  //con = DriverManager.getConnection(url, un, pw);
+		    //this statement requires a try catch
+		//we are initializing these local variables with
+		  //default value null(for references default value)
+		Connection con = null;
+		Statement stmt = null;
+		try
+		{
+			//not requires SQL Exception
+			String url = "jdbc:oracle:thin:@localhost:1521:XE";
+			//not requires SQL Exception
+			String un = "system";
+			//not requires SQL Exception
+			String pw = "admin";
+			//2. establishing database connection
+			//requires SQL Exception
+			con = DriverManager.getConnection(url, un, pw);
+			//3. create statement
+			//requires SQL Exception
+			stmt = con.createStatement();
+			//4. compose sql command
+			//not requires SQL Exception
+			String sql = "INSERT INTO PERSON VALUES(21, 'MANOHAR', 35)";
+			//5. triggering sql command
+			//requires SQL Exception
+			//sending sql command to the database
+			stmt.execute(sql);
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		//once sql command sent to the database
+		  //we dont require connection and statement object any more
+		  //we should try to close connection and statement without fail.
+		  //for closing connection without fail we are using finally block.
+		finally
+		{
+			//we are trying to close first statement then connection
+			  //reason is by using connection only statement is derived
+			//inside try in which order you have opened the resources
+			  //for that order in the opposite way we should close in the finally block
+			// in the finally block dont close all the connection with the same try
+			  //one try-catch for closing one resource another try-catch for closing another resource.
+			try
+			{
+				//checking whether stmt realy initialized or not
+				 //if not initialized dont close
+				//if it is null we get NullPointerException to avoid that.
+				if(stmt != null)
+				{
+					//while closing statement if we get any Exception then it wont be continueing further in the same try
+					  // thats why we should go for different try-catches for different resources.
+					stmt.close();
+					//after assigning to null stmt object is eligible for garbage collection
+					stmt = null;
+				}
+			}
+			//in order to call close() SQLException
+			catch (SQLException ex)
+			{
+				ex.printStackTrace();
+			}
+			try
+			{
+				if(con != null)
+				{
+					con.close();
+					con = null;
+				}
+			}
+			catch (SQLException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		System.out.println("done");
+	}
+}
+/*public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;//interface
+import java.sql.ResultSet;//interface
+import java.sql.ResultSetMetaData;//interface
+class M2 
+{
+	//no need of keeping throws Exception bcz of keeping try and catch
+	//if you did not keep throws Exception
+	  // should keep try catch wherever checked type of exception is there
+	public static void main(String[] args) 
+	{
+		//1. Registering driver
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}
+		catch (ClassNotFoundException ex)
+		{
+			ex.printStackTrace();
+		}
+		//if any member declare before try that can be used inside a try and also inside a finally
+		//these are local variables.
+		//we cant initialize DriverManager straightaway here
+		  //con = DriverManager.getConnection(url, un, pw);
+		    //this statement requires a try catch
+		//we are initializing these local variables with
+		  //default value null(for references default value)
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try
+		{
+			//not requires SQL Exception
+			String url = "jdbc:oracle:thin:@localhost:1521:XE";
+			//not requires SQL Exception
+			String un = "system";
+			//not requires SQL Exception
+			String pw = "admin";
+			//2. establishing database connection
+			//requires SQL Exception
+			con = DriverManager.getConnection(url, un, pw);
+			//3. create statement
+			//requires SQL Exception
+			stmt = con.createStatement();
+			//4. compose sql command
+			//not requires SQL Exception
+			String sql = "SELECT * FROM PERSON";
+			//5. triggering sql command
+			//requires SQL Exception
+			//sending sql command to the database
+			rs = stmt.executeQuery(sql);
+			//requires SQL Exception
+			ResultSetMetaData rsmd = rs.getMetaData();
+			int cols = rsmd.getColumnCount();
+			for (int i = 1; i <= cols; i++)
+			{
+				System.out.println(rsmd.getColumnName(i) + "\t");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			while(rs.next())
+			{
+				for (int i = 1; i <= cols; i++)
+				{
+					System.out.println(rs.getString(i) + "\t");
+				}
+				System.out.println();
+			}
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		//once sql command sent to the database
+		  //we dont require connection and statement object any more
+		  //we should try to close connection and statement without fail.
+		  //for closing connection without fail we are using finally block.
+		finally
+		{
+			try
+			{
+				if(rs != null)
+				{
+					rs.close();
+					rs = null;
+				}
+			}
+			catch (SQLException ex)
+			{
+				ex.printStackTrace();
+			}
+			//we are trying to close first statement then connection
+			  //reason is by using connection only statement is derived
+			//inside try in which order you have opened the resources
+			  //for that order in the opposite way we should close in the finally block
+			// in the finally block dont close all the connection with the same try
+			  //one try-catch for closing one resource another try-catch for closing another resource.
+			try
+			{
+				//checking whether stmt realy initialized or not
+				 //if not initialized dont close
+				//if it is null we get NullPointerException to avoid that.
+				if(stmt != null)
+				{
+					//while closing statement if we get any Exception then it wont be continueing further in the same try
+					  // thats why we should go for different try-catches for different resources.
+					stmt.close();
+					//after assigning to null stmt object is eligible for garbage collection
+					stmt = null;
+				}
+			}
+			//in order to call close() SQLException
+			catch (SQLException ex)
+			{
+				ex.printStackTrace();
+			}
+			try
+			{
+				if(con != null)
+				{
+					con.close();
+					con = null;
+				}
+			}
+			catch (SQLException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		System.out.println("done");
+	}
+}
+/*public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;//interface
+import java.sql.ResultSet;//interface
+import java.sql.ResultSetMetaData;//interface
+class M3 
+{
+	//no need of keeping throws Exception bcz of keeping try and catch
+	//if you did not keep throws Exception
+	  // should keep try catch wherever checked type of exception is there
+	public static void main(String[] args) 
+	{
+		//1. Registering driver
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}
+		catch (ClassNotFoundException ex)
+		{
+			ex.printStackTrace();
+		}
+		//not requires SQL Exception
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		//not requires SQL Exception
+		String un = "system";
+		//not requires SQL Exception
+		String pw = "admin";
+		String sql = "SELECT * FROM PERSON";
+		//all these three Connection, Statement, ResultSet are closeable and extends Autocloseable interface
+		//in this case we dont require to close the resources explicitely
+		//every resource automaticaly closes
+		//instead of using lenghty finally block we use this to autoclose 
+		// immediately after execution of try automaticaly resources will be closed.
+		try(Connection con = DriverManager.getConnection(url, un, pw);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql)) //JDK 1.7
+		{
+			//requires SQL Exception
+			ResultSetMetaData rsmd = rs.getMetaData();
+			int cols = rsmd.getColumnCount();
+			for (int i = 1; i <= cols; i++)
+			{
+				System.out.println(rsmd.getColumnName(i) + "\t");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			while(rs.next())
+			{
+				for (int i = 1; i <= cols; i++)
+				{
+					System.out.println(rs.getString(i) + "\t");
+				}
+				System.out.println();
+			}
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+//External properties file
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;//interface
+import java.sql.ResultSet;//interface
+import java.sql.ResultSetMetaData;//interface
+import java.io.FileReader;
+import java.io.IOException;
+//to load file contents to properties object
+import java.util.Properties;
+class M4 
+{
+	//no need of keeping throws Exception bcz of keeping try and catch
+	//if you did not keep throws Exception
+	  // should keep try catch wherever checked type of exception is there
+	public static void main(String[] args) 
+	{
+		//Properties object
+		Properties pr = new Properties();
+		//through file reader we trying to connect to the properties file
+		//we are loading file content to properties object
+		//we dont need to close fin explicitely it auto closes
+		try(FileReader fin = new FileReader("db.properties"))
+		{
+			pr.load(fin);
+		}
+		catch (IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		String driver = pr.getProperty("driverClassName");
+		String url = pr.getProperty("url");
+		String un = pr.getProperty("username");
+		String pw = pr.getProperty("password");
+		//1. Registering driver
+		try
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}
+		catch (ClassNotFoundException ex)
+		{
+			ex.printStackTrace();
+		}
+		String sql = "SELECT * FROM PERSON";
+		//all these three Connection, Statement, ResultSet are closeable and extends Autocloseable interface
+		//in this case we dont require to close the resources explicitely
+		//every resource automaticaly closes
+		//instead of using lenghty finally block we use this to autoclose 
+		// immediately after execution of try automaticaly resources will be closed.
+		try(Connection con = DriverManager.getConnection(url, un, pw);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql)) //JDK 1.7
+		{
+			//requires SQL Exception
+			ResultSetMetaData rsmd = rs.getMetaData();
+			int cols = rsmd.getColumnCount();
+			for (int i = 1; i <= cols; i++)
+			{
+				System.out.print(rsmd.getColumnName(i) + "\t");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			while(rs.next())
+			{
+				for (int i = 1; i <= cols; i++)
+				{
+					System.out.print(rs.getString(i) + "\t");
+				}
+				System.out.println();
+			}
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app4</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+//Util Dev and Transaction management
+/*
+- in the previous programs we were establishing a connection
+  establishing a connection it requires registering a driver,
+  reading constants from the properties file.
+- instead of developing establishig connection in every JDBC
+  program, we can develop a seperate Util class
+*/
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;
+class M1
+{
+	//wherever we try to interact with the database just
+	  //call the getConnection() from util 
+	//wht this method is doing
+	  //reading all the the properties from a properties file
+	public static void main(String[] args)
+	{
+		//String sqld = "DROP TABLE BOOK1";
+		String sql = "CREATE TABLE BOOK1(ID NUMBER, TITLE VARCHAR2(90), AUTHOR VARCHAR2(90), PRICE NUMBER)";
+		try(Connection con = Util.getConnection();
+			Statement stmt = con.createStatement())
+		{
+			stmt.execute(sql);
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+//Util Dev and Tx management
+/*
+- in the previous programs we were establishing a connection
+  establishing a connection it requires registering a driver,
+  reading constants from the properties file.
+- instead of developing establishig connection in every JDBC
+  program, we can develop a seperate Util class
+*/
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;
+class M2
+{
+	//wherever we try to interact with the database just
+	  //call the getConnection() from util 
+	//wht this method is doing
+	  //reading all the the properties from a properties file
+	public static void main(String[] args)
+	{
+		String sql = "INSERT INTO BOOK1 VALUES(1, 'JAVA', 'VIJAY', 500)";
+		try(Connection con = Util.getConnection();
+			Statement stmt = con.createStatement())
+		{
+			stmt.execute(sql);
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+//Util Dev and Tx management
+/*
+- in the previous programs we were establishing a connection
+  establishing a connection it requires registering a driver,
+  reading constants from the properties file.
+- instead of developing establishig connection in every JDBC
+  program, we can develop a seperate Util class
+*/
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;
+class M3
+
+{
+	//wherever we try to interact with the database just
+	  //call the getConnection() from util 
+	//wht this method is doing
+	  //reading all the the properties from a properties file
+	public static void main(String[] args)
+	{
+		String sql = "INSERT INTO BOOK1 VALUES(2, 'J2EE', 'RAMU', 600)";
+		try(Connection con = Util.getConnection();
+			Statement stmt = con.createStatement())
+		{
+			//returns how many records are updated
+			int i = stmt.executeUpdate(sql);
+			System.out.println("Records Updated: " + i);
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+//Util Dev and Tx management
+/*
+- in the previous programs we were establishing a connection
+  establishing a connection it requires registering a driver,
+  reading constants from the properties file.
+- instead of developing establishig connection in every JDBC
+  program, we can develop a seperate Util class
+*/
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;
+import java.sql.ResultSet;
+class M4
+
+{
+	//wherever we try to interact with the database just
+	  //call the getConnection() from util 
+	//wht this method is doing
+	  //reading all the the properties from a properties file
+	public static void main(String[] args)
+	{
+		String sql = "SELECT * FROM BOOK1";
+		try(Connection con = Util.getConnection();
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql))
+		{
+			while(rs.next())
+			{
+				System.out.print(rs.getString(1) + "\t");
+				System.out.print(rs.getString(2) + "\t");
+				System.out.print(rs.getString(3) + "\t");
+				System.out.print(rs.getString(4) + "\t");
+				System.out.println();
+			}
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+//Util Dev and Tx management
+/*
+- in the previous programs we were establishing a connection
+  establishing a connection it requires registering a driver,
+  reading constants from the properties file.
+- instead of developing establishig connection in every JDBC
+  program, we can develop a seperate Util class
+*/
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;
+class M5
+{
+	//wherever we try to interact with the database just
+	  //call the getConnection() from util 
+	//wht this method is doing
+	  //reading all the the properties from a properties file
+	public static void main(String[] args)
+	{
+		String sql1 = "INSERT INTO BOOK1 VALUES(3, 'SPRING', 'MANU', 600)";
+		String sql2 = "INSERT INTO BOOK1 VALUES(4, 'HIBERNATE', 'KUMAR', 600)";
+		String sql3 = "INSERT INTO BOOK1 VALUES(5, HADOOP', 'SWETHA', 600)";
+		
+		try(Connection con = Util.getConnection();
+			Statement stmt = con.createStatement())
+		{
+			stmt.executeUpdate(sql1);
+			System.out.println("sql1 triggered successfully");
+			stmt.executeUpdate(sql2);
+			System.out.println("sql2 triggered successfully");
+			stmt.executeUpdate(sql3);
+			System.out.println("sql3 triggered successfully");
+		}
+		catch (SQLException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+//Util Dev and Tx management
+/*
+- in the previous programs we were establishing a connection
+  establishing a connection it requires registering a driver,
+  reading constants from the properties file.
+- instead of developing establishig connection in every JDBC
+  program, we can develop a seperate Util class
+*/
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.sql.Statement;
+class M6
+{
+	//wherever we try to interact with the database just
+	  //call the getConnection() from util 
+	//wht this method is doing
+	  //reading all the the properties from a properties file
+	public static void main(String[] args)
+	{
+		String sql1 = "INSERT INTO BOOK1 VALUES(5, 'ANGULAR', 'ADAM', 700)";
+		String sql2 = "INSERT INTO BOOK1 VALUES(6, 'GIT', 'KATE', 800)";
+		String sql3 = "INSERT INTO BOOK1 VALUES(7, SPRING', 'NICK', 900)";
+		Connection con = null;		
+		try
+		{
+			con = Util.getConnection();
+			Statement stmt = con.createStatement();
+			//the default autocommit is true, we are making it as false
+			//then it will be waiting for con.commit();
+			con.setAutoCommit(false);
+			//these three sql1,2,3 we are keeping insde the boundary of transaction management
+			stmt.executeUpdate(sql1);
+			System.out.println("sql1 triggered successfully");
+			stmt.executeUpdate(sql2);
+			System.out.println("sql2 triggered successfully");
+			stmt.executeUpdate(sql3);
+			System.out.println("sql3 triggered successfully");
+			con.commit();
+		}
+		catch (SQLException ex)
+		{
+			try
+			{
+				//if exception sql1,2 will be rolling back
+				con.rollback();
+			}
+			catch (SQLException ex1)
+			{
+			}
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+//Util Dev and Tx management
+/*
+- in the previous programs we were establishing a connection
+  establishing a connection it requires registering a driver,
+  reading constants from the properties file.
+- instead of developing establishig connection in every JDBC
+  program, we can develop a seperate Util class
+*/
+//importing all the members seperately
+import java.sql.DriverManager;//class
+import java.sql.SQLException;//class
+import java.sql.Connection;//interface
+import java.io.FileReader;
+import java.io.IOException;
+//to load file contents to properties object
+import java.util.Properties;
+class Util 
+{
+	//wherever we try to interact with the database just
+	  //call the getConnection() from util 
+	//wht this method is doing
+	  //reading all the the properties from a properties file
+	public static Connection getConnection() throws SQLException 
+	{
+		//Properties object
+		Properties pr = new Properties();
+		//through file reader we trying to connect to the properties file
+		//we are loading file content to properties object
+		//we dont need to close fin explicitely it auto closes
+		try(FileReader fin = new FileReader("db.properties"))
+		{
+			pr.load(fin);
+		}
+		catch (IOException ex)
+		{
+			ex.printStackTrace();
+		}
+		String driver = pr.getProperty("driverClassName");
+		String url = pr.getProperty("url");
+		String un = pr.getProperty("username");
+		String pw = pr.getProperty("password");
+		//Registering driver
+		try
+		{
+			Class.forName(driver);
+		}
+		catch (ClassNotFoundException ex)
+		{
+			ex.printStackTrace();
+		}
+		//establishing a connection
+		Connection con = DriverManager.getConnection(url, un, pw);
+		System.out.println("con:" + con);
+		//returning a connection
+		return con;
+	}
+}
+/*
+- We might have to change the driver class for that we need to modify
+the code.
+-we might have to change IP address, XE or port number.
+-we might have to chage username and password
+- its not advisable to hardcode instead we get that 
+info from the properties file.
+-------------------
+- properties file should be kept under classes where we trigger
+java command.
+- in the properties file property_field_name=value
+- should not be having any unncessary spaces
+- extension should be .properties
+driverClassName=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:XE
+username=system
+password=admin
+
+
+
+
+
+
+
+public class DriverManager
+extends Object
+The basic service for managing a set of JDBC drivers.
+*/
+/*
+public class SQLException
+extends Exception
+implements Iterable<Throwable>
+An exception that provides information on a database access error or other errors.
+*/
+/*
+public interface Connection
+extends Wrapper, AutoCloseable
+A connection (session) with a specific database. SQL statements are executed and results are returned within the context of a connection.
+
+A Connection object's database is able to provide information describing its tables, its supported SQL grammar, its stored procedures, the capabilities of this connection, and so on. This information is obtained with the getMetaData method.
+*/
+/*
+public interface Statement
+extends Wrapper, AutoCloseable
+The object used for executing a static SQL statement and returning the results it produces.
+
+By default, only one ResultSet object per Statement object can be open at the same time. Therefore, if the reading of one ResultSet object is interleaved with the reading of another, each must have been generated by different Statement objects. All execution methods in the Statement interface implicitly close a statment's current ResultSet object if an open one exists.
+*/
+/*
+What are checked exceptions?
+Checked exceptions are checked at compile-time.
+It means if a method is throwing a checked exception 
+then it should handle the exception using try-catch block or
+it should declare the exception using throws keyword, 
+otherwise the program will give a compilation error.
+
+Generally, checked exceptions denote error scenarios which 
+are outside the immediate control of the program. ... 
+Checked exceptions are subclasses of Exception class. 
+Example of checked exceptions are : ClassNotFoundException, 
+IOException, SQLException and so on.
+*/
+
+/*
+The printStackTrace() method in Java is a tool used to 
+handle exceptions and errors. It is a method of Java's 
+throwable class which prints the throwable along with other 
+details like the line number and class name where the exception 
+occurred.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

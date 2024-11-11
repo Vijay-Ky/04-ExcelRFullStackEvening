@@ -1,0 +1,6 @@
+Object is real world entity
+Ex: Employee, Student, Dog, Chair, Fan, etc...
+- while creating the object all the non-static members of that class gets loaded to the memory.
+- in case of non-static variables they will be loaded with their default values.
+
+

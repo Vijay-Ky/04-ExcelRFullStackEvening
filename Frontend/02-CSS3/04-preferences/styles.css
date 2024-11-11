@@ -1,0 +1,17 @@
+
+h1
+{
+    color: yellowgreen;
+    text-transform: uppercase;
+}
+
+p
+{
+    color: brown;
+}
+/* h1 and p are the names of the elements */
+/* { declaration block } */
+/* css property name : css property value */
+/* each property should be seperated by a semi colon */
+/* color samples are not part of the syntax */
+

@@ -1,0 +1,22 @@
+Scanner class
+----------------------------------
+- To get input from the user we can make use of scanner class object.
+- Scanner class is inbuilt class and which is available in the java.util package.
+- Since scanner class is outside of java.lang package compulsary we have to import it before we use it in the program.
+Note: if any classes or interfaces are available in the java.lang package then we can use them directly without importing them explicitely.
+- Only one object of Scanner class is enough to get any number of inputs from the user.
+- We have so many methods inside scanner class, we can able to make use of them accordingly.
+- Scanner comes under input stream
+- There are 3 standard streams available in java
+   1. Standard Input Stream - To get the input
+   2. Standard Output Stream - To display the output
+   3. Standard Error Stream - To display the errors
+- Stream is a resource and after we use it we need to close it. so that we dont face any problems in the production environment.
+- In case of Scanner we use 'close()' method to close the resource.
+
+
+
+
+
+
+

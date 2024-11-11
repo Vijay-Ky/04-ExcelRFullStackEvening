@@ -1,0 +1,1212 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>com</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>rst</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>excelr</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack1</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack2</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>com</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>rst</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+package com.rst;
+class C 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from com.rst.C");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>excelr</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class E 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from excelr.E");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>pack1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class F 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from pack1.F");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>pack2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+package pack2;
+class G
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from pack2.G");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack1</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class A 
+{
+	private int i;
+
+	public static void main(String[] args) 
+	{
+		A obj = new A();
+		System.out.println(obj.i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class B 
+{
+	private void test1()
+	{
+		System.out.println("from test1()");
+	}
+
+	public static void main(String[] args) 
+	{
+		B obj = new B();
+		obj.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class C
+{
+	private static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println(C.i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class D
+{
+	private static void test()
+	{
+		System.out.println("from test()");
+	}
+
+	public static void main(String[] args) 
+	{
+		D.test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class E
+{
+	private int i;
+
+	private void test()
+	{
+		System.out.println("from test()");
+	}
+}
+class F 
+{
+	public static void main(String[] args) 
+	{
+		E obj = new E();
+		System.out.println(obj.i);
+		obj.test();
+	}	
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class G
+{
+	private int i;
+
+	private void test()
+	{
+		System.out.println("from test()");
+	}
+}
+class H extends G
+{
+	public static void main(String[] args) 
+	{
+		H obj = new H();
+		System.out.println(obj.i);
+		obj.test();
+	}	
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class I
+{
+	int i;
+
+	void test()
+	{
+		System.out.println("from test()");
+	}
+
+	public static void main(String[] args) 
+	{
+		I obj = new I();
+		System.out.println(obj.i);
+		obj.test();
+	}	
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class J
+{
+	int i;
+
+	void test()
+	{
+		System.out.println("from test()");
+	}
+}
+class K 
+{
+	public static void main(String[] args) 
+	{
+		J obj = new J();
+		System.out.println(obj.i);
+		obj.test();
+	}	
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class L
+{
+	int i;
+
+	void test()
+	{
+		System.out.println("from test()");
+	}
+}
+class M extends L 
+{
+	public static void main(String[] args) 
+	{
+		M obj = new M();
+		System.out.println(obj.i);
+		obj.test();
+	}	
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class N 
+{
+	private N()
+	{
+		System.out.println("N()");
+	}
+	public static void main(String[] args) 
+	{
+		N obj = new N();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class O
+{
+	private O()
+	{
+		System.out.println("O()");
+	}
+}
+class P 
+{
+	public static void main(String[] args) 
+	{
+		O obj = new O();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class Q
+{
+	private Q()
+	{
+		System.out.println("Q()");
+	}	
+}
+class R extends Q 
+{
+	public static void main(String[] args) 
+	{
+		R obj = new R();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class S
+{
+	private S()
+	{
+		System.out.println("S()");
+	}	
+}
+class T extends S 
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class U
+{
+	private U()
+	{
+		System.out.println("U()");
+	}	
+
+	U(int i)
+	{
+		System.out.println("U(int)");
+	}
+}
+class V extends U 
+{
+	V()
+	{
+		super(10);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+package pack1;
+class X 
+{
+	public static void main(String[] args) 
+	{
+		private int i = 0;
+		System.out.println(i);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app3</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>excelr</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>rst</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>excelr</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class A 
+{
+	int i;
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class B 
+{
+	public static void main(String[] args) 
+	{
+		A obj = new A();
+		System.out.println(obj.i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class C extends A
+{
+	public static void main(String[] args) 
+	{
+		C obj = new C();
+		System.out.println(obj.i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class D extends C
+{
+	public static void main(String[] args) 
+	{
+		D obj = new D();
+		System.out.println(obj.i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class E
+{
+	public static void main(String[] args) 
+	{
+		A obj1 = new A();
+		System.out.println(obj1.i);
+		C obj2 = new C();
+		System.out.println(obj2.i);
+		D obj3 = new D();
+		System.out.println(obj3.i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class F
+{
+	void test1()
+	{
+		System.out.println("from test1()");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class G 
+{
+	public static void main(String[] args) 
+	{
+		F obj = new F();
+		obj.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class H extends F
+{
+	public static void main(String[] args)
+	{
+		H h1 = new H();
+		h1.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class I extends H
+{
+	public static void main(String[] args)
+	{
+		I i1 = new I();
+		i1.test1();
+		System.out.println("done!");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class J
+{
+	public static void main(String[] args)
+	{
+		F f1 = new F();
+		f1.test1();
+		H h1 = new H();
+		h1.test1();
+		I i1 = new I();
+		i1.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+package excelr;
+public class N
+{
+	public N()
+	{
+		System.out.println("N()");
+	}
+
+	int i;
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>rst</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+package rst;
+class K
+{
+	public static void main(String[]args)
+	{
+		A a1 = new A();
+		System.out.println(a1.i);
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+package rst;
+class L
+{
+	public static void main(String[] args)
+	{
+		excelr.A a1 = new excelr.A();
+		System.out.println(a1.i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+package rst;
+class M
+{
+	public static void main(String[] args)
+	{
+		excelr.F f1 = new excelr.F();
+		f1.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+package rst;
+class O
+{
+	public static void main(String[]args)	
+	{
+		excelr.N n1 = new excelr.N();
+		System.out.println(n1.i);
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+package rst;
+class P extends excelr.N
+{
+	public static void main(String[]args)
+	{
+		P p1 = new P();
+		System.out.println(p1.i);
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+package rst;
+class Q
+{
+	public static void main(String[]args)
+	{
+		excelr.N n1 = new excelr.N();
+		excelr.N n2 = new excelr.N();
+		excelr.N n2 = new excelr.N();
+		excelr.N n2 = new excelr.N();
+		System.out.println("done");
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+package rst;
+import excelr.N;
+class R
+{
+	public static void main(String[]args)
+	{
+		N n1 = new N();
+		System.out.println("done");
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+package rst;
+import excelr.*;
+class S
+{
+	public static void main(String[] args)
+	{
+		N n1 = new N();
+		System.out.println("done");
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+package rst;
+import excelr.N;
+class T extends N
+{
+	T()
+	{
+		System.out.println("T()");
+	}
+
+	public static void main(String[]args)
+	{
+		T t1 = new T();
+		System.out.println("------");	
+		T t2 = new T();
+		System.out.println("------");	
+		T t3 = new T();
+		System.out.println("------");	
+		T t4 = new T();
+		System.out.println("------");	
+		System.out.println("done");	
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app4</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>excelr</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>rst</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>excelr</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+package excelr;
+public class A
+{
+	int i;
+	protected int j;
+	public int k;
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class B
+{
+	public static void main(String[]args)
+	{
+		A a1 = new A();
+		System.out.println(a1.i);
+		System.out.println(a1.j);
+		System.out.println(a1.k);
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class C extends A
+{
+	public static void main(String[] args)
+	{
+		C c1 = new C();
+		System.out.println(c1.i);
+		System.out.println(c1.j);
+		System.out.println(c1.k);
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class D extends C
+{
+	public static void main(String[]args)
+	{
+		D d1 = new D();
+		System.out.println(d1.i);
+		System.out.println(d1.j);
+		System.out.println(d1.k);
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+package excelr;
+class E
+{
+	public static void main(String[]args)
+	{
+		A a1 = new A();
+		System.out.println(a1.i);
+		System.out.println(a1.j);
+		System.out.println(a1.k);
+		System.out.println("--------");
+		C c1 = new C();
+		System.out.println(c1.i);
+		System.out.println(c1.j);
+		System.out.println(c1.k);
+		System.out.println("--------");
+		D d1 = new D();
+		System.out.println(d1.i);
+		System.out.println(d1.j);
+		System.out.println(d1.k);
+		System.out.println("--------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>rst</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 45</h3>
+<pre class="prettyprint linenums">
+package rst;
+class F
+{
+	public static void main(String[]args)
+	{
+		excelr.A a1 = new excelr.A();
+		System.out.println(a1.i);
+		System.out.println(a1.j);
+		System.out.println(a1.k);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 46</h3>
+<pre class="prettyprint linenums">
+package rst;
+class G extends excelr.A
+{
+	public static void main(String[] args)
+	{
+		G g1 = new G();
+		System.out.println(g1.j);
+		System.out.println(g1.k);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 47</h3>
+<pre class="prettyprint linenums">
+package rst;
+class H extends G
+{
+	public static void main(String[]args)
+	{
+		H h1 = new H();
+		System.out.println(h1.j);
+		System.out.println(h1.k);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 48</h3>
+<pre class="prettyprint linenums">
+package rst;
+class I extends H
+{
+	public static void main(String[] args)
+	{
+		H obj = new H();
+		//System.out.println(obj.j);
+		System.out.println(obj.k);
+
+		I obj2 = new I();
+		System.out.println(obj2.j);
+		System.out.println(obj2.k);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

@@ -1,0 +1,2075 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		int i = 0;
+		Integer obj = new Integer(i);//explicit-boxing
+		int k = obj.intValue();//explicit-unboxing
+		System.out.println(k);
+		System.out.println("done");
+		//String s1 = Integer.toString(10);
+		//String s2 = Float.toString(10.0f);
+		//String s3 = Boolean.toString(true);
+		//System.out.println(s1);
+		//System.out.println(s2);
+		//System.out.println(s3);
+	}
+}
+
+//Object Oriented -> Java, C++, Python
+//Object Based -> Javascript, Python
+//Java is not 100% Object oriented since the usage of primitive datatypes.
+//In order to represent primitives also in the form of objects we need wrapper classes.
+//for all the 8 primitive datatypes we have the corresponding wrapper classes.
+/* primitive datatype______________________Corresponding Wrapper class
+	byte                                    Byte
+	short                                   Short
+	int										Integer
+	long									Long
+	float									Float
+	double									Double
+	char									Charater
+	boolean									Boolean
+*/
+//All the wrapper classes are final classes 
+   //-> we can't extend wrapper classes further by using another class
+   //wrapper class cant become a super-class or parent class
+/*final class A extends Object
+{
+}
+class B extends A
+{
+}*/
+//In all the wrapper classes except Character wrapper class there are two constructors are available
+  //1. constructor which takes corresponding primitive as the argument
+  //2. constructor which takes String as the argument
+
+  //"In the Character wrapper class we have only
+  //1. constructor which takes corresponding primitive as the argument
+
+  //"We cant convert a String to character"
+  //"But we can able to convert a character to String"
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class B
+{
+	public static void main(String[] args) 
+	{
+		Byte obj = new Byte((byte)10);//explicit-boxing
+		int k = obj.byteValue();//explicit-unboxing
+		System.out.println(k);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	public static void main(String[] args) 
+	{
+		Double obj = new Double(10);//explicit-boxing
+		double k = obj.doubleValue();//explicit-unboxing
+		System.out.println(k);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class D
+{
+	public static void main(String[] args) 
+	{
+		Float obj = new Float(10.0F);
+		System.out.println(obj);
+		System.out.println("done");
+	}
+}
+//In all the wrapper classes toString() method of Object class got overrided in such manner that to return the content of that object.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	public static void main(String[] args) 
+	{
+		Character obj = new Character('a');
+		char c1 = obj.charValue();
+		System.out.println(c1);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class F
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		Boolean obj1 = new Boolean(true);
+		Boolean obj2 = new Boolean(false);
+		Boolean obj3 = new Boolean(!true);
+		Boolean obj4 = new Boolean(!false);
+		boolean x = true, y = false;
+		Boolean obj5 = new Boolean(x);
+		Boolean obj6 = new Boolean(y);
+
+		boolean b1 = obj1.booleanValue();
+		boolean b2 = obj2.booleanValue();
+		boolean b3 = obj3.booleanValue();
+		boolean b4 = obj4.booleanValue();
+		boolean b5 = obj5.booleanValue();
+		boolean b6 = obj6.booleanValue();
+
+		System.out.println(b1);
+		System.out.println(b2);
+		System.out.println(b3);
+		System.out.println(b4);
+		System.out.println(b5);
+		System.out.println(b6);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class G 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "10";
+		String s2 = "20";
+
+		Integer obj1 = new Integer(s1);
+		Integer obj2 = new Integer(s2);
+
+		//String s11 = "true";
+		//boolean ii = Boolean.parseBoolean(s11);
+		
+		Integer obj3 = new Integer("30");
+		Integer obj4 = new Integer("40");
+
+		int i = obj1.intValue();
+		int j = obj2.intValue();
+		int k = obj3.intValue();
+		int l = obj4.intValue();
+
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+		System.out.println(l);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class H
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "10.235";
+
+		Double obj1 = new Double(s1);
+	
+		double i = obj1.doubleValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class I
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "10.235";
+
+		Float obj1 = new Float(s1);
+	
+		float i = obj1.floatValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class J
+{
+	public static void main(String[] args) 
+	{
+		Float obj1 = new Float(10.235);
+	
+		float i = obj1.floatValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class K
+{
+	public static void main(String[] args) 
+	{
+		Float obj1 = new Float(10.235F);
+	
+		float i = obj1.floatValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class L
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "10$235";
+
+		Float obj1 = new Float(s1);
+	
+		float i = obj1.floatValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class M
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "10.235f";
+
+		Float obj1 = new Float(s1);
+	
+		float i = obj1.floatValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class N
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "10.235f";
+
+		Float obj1 = new Float(s1);
+	
+		float i = obj1.floatValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+class O
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "10.235D";
+
+		Double obj1 = new Double(s1);
+	
+		double i = obj1.doubleValue();
+	
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+class P 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "true";
+		String s2 = "false";
+		String s3 = "10Z";
+		String s4 = "TRUE";
+		String s5 = "FALSE";
+		String s6 = "TrUe";
+		String s7 = "FaLsE";
+		String s8 = "*****";
+		String s9 = "11111";
+
+		Boolean b1 = new Boolean(s1);
+		Boolean b2 = new Boolean(s2);
+		Boolean b3 = new Boolean(s3);
+		Boolean b4 = new Boolean(s4);
+		Boolean b5 = new Boolean(s5);
+		Boolean b6 = new Boolean(s6);
+		Boolean b7 = new Boolean(s7);
+		Boolean b8 = new Boolean(s8);
+		Boolean b9 = new Boolean(s9);
+
+		boolean value1 = b1.booleanValue();
+		boolean value2 = b2.booleanValue();
+		boolean value3 = b3.booleanValue();
+		boolean value4 = b4.booleanValue();
+		boolean value5 = b5.booleanValue();
+		boolean value6 = b6.booleanValue();
+		boolean value7 = b7.booleanValue();
+		boolean value8 = b8.booleanValue();
+		boolean value9 = b9.booleanValue();
+
+		System.out.println(value1);
+		System.out.println(value2);
+		System.out.println(value3);
+		System.out.println(value4);
+		System.out.println(value5);
+		System.out.println(value6);
+		System.out.println(value7);
+		System.out.println(value8);
+		System.out.println(value9);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+class Q 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		char ch1 = 'a';
+		Character c2 = new Character(ch1);
+		char ch3 = c2.charValue();
+		System.out.println(ch3);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class R
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		String str = "a";
+		Character c2 = new Character(str);
+		char ch3 = c2.charValue();
+		System.out.println(ch3);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+class S
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		int i = 10;
+		String str = "20";
+
+		Integer obj1 = new Integer(i);
+		Integer obj2 = new Integer(str);
+
+		int j = obj1.intValue();
+		int k = obj2.intValue();
+
+		System.out.println(j);
+		System.out.println(k);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+class T 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		String s1 = "90.9";
+
+		Double d1 = Double.valueOf(s1);//new Double(s1);
+		double d2 = d1.doubleValue();
+
+		System.out.println(d2);
+
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+class U
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		double value = 90.9;
+
+		Double d1 = Double.valueOf(value);
+		double d2 = d1.doubleValue();
+
+		System.out.println(d2);
+
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+class V
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		char value = 'b';
+
+		Character c1 = Character.valueOf(value);//new Character(value);
+		char c2 = c1.charValue();
+
+		System.out.println(c2);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+class W
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		String value = "b";
+
+		Character c1 = Character.valueOf(value);
+		char c2 = c1.charValue();
+
+		System.out.println(c2);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class X 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		String s1 = Byte.toString(b);
+		System.out.println(s1);
+		System.out.println("------");
+		short s = 100;
+		String s2 = Short.toString(s);
+		System.out.println(s2);
+		System.out.println("------");
+		int i = 1000;
+		String s3 = Integer.toString(i);
+		System.out.println(s3);
+		System.out.println("------");
+		long l = 10000;
+		String s4 = Long.toString(l);
+		System.out.println(s4);
+		System.out.println("------");
+		float f = 10.0F;
+		String s5 = Float.toString(f);
+		System.out.println(s5);
+		System.out.println("------");
+		double d = 10;
+		String s6 = Double.toString(d);
+		System.out.println(s6);
+		System.out.println("------");
+		char c = 'a';
+		String s7 = Character.toString(c);
+		System.out.println(s7);
+		System.out.println("------");
+		boolean booleanValue = false;
+		String s8 = Boolean.toString(booleanValue);
+		System.out.println(s8);
+		System.out.println("------");
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+class Y 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		//byte b = 100;
+		String s1 = "10";
+		byte b = Byte.parseByte(s1);
+		System.out.println(b);
+		System.out.println("----------");
+		String s2 = "100";
+		int i = Integer.parseInt(s1);
+		System.out.println(i);
+		System.out.println("----------");
+		String s3 = "100";
+		short s = Short.parseShort(s3);
+		System.out.println(s);
+		System.out.println("----------");
+		String s4 = "1000";
+		long l = Long.parseLong(s4);
+		System.out.println(l);
+		System.out.println("----------");
+		String s5 = "10.0F";
+		float f = Float.parseFloat(s5);
+		System.out.println(f);
+		System.out.println("----------");
+		String s6 = "10.0";
+		double d = Double.parseDouble(s6);
+		System.out.println(d);
+		System.out.println("----------");
+		String s7 = "////";
+		boolean booleanValue = Boolean.parseBoolean(s7);
+		System.out.println(booleanValue);
+		System.out.println("----------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+class Z
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		String str = "10.0f";
+		//String str = "10.0f";
+		float f = Float.parseFloat(str);
+		System.out.println(f);
+		System.out.println("----------");
+		double d = Double.parseDouble(str);
+		System.out.println(d);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+class A 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		String s1 = "abc123";
+		String s2 = "True";
+		String s3 = "FLASE";
+		String s4 = "False";
+
+		boolean b1 = Boolean.parseBoolean(s1);
+		boolean b2 = Boolean.parseBoolean(s2);
+		boolean b3 = Boolean.parseBoolean(s3);
+		boolean b4 = Boolean.parseBoolean(s4);
+
+		System.out.println(b1);
+		System.out.println(b2);
+		System.out.println(b3);
+		System.out.println(b4);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+class B 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		Integer obj1 = new Integer(10);
+		System.out.println(obj1);
+		System.out.println("------------");
+
+		Integer obj2 = 20;//new Integer(20);
+		System.out.println(obj2);
+		System.out.println("------------");
+
+		Integer obj3 = new Integer(20);
+		int i = obj3.intValue();
+		System.out.println(i);
+		System.out.println("------------");
+
+		int j = new Integer(30);
+		System.out.println(j);
+
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+public class C
+{
+	@SuppressWarnings("removal")
+	public static void main(String [] args)
+	{
+		String s1 = "abc";
+		String s2 = "true";
+		String s3 = "TRUE";
+		String s4 = "False";
+		String s5 = "@@123";
+
+		boolean b1 = Boolean.parseBoolean(s1);
+		boolean b2 = Boolean.parseBoolean(s2);
+		boolean b3 = Boolean.parseBoolean(s3);
+		boolean b4 = Boolean.parseBoolean(s4);
+		boolean b5 = Boolean.parseBoolean(s5);
+
+		System.out.println(b1);
+		System.out.println(b2);
+		System.out.println(b3);
+		System.out.println(b4);
+		System.out.println(b5);
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+public class D
+{
+	@SuppressWarnings("removal")
+	public static void main(String [] args)
+	{
+		int i = 10;
+		new Integer(i);
+		int j = new Integer(i);//auto-unboxing
+		System.out.println("done");
+	}
+}
+ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+public class E
+{
+	@SuppressWarnings("removal")
+	public static void main(String [] args)
+	{
+		Character c1 = new Character('a');
+		char c2 = c1;//auto-unboxing
+		System.out.println(c2);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+class F 
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		Integer obj1 = new Integer(10);
+		int i = obj1.intValue();
+
+		Integer obj2 = obj1;
+
+		//int i = obj1;
+
+		System.out.println(i == obj2);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+class G 
+{
+	static void test(Integer obj)
+	{
+		System.out.println("done: " + obj);
+	}
+
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		test(20);
+		test(new Integer(20));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+class H
+{
+	static void test(int i)
+	{
+		System.out.println("done: " + i);
+	}
+
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		Integer obj = new Integer(10);
+		test(obj);
+		test(new Integer(20));
+		test(obj.intValue());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+class I
+{
+	static void test(Character ch)
+	{
+		System.out.println("value: " + ch);
+	}
+
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		test('a');//auto-boxing
+		char ch1 = 'b';
+		test(ch1);//auto-boxing
+		Character ch2 = 'c';//auto-boxing //new Character('c');
+		test(ch2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+class J
+{
+	@SuppressWarnings("removal")
+	public static void main(String[] args) 
+	{
+		Boolean b1 = new Boolean(true);
+		if (b1)
+		{
+			System.out.println("from if1");
+		}
+		if (b1.booleanValue())
+		{
+			System.out.println("from if2");
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+class K 
+{
+	static Integer test(int i)
+	{
+		return i;//new Integer(20);
+	}
+
+	public static void main(String[] args) 
+	{
+		Integer obj1 = new Integer(10);
+		test(obj1);
+		Integer obj2 = test(20);
+		System.out.println(obj1);//10
+		System.out.println(obj2);//20
+		System.out.println(obj1 == obj2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+public class L
+{
+	static void test(int i)
+	{
+		System.out.println("int");
+	}
+
+	public static void main(String [] args)
+	{
+		int i = 20;
+		Integer obj = new Integer(20);
+		test(i);
+		//error in case of JDK <= 1.4
+		test(obj);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+public class M
+{
+	static void test(int i)
+	{
+		System.out.println("int");
+	}
+
+	static void test(double j)
+	{
+		System.out.println("double");
+	}
+
+	public static void main(String [] args)
+	{
+		int i = 20;
+		test(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+public class N
+{
+	//first preference given for widening
+	static void test(double d1)
+	{
+		System.out.println("double");
+	}
+	//if there is no suitable method to widening then only considers boxing
+	static void test(Integer obj)
+	{
+		System.out.println("Integer");
+	}
+	public static void main(String [] args)
+	{
+		int i = 20;
+		test(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+public class O
+{
+	static void test(Byte b)
+	{
+		System.out.println("Byte");
+	}
+	//first preference given to widening
+	static void test(int i)
+	{
+		System.out.println("int");
+	}
+	public static void main(String [] args)
+	{
+		byte b1 = 10;
+		test(b1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+public class P
+{
+	static void test(Long d1)
+	{
+		System.out.println("Long");
+	}
+	static void test(float f1)
+	{
+		System.out.println("float");
+	}
+	static void test(double d1)
+	{
+		System.out.println("double");
+	}
+	public static void main(String [] args)
+	{
+		long lon = 10;
+		test(lon);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+public class Q
+{
+	static void test(Long d1)
+	{
+		System.out.println("Long");
+	}
+	static void test(double d1)	
+	{
+		System.out.println("double");
+	}
+	public static void main(String [] args)
+	{
+		long lon = 10;
+		test(lon);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+public class R
+{
+	static void test()
+	{
+		System.out.println("test()");
+	}
+
+	static void test(int i)
+	{
+		System.out.println("test(int)");
+	}
+	//var arg, any no. of int arg can be supplied, even 0 no. also
+	//var arg introduced in JDK 1.5
+	static void test(double i, String j, int ... arg)
+	{
+		System.out.println("test(double, String, var-args)");
+	}
+	public static void main(String [] args)
+	{
+		test();
+		test(10);
+		test(20.0, "abc", 10, 30);
+		test(40.0, "xyz", 50, 90, 100);
+		test(80.0, "test", 90, 10, 20, 40);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 45</h3>
+<pre class="prettyprint linenums">
+public class S
+{
+	//var arg, any no. of int arg can be supplied, even 0 no. also
+	//var arg introduced in JDK 1.5
+	static void test(int     ...          arg)
+	{
+		System.out.println("test(var-args)");
+	}
+	public static void main(String [] args)
+	{
+		test();
+		test(10);
+		test(10,30);
+		test(40,50,90);
+		test(8,240,150,910);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 46</h3>
+<pre class="prettyprint linenums">
+public class T
+{
+	static void test(String...str)
+	{
+		System.out.println("var args");
+	}
+	public static void main(String[] args)
+	{
+		test();
+		test("abc");
+		test("msg1", "xyz", "hello");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 47</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+public class U
+{
+	static void test(String...str)
+	{
+		System.out.println(str.length);
+
+		for (String element :  str)
+		{
+			System.out.println("var args-for-each: " + element);
+		}
+
+		System.out.println("--------------");
+
+		for(int i = 0; i < str.length; i++)
+		{
+			System.out.println("var args-for: " + str[i]);
+		}
+	}
+	/*
+	U(String...args)
+	{
+		String[] array = new String[args.length];
+		for(int i = 0; i < args.length; i++)
+		{
+			if(i < args.length)
+			{
+				array[i] = args[i];
+			}
+		}
+		System.out.println(Arrays.toString(array));
+	}*/
+	public static void main(String [] args)
+	{
+		test();
+		test("abc");
+		test("msg1", "xyz", "hello");
+		/*
+		U u1 = new U();
+		U u2 = new U("abc");
+		U u3 = new U("msg1", "xyz", "hello");
+		U u4 = new U("msg1", "xyz", "hello","abc");*/
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 48</h3>
+<pre class="prettyprint linenums">
+public class V
+{
+	//var-arg by default is an array
+	static void test(int...x)
+	{
+		System.out.println("size: " + x.length);
+		if (x.length == 0)
+		{
+			System.out.println("no. of indexes are availalbe: " + (x.length));
+		}
+		else
+		{
+			System.out.println("index starting from 0 and upto: " + (x.length - 1));
+		}
+		
+	}
+	public static void main(String[] args)
+	{
+		test();
+		test(20, 40, 70);
+		test(90, 20, 10, 60, 50);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 49</h3>
+<pre class="prettyprint linenums">
+public class W
+{
+	static void test(String...varArg)
+	{ 
+		/*
+		//by default var-arg is an array
+		//iterating an array by using for-each loop
+		if (varArg.length == 0)
+		{
+			System.out.println("No elements");
+		}
+		else
+		{
+			for(String s1 : varArg)
+			{
+				if(varArg.length == 1)
+				{
+					System.out.println(s1);
+				}
+				else if(varArg.length > 1)
+				{
+					if(varArg.length != varArg.length - 1)
+					{
+						System.out.print(s1 + ", ");
+						if (varArg.length - 1 == varArg.length - 1)
+						{
+							System.out.print(s1);
+						}
+					}
+				}
+			}
+		}
+	}
+	*/
+	if (varArg.length == 0)
+	{
+		System.out.print("No elements");
+	}
+	int counter = 0;
+
+	for(String s1 : varArg)
+	{
+		counter++;
+
+		System.out.print(s1);
+
+		if(counter < varArg.length)
+		{
+			System.out.print(",");
+		}
+	}
+	/*
+	if ((varArg.length == 0))
+	{
+		System.out.println();
+	}*/
+	System.out.println();
+	
+}
+
+	public static void main(String [] args)
+	{
+		test();
+		test("abc");
+		test("hello","test");
+		test("hello","test","xyz");
+		test("hello","test","xyz","abc");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 50</h3>
+<pre class="prettyprint linenums">
+public class X
+{
+	static void test(int x, String...y)
+	{
+		System.out.print("x value: " + x);
+		System.out.println(" and length of the var-arg y : " + y.length);
+		System.out.println("----------");
+	}
+	public static void main(String [] args)
+	{
+		//test();
+		test(10);
+		test(1,"abc");
+		test(30,"xyz","hello");
+		test(40,"done","check","hello");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 51</h3>
+<pre class="prettyprint linenums">
+public class Y
+{
+    //var-arg should be always the last argument.
+	//maximum only one var-arg method can be there.
+	static void test(String...x, int y)
+	{
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 52</h3>
+<pre class="prettyprint linenums">
+public class Z
+{
+    //var-arg should be always the last argument.
+	//maximum only one var-arg method can be there.
+	//static void test(String...x)//okay
+	//static void test(int i, int j, int k, int l, String... m)//okay
+	static void test(int i, int j, String... m, int k, int l)//not-okay
+	//static void test(int...i, int...j)//not-okay
+	{
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 53</h3>
+<pre class="prettyprint linenums">
+public class Z1
+{
+    //var-arg should be always the last argument.
+	//maximum only one var-arg method can be there.
+	//static void test(String...x)//okay
+	//static void test(int i, int j, int k, int l, String... m)//okay
+	static void test(int i, int j, int k, int l, String... m, String... n)//not-okay
+	//static void test(int...i, int...j)//not-okay
+	{
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app3</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 54</h3>
+<pre class="prettyprint linenums">
+public class A
+{
+	//first preference goes to same-type
+	static void test(int i)
+	{
+		System.out.println("int");
+	}
+	static void test(double j)
+	{
+		System.out.println("double");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 55</h3>
+<pre class="prettyprint linenums">
+public class B
+{
+	//since there are no other-options widening would be considered
+	static void test(double j)
+	{
+		System.out.println("double");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 56</h3>
+<pre class="prettyprint linenums">
+public class C
+{
+	//widening would be considered
+	static void test(long j)
+	{
+		System.out.println("long");
+	}
+	static void test(byte k)
+	{
+		System.out.println("byte");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 57</h3>
+<pre class="prettyprint linenums">
+public class D
+{
+	//suitable type
+	static void test(int i)
+	{
+		System.out.println("int");
+	}
+	static void test(Integer i)
+	{
+		System.out.println("Integer");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 58</h3>
+<pre class="prettyprint linenums">
+public class E
+{
+	//widening would be considered
+	static void test(double i)
+	{
+		System.out.println("double");
+	}
+
+	static void test(Integer i)
+	{
+		System.out.println("Integer");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 59</h3>
+<pre class="prettyprint linenums">
+public class F
+{
+	static void test(Integer i)
+	{
+		System.out.println("Integer");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 60</h3>
+<pre class="prettyprint linenums">
+public class G
+{
+	static void test(Integer i)
+	{
+		System.out.println("Integer");
+	}
+	static void test(Long j)
+	{
+		System.out.println("Long");
+	}
+	public static void main(String[] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 61</h3>
+<pre class="prettyprint linenums">
+public class H
+{
+	static void test(Long j)
+	{
+		System.out.println("Long");
+	}
+
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 62</h3>
+<pre class="prettyprint linenums">
+public class I
+{
+	static void test(Double j)
+	{
+		System.out.println("Double");
+	}
+
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 63</h3>
+<pre class="prettyprint linenums">
+public class J
+{
+	static void test(Number j)
+	{
+		System.out.println("Number");
+	}
+	public static void main(String [] args)
+	{
+		byte i = 10;
+		short j = 20;
+		int k = 30;
+		long l = 40l;
+		float m = 50.0f;
+		double n = 60.0;
+		test((byte)i);//new Byte((byte)10);
+		test((short)j);
+		test(k);
+		test(l);
+		test(m);
+		test(n);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 64</h3>
+<pre class="prettyprint linenums">
+public class K
+{
+	static void test(Number j)
+	{
+		System.out.println("Number");
+	}
+
+	static void test(Integer k)
+	{
+		System.out.println("Integer");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 65</h3>
+<pre class="prettyprint linenums">
+public class L
+{
+	static void test(Object i)
+	{
+		System.out.println("Object");
+	}
+	static void test(Number j)
+	{
+		System.out.println("Number");
+	}
+	static void test(Integer j)
+	{
+		System.out.println("Integer");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 66</h3>
+<pre class="prettyprint linenums">
+public class M
+{
+	static void test(Object i)
+	{
+		System.out.println("Object");
+	}
+	static void test(Number j)
+	{
+		System.out.println("Number");
+	}
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 67</h3>
+<pre class="prettyprint linenums">
+public class N
+{
+	static void test(Object i)
+	{
+		System.out.println("Object");
+	}
+
+	public static void main(String [] args)
+	{
+		int i = 10;
+		test(i);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 68</h3>
+<pre class="prettyprint linenums">
+public class O
+{
+	//first preference goes to same type
+	
+	/*
+	static void test(byte i)
+	{
+		System.out.println("byte");
+	}*/
+	/*
+	static void test(short i)
+	{
+		System.out.println("short");
+	}*/
+	/*
+	static void test(int i)
+	{
+		System.out.println("int");
+	}*/
+	/*
+	static void test(Byte b)
+	{
+		System.out.println("Byte");
+	}*/
+	static void test(Double d1)
+	{
+		System.out.println("Double");
+	}
+	/*
+	static void test(Number n1)
+	{
+		System.out.println("Number");
+	}*/
+	
+	/*
+	static void test(Object obj)
+	{
+		System.out.println("Object");
+	}*/
+	
+	/*
+	static void test(byte...b)
+	{
+		System.out.println("byte...var-arg");
+	}
+	static void test(int...i)
+	{
+		System.out.println("int...var-arg");
+	}*/
+
+	static void test(Byte...j)
+	{
+		System.out.println("Byte...var-arg");
+	}
+
+	public static void main(String[] args)
+	{
+		byte b1 = 10;
+		test(b1);
+	}
+}
+	
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

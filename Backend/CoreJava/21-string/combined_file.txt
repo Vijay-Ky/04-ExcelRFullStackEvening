@@ -1,0 +1,1305 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";	
+		System.out.println(s1);
+	}
+}
+/* 
+ * String is one of the built in class.
+ * String class is available in java.lang package.
+ * members of java.lang package can be used straight away without importing.
+   all the wrapper classes are available in java.lang package.
+ * String s1 = "hello"; we can create a string object without a new operator.
+ * String s2 = new String("hello"); we can also use this approach to create String object.
+ * while printing s1 we are getting content of the string object. whichever referred by s1.
+ * while printing s2 we are getting content of the string object. whichever referred by s2.
+ * Inside String class toString method of object class got overrided that is why we get the
+   content of the String object while printing the reference of the string object. 
+ * In every Wrapper class object also toString method of object class got overrided so whenever we tried
+   to print the reference of Wrapper class object we get the content of the object.
+ * 
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class B 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = new String("hello");
+		System.out.println(s1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";
+		String s2 = new String("hello");
+		String s3 = new String("hello");
+		String s4 = new String("welcome");
+		String s5 = "welcome";
+		String s6 = "welcome";
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		System.out.println(s4);
+		System.out.println(s5);
+		System.out.println(s6);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class D 
+{
+	public static void main(String[] args)
+	{
+		String s1 ="hello";
+		String s2 = "hello";
+		System.out.println(s1 == s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	public static void main(String[] args)
+	{
+		String s1 = new String("hello");
+		String s2 = new String("hello");
+		System.out.println(s1 == s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class F
+{
+	public static void main(String[] args)
+	{	
+		String s1 = new String("hello");
+		String s2 = new String("hello");
+		System.out.println(s1.equals(s2));
+		System.out.println(s2.equals(s1));
+		
+		String s3 = new String("hello");
+		String s4 = new String("welcome");
+		System.out.println(s3.equals(s4));
+		System.out.println(s4.equals(s3));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class G
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello";
+		int i = s1.length();
+		System.out.println(i);
+		System.out.println(s1.length());
+	}
+}
+/*
+ * in case of Arrays length is the property but in case of string it is a method.
+ * in case of Arrays length is used for finding out the size of the array.
+ * in case of Strings length is used for finding out the number of characters available inside the string object.
+ * in case of Arrays length should not end with parenthesis but in case of strings it should.
+ * 
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class H
+{
+	public static void main(String[] args)
+	{
+		String s1 = "a c";
+		String s2 = " a c ";
+		System.out.println(s1.length());
+		System.out.println(s2.length());
+	}
+}
+/*
+ * space is also counting, it is a physical and speacial character. 
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class I
+{
+	public static void main(String[] args)
+	{
+		String s1 = "Hi India";
+		String s2 = "Hi "India"";	
+		System.out.println(s1);
+		System.out.println(s2);
+	}
+}
+/*
+ * straight away we cant keep "" in the middle of the ""
+ * 
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+ class J
+{
+	public static void main(String[] args)
+	{
+		String s1 = "Hi India";
+		String s2 = "Hi \"India\" ";	
+		System.out.println(s1);
+		System.out.println(s2);
+	}
+}
+/*
+ * straight away we cant keep "" in the middle of the ""
+ * 
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class K
+{
+	public static void main(String[] args)
+	{
+		String s1 = "Hi India";
+		String s2 = "Hi \"India\" ";	
+		System.out.println(s1.length());
+		System.out.println(s2.length());
+	}
+}
+/*
+ * straight away we cant keep "" in the middle of the ""
+ * 
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class L
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello n hello";
+		String s2 = "hello \n hello";
+		System.out.println(s1);
+		System.out.println("-----------");
+		System.out.println(s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class M
+{
+	public static void main(String[] args)
+	{
+		String s1 = "abc \ xyz";
+		System.out.println(s1);
+	}
+}
+/* we cant use \ straight away.
+ * \ is the escape character it is mainly used for escaping main feature of other character.
+ * use \ with a character that has some feature.
+ * 
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class N
+{
+	public static void main(String[] args)
+	{
+		String s1 = "abc \\ xyz";
+		System.out.println(s1);
+	}
+}
+/* we cant use \ straight away.
+ * \ is the escape character it is mainly used for escaping main feature of other character.
+ * use \ with a character that has some feature.
+ * 
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+class O
+{
+	public static void main(String[] args)
+	{
+		String path = "D:\JDK8\bin";
+		System.out.println(path);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+class P
+{
+	public static void main(String[] args)
+	{
+		String path = "D:\\JDK8\\bin";
+		System.out.println(path);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+class Q
+{
+	public static void main(String[] args)
+	{
+		String s1 = "abc";
+		s1 = s1 + "xyz";
+		System.out.println(s1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class R
+{
+	public static void main(String[] args)
+	{
+		String s1 = "abc";
+		String s2 = null;
+		String s3 = s1 + s2;
+		String s4 = s2 + s1;
+		System.out.println(s1);//abc
+		System.out.println(s2);//null
+		System.out.println(s3);//abcnull
+		System.out.println(s4);//nullabc
+	}
+}
+/*
+ * we can also add null. we dont get CE
+ * + operator requires either left operand or right operand as string type.
+ * 
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+class S
+{
+	public static void main(String[] args)
+	{
+		String s1 = null;//String s1 =  null + null;
+		String s2 = s1 + null;// in this case one of the operand is of string type
+		String s3 = null + s1;
+		System.out.println(s1);//null
+		System.out.println(s2);//nullnull
+		System.out.println(s3);//nullnull
+
+		/*
+		S s4 = null;
+		S s5 = s4 + null;
+		System.out.println(s5);*/
+	}
+}
+/* null value can be supplyed to any derived datatype
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+class T 
+{
+	public static void main(String[] args)
+	{
+		String s1 = "abc" + 5 + 6;//string concatenation
+		String s2 = 5 + "abc" + 6;
+		String s3 = 5 + 6 + "abc";
+		System.out.println(s1);//abc56
+		System.out.println(s2);//5abc6
+		System.out.println(s3);//11abc
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+class U
+{
+	public static void main(String[] args)
+	{
+		String s1 = null;
+		System.out.println(s1.length());	
+	}
+}
+/* we dont ge 4 as the length
+ * considering s1 content as null.
+ * we are not adding null to the s1
+ * when we call any property or method from the null reference we get NullPointerException
+**/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+class V
+{
+	public static void main(String[] args)
+	{
+		String s1 = "abc" + null;
+		System.out.println(s1.length());	
+	}
+}
+/* we dont ge 4 as the length
+ * considering s1 content as null.
+ * we are not adding null to the s1
+ * when we call any property or method from the null reference we get NullPointerException
+**/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	public static void main(String[] args)
+	{
+		String s1 = "xyz";
+		System.out.println(s1);
+		s1.concat("hello");
+		System.out.println(s1);
+	}
+}
+/*
+ * Strings are immutable
+ * we cant change the String object once we create
+ * while calling s1.concat a new string object is generating with xyz and hello
+ * whenever we try to modify any one character in the existing string object
+   a new string will be generating with all the modifications.
+ * once a string object created it cant be modified further. if we try
+   to modify a new string will be generating.
+ *  */ 
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class B
+{
+	public static void main(String[] args)
+	{
+		String s1 = "xyz";
+		String s2 = s1.concat("hello");
+		System.out.println(s1);
+		System.out.println(s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	public static void main(String[] args)
+	{
+		String s1 = "xyz";
+		System.out.println(s1);
+		s1 = s1.concat("hello");
+		System.out.println(s1);
+	}
+}
+/* s1 = s1.concat("hello"); after this statement xyz object not modified but instead s1 is reassigned to a new different object that contains xyzhello as the content
+ * old object with the content xyz becomes abadoned bcz of no reference.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+class D
+{
+	public static void main(String[] args)
+	{
+		String s1 = " abc xyz ";
+		System.out.println(s1.length());
+		s1.trim();
+		System.out.println(s1.length());
+	}
+}
+/*
+ * trim method removes the leading and trailing white spaces but not the in between white space.
+ * while removing the 2 white spaces string object modified so a new object will be generated.
+ * still s1 pointing the old string only so we get 9 
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	public static void main(String[] args)
+	{
+		String s1 = " abc xyz ";
+		String s2 = s1.trim();
+		System.out.println(s1.length());
+		System.out.println(s2.length());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+class F
+{
+	public static void main(String[] args)
+	{
+		String s1 = " abc xyz ";
+		System.out.println(s1.length());
+		s1 = s1.trim();
+		System.out.println(s1.length());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+class G
+{
+	public static void main(String[] args)
+	{
+		String s1 = " abc xyz ";
+		System.out.println(s1.length());
+		int i = s1.trim().length();//still s1 is pointed to the old object only 
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+class H
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello";
+		System.out.println(s1);
+		s1.toUpperCase();//string modification resulting in a new object creation.
+		System.out.println(s1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+class I
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello";
+		System.out.println(s1);
+		String s2 = s1.toUpperCase();//string modification resulting in a new object creation.
+		System.out.println(s2);
+		System.out.println(s1 == s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+class J
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello";
+		System.out.println(s1);
+		s1.toLowerCase();//string modification resulting in a new object creation.
+		System.out.println(s1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+class K
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello";
+		System.out.println(s1);
+		String s2 = s1.toLowerCase();//string modification resulting in a new object creation.
+		System.out.println(s1 == s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+class L
+{
+	public static void main(String[] args)
+	{
+		String s1 = "Hello";
+		System.out.println(s1);
+		String s2 = s1.toLowerCase();//string modification resulting in a new object creation.
+		System.out.println(s1 == s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+class M
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello";
+		System.out.println(s1.length());
+		for(int i = 0; i < s1.length(); i++)
+		{
+			System.out.print(s1.charAt(i));
+		}
+		System.out.println("\n------------");
+		char[] chars = s1.toCharArray();// built in method
+		for(int i = 0; i < chars.length; i++)
+		{
+			System.out.print(chars[i]);
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+class N
+{
+	public static void main(String[] args)
+	{
+		String s1 = "hello";
+		//           01234
+		char c1 = s1.charAt(0);
+		char c2 = s1.charAt(3);
+		char c3 = s1.charAt(4);
+		
+		//char c4 = s1.charAt(-1);
+		//char c5 = s1.charAt(5);
+		
+		System.out.println(c1);
+		System.out.println(c2);
+		System.out.println(c3);
+		
+		//System.out.println(c4);
+		//System.out.println(c5);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+class O 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";
+		//           01234
+		char c1 = s1.charAt(s1.length() - 1);
+		System.out.println(c1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+class P 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "vijay";
+		char[] c1 = s1.toCharArray();
+		System.out.println("before reverse: " + s1);
+		System.out.print("after reverse: ");
+		for (int i = c1.length - 1; i >= 0; i--)
+		{
+			System.out.print(c1[i]);
+		}
+		System.out.print("\ncharAt Approach: ");
+		for (int i = s1.length() - 1; i >= 0; i--)
+		{
+			System.out.print(s1.charAt(i));
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+class Q 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";
+		//           01234
+		int i = s1.indexOf('e');
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+class R
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";
+		//           01234
+		int i = s1.indexOf('v');
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+class S 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java made easy";
+		//           0123456789
+		int i = s1.indexOf('a');
+		System.out.println(i);
+		int j = s1.indexOf('a', 8);
+		System.out.println(j);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+class T 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java is easy and also very popular java";
+		//           012345678911234567892123456789312345678
+		int i = s1.indexOf("java");
+		System.out.println(i);
+		int j = s1.indexOf("java", 11);
+		System.out.println(j);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+class U
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java technologies";
+		//			 0123456789
+		System.out.println(s1.indexOf(' '));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+class V 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java technologies";
+		//			 01234567891123456
+		System.out.println(s1.length());
+		String s2 = s1.substring(5, s1.length());
+		System.out.println(s1);
+		System.out.println(s2);
+		//String s3 = s1.substring(5, 30);
+		//String s3 = s1.substring(5, 10);
+		//String s3 = s1.substring(-5, 17);
+		System.out.println(s3);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 45</h3>
+<pre class="prettyprint linenums">
+class W
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java technologies";
+		//			 0123456789
+		String s2 = s1.substring(5);//Returns a string that is a substring of this string
+		System.out.println(s1);
+		System.out.println(s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 46</h3>
+<pre class="prettyprint linenums">
+class X
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java technologies";
+		//			 0123456789
+		String s2 = s1.substring(5, 17);//Returns a string that is a substring of this string
+		String s3 = s1.substring(0, 4);
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 47</h3>
+<pre class="prettyprint linenums">
+class Y 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java technologies";
+		//			 0123456789
+		String s2 = s1.substring(0, s1.indexOf(' '));
+		String s3 = s1.substring(s1.indexOf(' ') + 1, s1.length());//Returns a string that is a substring of this string
+		String s4 = s1.substring(s1.indexOf(' ') + 1);//now second argument is optional
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
+		System.out.println(s4);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 48</h3>
+<pre class="prettyprint linenums">
+class Z 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "abc";
+		
+		System.out.println(s1.substring(0, 0).length());
+		System.out.println(s1.substring(0, 1).length());
+		System.out.println(s1.substring(0, 2).length());
+		System.out.println(s1.substring(1, 3).length());
+		System.out.println(s1.substring(2, 3).length());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app3</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 49</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	public static void main(String[] args)
+	{
+		String s1 = "abc xyz hello 123";
+		String[] splits = s1.split(" ");
+		for(String split : splits)
+		{
+			System.out.println(split);
+		}
+	}
+}
+/*
+ * String class contains split method
+ * it splits main string into number of strings by making use of a common seperator.
+ * we can supply any sepearator it will split string into sub strings
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 50</h3>
+<pre class="prettyprint linenums">
+class B 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";
+		String s2 = "hello";
+		System.out.println(s1 == s2);
+		System.out.println(s1.equals(s2));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 51</h3>
+<pre class="prettyprint linenums">
+class C 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "java";// creating constant
+		String s2 = "ja" + "va";//left side perfect constant as well as right
+		System.out.println(s1 == s2);
+		System.out.println(s1.equals(s2));
+	}
+}
+//+ operator treating "ja" + "va"; as a constant bcz no reference left or right side.
+//+ operator if it not found reference either left of right then the result will be considered as constant.
+//+ operator if found reference either left of right or both then it uses a new operator.creating a new object.
+//s2 results in java
+//s2 will be point to the same object where s1 points
+
+//true
+//ture
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 52</h3>
+<pre class="prettyprint linenums">
+class D
+{
+	public static void main(String[] args)
+	{
+		String s1 = "java";// creating constant
+		String va = "va";
+		String s2 = "ja" + va + "tech";//
+		System.out.println(s1 == s2);
+		System.out.println(s1.equals(s2));
+	}
+}
+/*
+//+ operator if found reference either left of right or both then it uses a new operator.creating a new object.
+//s1 is different object
+//s2 is different object
+//totally 4 objects are created.
+//s1 = java, s2 =new java
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 53</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	public static void main(String[] args)
+	{
+	    String s1 = new String("you cannot change me");
+		String s2 = new String("you cannot change me");
+		System.out.println(s1 == s2);//false
+
+		String s3 = "you cannot change me";
+		System.out.println(s1 == s3);//false
+
+		String s4 = "you cannot change me";
+		System.out.println(s3 == s4);//true
+
+		String s5 = "you cannot " + "change me";
+		System.out.println(s4 == s5);//true
+
+		String s6 = "you cannot ";
+		String s7 = s6 + "change me";
+		System.out.println(s4 == s7);//false
+		System.out.println(s1 == s7);//false
+		System.out.println(s2 == s7);//false
+
+		final String s8 = "you cannot ";
+		String s9  = s8 + "change me";
+		System.out.println(s4 == s9);//true
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

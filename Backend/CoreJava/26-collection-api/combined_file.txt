@@ -1,0 +1,3289 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+public class M1
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add("abc");
+		list.add('a');
+		list.add(true);
+		list.add(48);
+		list.add(48);
+		System.out.println(list);
+	}
+}
+/*
+ * .in every Class tostring method of object class got overrided.
+. because of this we get the content instead of class name and hashcode.
+.in arraylist class tostring method from object class got overrided.
+*/
+
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+public class M10
+{
+	@SuppressWarnings({"unchecked", "removal"})
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(9);
+		list.add(1);
+		list.add(4.0F);
+		list.add(6);
+		list.add(8);
+		list.add(2);
+		list.add(1);
+		list.add(3);
+		list.add(6.0F);
+		list.add("abc");
+		System.out.println(list);
+		//remove(Object o): Removes the first occurrence of the specified element from this list, if it is present.
+		boolean flag = list.remove(new Float(4.0F));
+		System.out.println(list);
+		System.out.println(flag);
+		flag = list.remove(new Integer(12));
+		System.out.println(flag);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+public class M11
+{
+	@SuppressWarnings({"unchecked", "removal"})
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(9);
+		list.add(0);
+		list.add(4);
+		list.add(6);
+		list.add(8);
+		list.add(2);
+		list.add(1);
+		list.add(3);
+		System.out.println(list);
+		//clear(): Removes all of the elements from this list.
+		list.clear();//remove all list element
+		//if list is empty return true
+		System.out.println(list);
+		//isEmpty(): Returns true if this list contains no elements.
+		System.out.println(list.isEmpty());	
+	}
+}
+
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class M12 
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list1 = new ArrayList();
+		list1.add(10);
+		list1.add(20);
+		list1.add(30);
+		list1.add(40);
+		list1.add(50);
+		list1.add(60);
+		list1.add(70);
+		ArrayList list2 = new ArrayList();
+		list2.add(20);
+		list2.add(40);
+		list2.add(60);
+		System.out.println(list1);
+		System.out.println(list2);
+		//removeAll(Collection<?> c): Removes from this list all of its elements that are contained in the specified collection.
+		//removing all the elements from the list1 which are matching with list2 elements
+		list1.removeAll(list2);
+		System.out.println("-------------");
+		System.out.println(list1);
+		System.out.println(list2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class M13
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list1 = new ArrayList();
+		list1.add(10);
+		list1.add(20);
+		list1.add(30);
+		list1.add(40);
+		list1.add(50);
+		list1.add(60);
+		list1.add(70);
+		ArrayList list2 = new ArrayList();
+		list2.add(20);
+		list2.add(40);
+		list2.add(60);
+		System.out.println(list1);
+		System.out.println(list2);
+		//retaining all the elements of list2 on the list1 and removing the remaining elements from the list1
+		//retainAll(Collection<?> c): Retains only the elements in this list that are contained in the specified collection.
+		list1.retainAll(list2);
+		System.out.println("-------------");
+		System.out.println(list1);
+		System.out.println(list2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class M14
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list1 = new ArrayList();
+		list1.add(10);
+		list1.add(20);
+		list1.add(30);
+		list1.add(40);
+		list1.add(50);
+		list1.add(60);
+		list1.add(70);
+		System.out.println(list1);
+		list1.removeRange(2, 5);
+		System.out.println("----------------");
+		System.out.println(list1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class M15 extends ArrayList
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		M15 list1 = new M15();
+		list1.add(10);
+		list1.add(20);
+		list1.add(30);
+		list1.add(40);
+		list1.add(50);
+		list1.add(60);
+		list1.add(70);
+		System.out.println(list1);
+		list1.removeRange(2, 5);
+		System.out.println("----------------");
+		System.out.println(list1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Scanner;
+class M16 
+{
+	@SuppressWarnings("unchecked")	
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		Scanner sc = new Scanner(System.in);
+		do
+		{
+			System.out.println("add an element to the list");
+			String str = sc.next();
+
+			if (!list.contains(str))
+			{
+				list.add(str);
+				System.out.println("successfuly added: " + str);
+				System.out.println("updated list: " + list);
+			}
+			else
+			{
+				System.out.println("Sorry, that element is already available!");
+			}
+			System.out.println("do you wish to add element to the ArrayList??");
+		}
+		while ("y".equalsIgnoreCase(sc.next()));
+
+		System.out.println("final list: " + list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class M17 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		System.out.println(list.contains(20));
+		System.out.println(list.contains(40));
+		System.out.println(list.contains(80));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class M18 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(0);
+		list.add(4);
+		list.add(2);
+		list.add(8);
+		list.add(6);
+		list.add(10);
+		System.out.println("intial list before sort: " + list);
+		
+		Collections.sort(list);
+
+		System.out.println("final list after sort: " + list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class M19
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(0);
+		list.add(4.0);
+		list.add(2);
+		list.add(8);
+		list.add(6);
+		list.add(10);
+		System.out.println("intial list before sort: " + list);
+		
+		Collections.sort(list);
+
+		System.out.println("final list after sort: " + list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+class M2
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<Object> list = new ArrayList<Object>();
+		list.add(90);
+		list.add("abc");
+		list.add(90.9);
+		list.add(true);
+		System.out.println(list.size());// total no of element
+		for(int i = 0; i < list.size(); i++)
+		{
+			System.out.println("Index " + i + ": " + list.get(i));
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+class M20
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+
+		list.add(0);
+		list.add(4);
+		list.add(2);
+		list.add(8);
+		list.add(6);
+		list.add(10);
+		System.out.println("intial list before sort: " + list);
+
+		//Comparator ctr = Collections.reverseOrder();
+		//reverseOrder(): Returns a comparator that imposes the reverse of the natural ordering on a collection of objects that implement the Comparable interface.
+
+		Collections.sort(list, Collections.reverseOrder());
+
+		System.out.println("final list after reverse sort: " + list);
+	}
+}
+/*
+
+The Collections class in Java provides utility methods for working with collections. Here is a list of commonly used methods in the Collections class:
+
+binarySearch(List<? extends Comparable<? super T>> list, T key): Searches the specified list for the specified object using the binary search algorithm.
+binarySearch(List<? extends T> list, T key, Comparator<? super T> c): Searches the specified list for the specified object using the binary search algorithm.
+copy(List<? super T> dest, List<? extends T> src): Copies all of the elements from one list into another.
+fill(List<? super T> list, T obj): Replaces all of the elements of the specified list with the specified element.
+max(Collection<? extends T> coll): Returns the maximum element of the given collection, according to the natural ordering of its elements.
+max(Collection<? extends T> coll, Comparator<? super T> comp): Returns the maximum element of the given collection, according to the order induced by the specified comparator.
+min(Collection<? extends T> coll): Returns the minimum element of the given collection, according to the natural ordering of its elements.
+min(Collection<? extends T> coll, Comparator<? super T> comp): Returns the minimum element of the given collection, according to the order induced by the specified comparator.
+nCopies(int n, T o): Returns an immutable list consisting of n copies of the specified object.
+reverse(List<?> list): Reverses the order of the elements in the specified list.
+reverseOrder(): Returns a comparator that imposes the reverse of the natural ordering on a collection of objects that implement the Comparable interface.
+shuffle(List<?> list): Randomly permutes the specified list using a default source of randomness.
+shuffle(List<?> list, Random rnd): Randomly permutes the specified list using the specified source of randomness.
+singleton(T o): Returns an immutable set containing only the specified object.
+singletonList(T o): Returns an immutable list containing only the specified object.
+singletonMap(K key, V value): Returns an immutable map containing only the specified mapping.
+sort(List<T> list): Sorts the specified list into ascending order, according to the natural ordering of its elements.
+sort(List<T> list, Comparator<? super T> c): Sorts the specified list according to the order induced by the specified comparator.
+swap(List<?> list, int i, int j): Swaps the elements at the specified positions in the specified list.
+unmodifiableCollection(Collection<? extends T> c): Returns an unmodifiable view of the specified collection.
+unmodifiableList(List<? extends T> list): Returns an unmodifiable view of the specified list.
+unmodifiableMap(Map<? extends K,? extends V> m): Returns an unmodifiable view of the specified map.
+unmodifiableSet(Set<? extends T> s): Returns an unmodifiable view of the specified set.
+unmodifiableSortedMap(SortedMap<K,? extends V> m): Returns an unmodifiable view of the specified sorted map.
+unmodifiableSortedSet(SortedSet<T> s): Returns an unmodifiable view of the specified sorted set.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Collections;
+class M21 
+{
+	@SuppressWarnings({"removal", "unchecked"})
+	public static void main(String[] args) 
+	{
+		Integer[] array = {new Integer(10), new Integer(4), new Integer(1), new Integer(0), new Integer(30), new Integer(2)};
+
+		//toString(T[] a): Returns a string representation of the contents of the specified array.
+		System.out.println("intial order: " + Arrays.toString(array));
+		//sort(T[] a): Sorts the specified array into ascending order, according to the natural ordering of its elements.
+
+		Arrays.sort(array);
+
+		System.out.println("\nascending order: " + Arrays.toString(array));
+
+
+		Comparator ctr = Collections.reverseOrder();
+		//sort(T[] a, Comparator<? super T> c): Sorts the specified array of objects into ascending order, according to the order induced by the specified comparator.
+
+		Arrays.sort(array, ctr);
+
+		System.out.println("\ndescending order: " + Arrays.toString(array));
+	}
+}
+
+/*
+System.out.println("\n -----------------------");
+
+		int counter = 1;
+		for (int i = 0; i < array.length; i++)
+		{
+			if (counter != array.length)
+			{
+				System.out.print(array[i] + ", ");
+			}
+			else if(counter == array.length)
+			{
+				System.out.print(array[i]);
+			}
+			counter++;
+		}
+
+		*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+class M22
+{
+	public static void main(String[] args) 
+	{
+		String[] array = {"B", "A", "E", "D", "C"};
+
+		System.out.println("intial list before sort: " + Arrays.toString(array));
+		
+		Arrays.sort(array);
+		System.out.println("after sorting: " + Arrays.toString(array));
+
+		Arrays.sort(array, Collections.reverseOrder());
+		
+		//for (int i = 0; i < array.length; i++)
+		//{
+		//	System.out.print(array[i] + ", ");
+		//}
+
+		System.out.println("after reversing: " + Arrays.toString(array));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class M23 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add("Z");
+		list.add("#");
+		list.add("G");
+		list.add("10");
+		list.add("1");
+		list.add("P");
+		list.add("D");
+		list.add("*");
+		list.add("a");
+		list.add("k");
+		list.add("e");
+		list.add("j");
+		System.out.println("Before sort: " + list);
+		//Special characters, Numbers, Upper case Characters, Lower case Characters ==> sorted
+		//Based on ASCII values
+		Collections.sort(list);
+		System.out.println("After sort: " + list);
+	}
+}
+/*
+ corresponding ASCII values for each of these elements:
+
+#: ASCII value = 35
+*: ASCII value = 42
+1: ASCII value = 49
+10: There are two characters here, '1' and '0'. Their ASCII values are 49 and 48 respectively.
+D: ASCII value = 68
+G: ASCII value = 71
+P: ASCII value = 80
+Z: ASCII value = 90
+a: ASCII value = 97
+e: ASCII value = 101
+j: ASCII value = 106
+k: ASCII value = 107
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class A
+{
+	int i;
+
+	A(int i)
+	{
+		this.i = i;
+	}
+	
+	public String toString()
+	{
+		return i + "";
+	}
+
+}
+class M24 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add("abc");
+		list.add(new A(10));
+		list.add(new A(20));
+		list.add(new A(30));
+		list.add(new A(40));
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class A
+{
+	int i;
+
+	A(int i)
+	{
+		this.i = i;
+	}
+
+	public String toString()
+	{
+		return Integer.toString(i);
+	}
+}
+class M25
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		//ArrayList class toString method internally calls the toString method on each element while inserting.
+		list.add(90);
+		list.add("abc");
+		list.add(new A(10));
+		list.add(new A(20));
+		list.add(new A(30));
+		list.add(new A(40));
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class A
+{
+	int i;
+
+	A(int i)
+	{
+		this.i = i;
+	}
+
+	public String toString()
+	{
+		return i + "";//Integer.toString(i);
+	}
+}
+class M26
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		//ArrayList class toString method internally calls the toString method on each element while inserting.
+		list.add(new A(110));
+		list.add(new A(20));
+		list.add(new A(30));
+		list.add(new A(410));
+		list.add(new A(40));
+		list.add(new A(4));
+		System.out.println(list);
+		Collections.sort(list);
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+//Comparable is functional interface which contains only one abstract method.
+class A implements Comparable
+{
+	int i;
+
+	A(int i)
+	{
+		this.i = i;
+	}
+
+	public String toString()
+	{
+		return i + "";//Integer.toString(i);
+	}
+
+	public int compareTo(Object obj)
+	{
+		//int result = i - ((A)obj).i;
+		//return result;
+		return i - ((A)obj).i;
+	}
+}
+class M27
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		//ArrayList class toString method internally calls the toString method on each element while inserting.
+		list.add(new A(110));
+		list.add(new A(20));
+		list.add(new A(30));
+		list.add(new A(410));
+		list.add(new A(40));
+		list.add(new A(4));
+		System.out.println(list);
+		Collections.sort(list);
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class A implements Comparable
+{
+	int i;
+	int j;
+
+	A(int i, int j)
+	{
+		this.i = i;
+		this.j = j;
+	}
+
+	public String toString()
+	{
+		return "[" + i + ", " + j + "]";//Integer.toString(i);
+	}
+
+	public int compareTo(Object obj)
+	{
+		int result = i - ((A)obj).i;
+		return result;
+	}
+}
+class M28
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		//ArrayList class toString method internally calls the toString method on each element while inserting.
+		list.add(new A(110, 9));
+		list.add(new A(20, 8));
+		list.add(new A(30, 7));
+		list.add(new A(410, 6));
+		list.add(new A(40, 5));
+		list.add(new A(4, 3));
+		System.out.println(list);
+		Collections.sort(list);
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+class A
+{
+	int i;
+	int j;
+
+	A(int i, int j)
+	{
+		this.i = i;
+		this.j = j;
+	}
+
+	public String toString()
+	{
+		return "[" + i + ", " + j + "]";//Integer.toString(i);
+	}
+}
+class compareBasedOnIValue implements Comparator
+{
+	public int compare(Object obj1, Object obj2)
+	{
+		 A a1 = (A)obj1;
+		 A a2 = (A)obj2;
+		 return a1.i - a2.i;
+	}
+}
+class compareBasedOnJValue implements Comparator
+{
+	public int compare(Object obj1, Object obj2)
+	{
+		A a1 = (A)obj1;
+		A a2 = (A)obj2;
+		return a1.j - a2.j;
+	}
+}
+
+class M29
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		//ArrayList class toString method internally calls the toString method on each element while inserting.
+		list.add(new A(110, 9));
+		list.add(new A(20, 8));
+		list.add(new A(30, 7));
+		list.add(new A(410, 6));
+		list.add(new A(40, 5));
+		list.add(new A(4, 3));
+		System.out.println(list);
+		Collections.sort(list, new compareBasedOnIValue());
+		System.out.println("Sort based on i value: " + list);
+		Collections.sort(list, new compareBasedOnJValue());
+		System.out.println("Sort based on j value: " + list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+public class M3
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list1 = new ArrayList();
+		list1.add(90);
+		list1.add(0);
+		list1.add("abc");
+		System.out.println(list1);
+		list1.add("xyz");
+		System.out.println(list1);
+		//Inserts the specified element at the specified position in this list.
+		list1.add(2, "check");
+		System.out.println(list1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class M30 
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add("red");
+		list.add("blue");
+		list.add("green");
+		list.add("grey");
+		list.add("black");
+		list.add("white");
+		System.out.println("initlial: " +  list);
+		Collections.sort(list);
+		System.out.println("sorted: " +  list);
+		int i = Collections.binarySearch(list, "red");
+
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class M31
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(10);
+		list.add(2);
+		list.add(5);
+		list.add(1);
+		list.add(6);
+		list.add(4);
+		System.out.println("initlial: " +  list);
+		Collections.sort(list);
+		System.out.println("sorted: " +  list);
+		//if that element is not present it will return the value -7
+		int i = Collections.binarySearch(list, 500);
+
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Collections;
+class M32 
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(10);
+		list.add(0);
+		list.add(20);
+		list.add(40);
+		list.add(6);
+		list.add(9);
+		System.out.println(Collections.max(list));
+		System.out.println(Collections.min(list));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Iterator;
+class M33 
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		list.add(60);
+		list.add(70);
+		System.out.println(list);
+		System.out.println("--------------");
+
+		//iterator(): Returns an iterator over the elements in this list in proper sequence.
+		Iterator iterator = list.iterator();
+
+		while (iterator.hasNext())
+		{
+			System.out.println(iterator.next() + ", ");//reading
+			iterator.remove(); //Object obj = (Integer) //just removing 
+			//System.out.println(obj);
+		}
+		System.out.println(list);
+	}
+}
+/*
+methods:
+
+boolean hasNext(): Returns true if there are more elements in the collection when traversing it forward.
+
+E next(): Returns the next element in the collection and advances the cursor position.
+
+void remove(): Removes from the underlying collection the last element returned by next() (optional operation).
+
+
+An Iterator is an interface that provides a way to traverse through the elements of a collection(such as list)
+
+hasNext() - to check if there are more elements
+
+Iterator interface in Java provides methods for iterating over a collection of objects. Here are the methods defined in the Iterator interface:
+
+boolean hasNext(): Returns true if the iteration has more elements.
+E next(): Returns the next element in the iteration.
+void remove(): Removes from the underlying collection the last element returned by this iterator (optional operation).
+default void forEachRemaining(Consumer<? super E> action): Performs the given action for each remaining element until all elements have been processed or the action throws an exception.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+class A
+{
+	int i;
+
+	A(int i)
+	{
+		this.i = i;
+	}
+
+	public String toString()
+    {
+		return i + "";
+    }
+}
+class M34 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add("abc");
+		list.add(new A(10));
+		list.add(new A(20));
+		list.add(new A(30));
+		list.add(new A(40));
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.ListIterator;
+class M35
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		list.add(60);
+		list.add(70);
+		System.out.println(list);
+		System.out.println("--------------");
+
+		ListIterator listIterator = list.listIterator();
+
+		while (listIterator.hasNext())
+		{
+			System.out.println(listIterator.next() + ", ");
+		}
+	}
+}
+
+/*
+ListIterator in Java is an interface that extends Iterator and provides additional functionality for iterating over lists bidirectionally, as well as for modifying the list during iteration. Here's a list of methods available in the ListIterator interface:
+
+totally 9 methods we have
+
+void add(E e): Inserts the specified element into the list (optional operation).
+
+boolean hasNext(): Returns true if there are more elements in the list when traversing it forward.
+
+boolean hasPrevious(): Returns true if there are more elements in the list when traversing it backward.
+
+E next(): Returns the next element in the list and advances the cursor position.
+
+int nextIndex(): Returns the index of the element that would be returned by the next call to next().
+
+E previous(): Returns the previous element in the list and moves the cursor position backward.
+
+int previousIndex(): Returns the index of the element that would be returned by the next call to previous().
+
+void remove(): Removes from the list the last element that was returned by next() or previous() (optional operation).
+
+void set(E e): Replaces the last element returned by next() or previous() with the specified element (optional operation).
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Iterator;
+class M36
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		list.add(60);
+		list.add(70);
+		
+		System.out.println("initial list: " + list);
+		System.out.println("--------------");
+
+		Iterator iterator = list.iterator();
+
+		while (iterator.hasNext())
+		{
+			System.out.println(iterator.next());
+			iterator.remove();
+			System.out.println(list);
+		}
+
+		System.out.println("final list: " + list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class M37
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9);
+		list.add(0);
+		list.add(40);
+		list.add(9);
+		System.out.println("initial list: " + list);
+		Iterator it = list.iterator();
+		while (it.hasNext())
+		{
+			Object obj = it.next();
+
+			System.out.println(obj);
+			if (obj.equals(9))
+			{
+				it.remove();
+			}
+		}
+		System.out.println("ending list: " + list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class M38
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9);
+		list.add(0);
+		list.add(40);
+		Iterator it = list.iterator();
+		list.add(50);
+		while (it.hasNext())
+		{
+			System.out.println(it.next());
+		}
+		System.out.println(list);
+	}
+}
+/*
+ *java.util.concurrentmodificationexception is an error in Java.
+ The error occurs when the iterator is traversing a list,
+ and a command is used to change an elements value during that traversal.
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class M39
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9);
+		list.add(0);
+		list.add(40);
+
+		Iterator it = list.iterator();
+
+		it.add(50);
+		
+		while (it.hasNext())
+		{
+			System.out.println(it.next());
+		}
+		
+
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+public class M4
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9.0);
+		list.add(190);
+		list.add(910);
+		list.add("abc");
+		System.out.println(list);
+		for (int i = 0; i < list.size(); i++)
+		{
+			System.out.print(list.get(i) + ",");
+		}
+		System.out.println();
+		System.out.println("--------");
+		for (Object obj : list)
+		{
+			System.out.print(obj + ",");
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class M40
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9);
+		list.add(0);
+		list.add(40);
+		list.add(50);
+
+		ListIterator it = list.listIterator();
+
+		while (it.hasNext())
+		{
+			System.out.println(it.next() + ",");
+		}
+
+		System.out.println("------");
+
+		while (it.hasPrevious()) 
+		{
+			System.out.println(it.previous() + ",");
+		}
+
+		System.out.println("------");
+
+		while (it.hasNext())
+		{
+			System.out.println(it.next() + ",");
+		}
+
+		System.out.println("------");
+
+	}
+}
+/*
+ * -ListIterator interface extends Iterator Interface.
+ -listIterator() method is available in List interface.
+ -Unlike Enumeration and Iterator ListIterator interface is bidirectional cursor i,e 
+ either we can move forward or backward direction.
+- Using ListIterator we can perform read, remove, replacement, addition of new objects.
+-while calling list.listIterator() we get an object of type Listiterator.
+-inside ListIterator() method using anonymous inner class to implement ListIterator interface,
+ for that implemented class object is creating and that object is returning to it.
+
+--------forward direction methods-------
+public boolean hasNext()
+public Object next()
+public int nextIndex()
+
+---------backward direction methods--------
+public boolean hasPrevious()
+public Object previous()
+public int previousIndex()
+
+------Limitation------------
+-it is applicable for only List implemented class objects and it is not a universal cursor.	
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class M41
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9);
+		list.add(0);
+		list.add(40);
+
+		ListIterator lit = list.listIterator();
+		
+		lit.add(50);//to avoid CuncurrentModificationException //use 
+		
+		System.out.println(list);
+		System.out.println("--------");
+		System.out.println(list.size());// total no of element
+		for(int i = 0; i < list.size(); i++)
+		{
+			System.out.println("Index " + i + ": " + list.get(i));
+		}
+
+		System.out.println("forward direction");
+		
+		while(lit.hasNext())
+		{
+			System.out.println("In the index: " + lit.nextIndex() + " The element: " + lit.next() + " is present");
+		}
+
+		System.out.println(list);
+		System.out.println("--------");
+		System.out.println(list.size());// total no of element
+		for(int i = 0; i < list.size(); i++)
+		{
+			System.out.println("Index " + i + ": " + list.get(i));
+		}
+
+		System.out.println("backward direction");
+
+		while(lit.hasPrevious())
+		{
+			System.out.println("In the index: " + lit.previousIndex() + " The element: " + lit.previous() + " is present");
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class M42
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9);
+		list.add(0);
+		list.add(40);
+
+		ListIterator it = list.listIterator();
+
+		it.add(50);
+
+		while(it.hasNext())
+		{
+			System.out.println("In the index: " + it.nextIndex() + " The element: " + it.next() + " is present");
+		}
+
+		it.add(50);
+
+		System.out.println("---------");
+		
+		System.out.println(it.hasPrevious());
+
+		while(it.hasPrevious())
+		{
+			System.out.println("In the index: " + it.previousIndex() + " The element: " + it.previous() + " is present");
+		}
+
+		System.out.println("---------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class M43
+{
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(9);
+		list.add(0);
+		list.add(40);
+		
+		ListIterator it = list.listIterator();
+		
+		it.add(50);//ListIterator has add(E e) method unlike Iterator Interface.
+		
+		while(it.hasNext())
+		{
+			if(it.nextIndex() == 2)
+			{
+				it.add(100);
+			}
+			System.out.println("In the index: " + it.nextIndex() + " The element: " + it.next() + " is present");
+		}
+
+		it.add(50);
+
+		System.out.println();
+
+		while(it.hasPrevious())
+		{
+			System.out.println("In the index: " + it.previousIndex() + " The element: " + it.previous() + " is present");
+		}
+
+		System.out.println(list);
+		System.out.println("--------------");
+
+		while(it.hasNext())
+		{
+			System.out.println("In the index: " + it.nextIndex() + " The element: " + it.next() + " is present");
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class M44
+{
+	public static void main(String[] args) 
+	{
+		ArrayList list = new ArrayList();
+		list.add(90);
+		list.add(0);
+		list.add(9);
+		list.add(91);
+		list.add(8);
+		list.add(7);
+		System.out.println(list);
+		
+		ListIterator lit = list.listIterator();
+
+		while(lit.hasNext())
+		{
+			Object obj = lit.next();
+
+			if(obj.equals(91))
+			{
+				//set method replaces the current element(object) with argument object.
+				lit.set("abc");//replacement of object
+			}
+			System.out.println(obj + ",");
+		}
+		System.out.println();
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+class M5
+{
+		@SuppressWarnings("unchecked")
+		public static void main(String[] args)
+		{
+			ArrayList list1 = new ArrayList();
+			list1.add(9);
+			list1.add(0);
+			list1.add(90);
+			list1.add(19);
+		    System.out.println(list1);
+			ArrayList list2 = new ArrayList();
+			list2.add(100);
+			list2.add(50);
+			list2.add(list1);
+			System.out.println(list1);
+			System.out.println(list2);
+		}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+class M6
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list1 = new ArrayList();
+		list1.add(9);
+		list1.add(0);
+		list1.add(90);
+		list1.add(19);
+		ArrayList list2 = new ArrayList();
+		list2.add(100);
+		list2.add(50);
+		list2.add("abc");
+		//position and index same
+		list2.addAll(1, list1);
+		System.out.println(list1);
+		System.out.println(list2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+class M7
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list1 = new ArrayList();
+		list1.add(90);
+		list1.add(0);
+		list1.add(9);
+		list1.add(4);
+		System.out.println(list1);
+		ArrayList list2 = new ArrayList(list1);//value pass through constructor 
+		list2.add("abc");
+		System.out.println(list2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+class M8
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args)
+	{
+		ArrayList list = new ArrayList();
+		list.add(9);
+		list.add(0);
+		list.add(4);
+		list.add(6);//remove element---list.remove
+		list.add(8);
+		list.add(2);
+		list.add(1);
+		list.add(3);
+		System.out.println(list);
+		int i = (Integer)list.remove(3);
+		System.out.println(list);
+		System.out.println(i);//whatever element is remove same assign into obj..
+		//obj = (Integer)list.remove(10);//element is not available at 10 index-------indexOutOfBound Exception
+		//System.out.println(obj);	
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+
+class M9
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<Object> list = new ArrayList<Object>();
+		list.add(90);
+		list.add("abc");
+		list.add(90.9);
+		list.add(true);
+		System.out.println(list);
+		list.set(2, 'a');
+		System.out.println(list);
+	}
+}
+
+/*
+ list of commonly used methods of the ArrayList class in Java:
+
+add(E element): Appends the specified element to the end of this list.
+add(int index, E element): Inserts the specified element at the specified position in this list.
+addAll(Collection<? extends E> c): Appends all of the elements in the specified collection to the end of this list, in the order that they are returned by the specified collection's iterator.
+addAll(int index, Collection<? extends E> c): Inserts all of the elements in the specified collection into this list at the specified position.
+clear(): Removes all of the elements from this list.
+clone(): Returns a shallow copy of this ArrayList instance.
+contains(Object o): Returns true if this list contains the specified element.
+ensureCapacity(int minCapacity): Increases the capacity of this ArrayList instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument.
+get(int index): Returns the element at the specified position in this list.
+indexOf(Object o): Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
+isEmpty(): Returns true if this list contains no elements.
+iterator(): Returns an iterator over the elements in this list in proper sequence.
+lastIndexOf(Object o): Returns the index of the last occurrence of the specified element in this list, or -1 if this list does not contain the element.
+remove(int index): Removes the element at the specified position in this list.
+remove(Object o): Removes the first occurrence of the specified element from this list, if it is present.
+removeAll(Collection<?> c): Removes from this list all of its elements that are contained in the specified collection.
+removeIf(Predicate<? super E> filter): Removes all of the elements of this collection that satisfy the given predicate.
+retainAll(Collection<?> c): Retains only the elements in this list that are contained in the specified collection.
+set(int index, E element): Replaces the element at the specified position in this list with the specified element.
+size(): Returns the number of elements in this list.
+spliterator(): Creates a late-binding and fail-fast Spliterator over the elements in this list.
+subList(int fromIndex, int toIndex): Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
+toArray(): Returns an array containing all of the elements in this list in proper sequence.
+toArray(T[] a): Returns an array containing all of the elements in this list in the proper order; the runtime type of the returned array is that of the specified array.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 45</h3>
+<pre class="prettyprint linenums">
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Contact {
+    private String name;
+    private String phoneNumber;
+
+    public Contact(String name, String phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Phone Number: " + phoneNumber;
+    }
+}
+
+public class AddressBook
+	{
+    private ArrayList<Contact> contacts;
+
+    public AddressBook() {
+        contacts = new ArrayList<>();
+    }
+
+    public void addContact(Contact contact) {
+        contacts.add(contact);
+        System.out.println("Contact added successfully.");
+    }
+
+    public void deleteContact(String name) {
+        for (int i = 0; i < contacts.size(); i++) {
+            if (contacts.get(i).getName().equalsIgnoreCase(name)) {
+                contacts.remove(i);
+                System.out.println("Contact deleted successfully.");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
+
+    public void searchContact(String name) {
+        for (Contact contact : contacts) {
+            if (contact.getName().equalsIgnoreCase(name)) {
+                System.out.println("Contact found: " + contact);
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
+
+    public void displayContacts() {
+        System.out.println("Contacts:");
+        for (Contact contact : contacts) {
+            System.out.println(contact);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        AddressBook addressBook = new AddressBook();
+
+        while (true) {
+            System.out.println("\nAddress Book Menu:");
+            System.out.println("1. Add Contact");
+            System.out.println("2. Delete Contact");
+            System.out.println("3. Search Contact");
+            System.out.println("4. Display Contacts");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Enter phone number: ");
+                    String phoneNumber = scanner.nextLine();
+                    addressBook.addContact(new Contact(name, phoneNumber));
+                    break;
+                case 2:
+                    System.out.print("Enter name to delete: ");
+                    String nameToDelete = scanner.nextLine();
+                    addressBook.deleteContact(nameToDelete);
+                    break;
+                case 3:
+                    System.out.print("Enter name to search: ");
+                    String nameToSearch = scanner.nextLine();
+                    addressBook.searchContact(nameToSearch);
+                    break;
+                case 4:
+                    addressBook.displayContacts();
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 46</h3>
+<pre class="prettyprint linenums">
+//Queue
+import java.util.LinkedList;
+
+public class M1
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		LinkedList list = new LinkedList();
+		list.add(90);
+		list.add(990);
+		list.add(190);
+		list.add(290);
+		list.add(80);
+		list.add(790);
+		list.add(10);
+		System.out.println(list);
+		System.out.println(list.get(2));
+		System.out.println(list.removeFirst());
+		System.out.println(list);
+	}
+}
+/*
+1. LinkedList is supporting basic queue.
+2. Queue FIFO
+*/
+
+/*
+Data Structure:
+
+- ArrayList is internally backed by an array, which provides indexed access to elements.
+- LinkedList is internally implemented as a doubly linked list, where each element is stored in a separate node and connected to the previous and next nodes.
+
+Performance:
+ - If there is a frequent reading operation is there then you could use ArrayList
+ - Adding and removing elements in ArrayList at the beginning or middle of the list requires shifting subsequent elements, which can be slow for large lists.
+
+- ArrayList provides faster access time for random access (get and set) because it uses array indexing, which has constant time complexity O(1).
+
+- If there is a frequent add and remove operations are there then you could use LinkedList
+- Adding and removing elements in LinkedList at the beginning or middle of the list is faster because it only requires adjusting pointers.
+
+- LinkedList provides faster insertion and deletion time (add and remove operations) for elements in the middle of the list because it only requires adjusting the pointers, but accessing elements by index has linear time complexity O(n) because it requires traversing the list from the beginning or end to find the desired element.
+
+Search Operation:
+
+- ArrayList performs better in search operations when the index of the element is known, as it can directly access elements using array indexing.
+
+- LinkedList performs better in search operations when scanning the list sequentially because it doesn't need to jump to specific indices.
+
+Implementation Complexity:
+
+- ArrayList has a simpler implementation compared to LinkedList.
+- LinkedList has a more complex implementation due to managing nodes and pointers.
+*/
+
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 47</h3>
+<pre class="prettyprint linenums">
+//pure queue
+import java.util.PriorityQueue;
+
+public class M10
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		PriorityQueue queue = new PriorityQueue();
+		queue.add(90);
+		queue.add(990);
+		queue.add(190);
+		queue.add(20);
+		//there is no get method
+		//bcz elements are not assigned with index or key.
+		System.out.println(queue.get());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 48</h3>
+<pre class="prettyprint linenums">
+//pure queue
+import java.util.PriorityQueue;
+
+public class M11
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		PriorityQueue queue = new PriorityQueue();
+		queue.add(90);
+		queue.add(990);
+		queue.add(190);
+		queue.add(20);
+
+		System.out.println(queue);
+		
+		//list,queue,set we can able to read elements through for-each
+		//we cant predict the order
+		//but head element is sorted one.
+		for(Object obj : queue)
+		{
+			System.out.println(obj);
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 49</h3>
+<pre class="prettyprint linenums">
+//pure queue
+import java.util.PriorityQueue;
+
+public class M12
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		PriorityQueue queue = new PriorityQueue();
+		queue.add(90);
+		queue.add(990);
+		//ClassCastException
+		//wherever sorting is happening we need to provide same type of elements.
+		//if multiple types of elements are there we get ClassCastException.
+		//there is a default sorting here. 
+		queue.add(90.0);
+		queue.add(190);
+		queue.add(20);
+		System.out.println(queue);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 50</h3>
+<pre class="prettyprint linenums">
+//pure queue
+import java.util.PriorityQueue;
+
+public class M13
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		PriorityQueue queue = new PriorityQueue();
+		queue.add(90);
+		queue.add(990);
+		//NullPointerException
+		//while sorting internally it is calling one method called compareto 
+		//wherever sorting is there we should not go for null element.
+		queue.add(null);
+		queue.add(190);
+		queue.add(20);
+		System.out.println(queue);
+	}
+}
+/* while sorting 3 conditions
+1.no different elements
+2.no null elements
+3.elements should be comparable type or a seperate comparator should be supplied.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 51</h3>
+<pre class="prettyprint linenums">
+import java.util.LinkedList;
+
+public class M2
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		LinkedList list = new LinkedList();
+		list.add(90);
+		list.add(990);
+		list.add(190);
+		list.add(290);
+		list.add(790);
+		System.out.println(list);
+		System.out.println("element removed: " + list.removeFirst());
+		System.out.println(list);
+		System.out.println("element removed: " + list.removeFirst());
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 52</h3>
+<pre class="prettyprint linenums">
+import java.util.LinkedList;
+
+public class M3
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		LinkedList list = new LinkedList();
+		list.add(90);
+		list.add(990);
+		list.add(190);
+		list.add(290);
+		list.add(790);
+		System.out.println(list);
+		//Wherever Queue is possible Stack is also possible.
+		System.out.println("element removed: " + list.removeLast());
+		System.out.println(list);
+		System.out.println("element removed: " + list.removeLast());
+		System.out.println(list);
+	}
+}
+/*
+1.Wherever Queue is possible Stack is also possible.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 53</h3>
+<pre class="prettyprint linenums">
+import java.util.LinkedList;
+
+public class M4
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		LinkedList list = new LinkedList();
+		list.add(90);
+		list.add(990);
+		list.add(190);
+		list.add(290);
+		list.add(790);
+		System.out.println(list);
+		//peek just reads and returns the first element.
+		System.out.println(list.peek());
+		System.out.println(list);
+		System.out.println(list.peek());
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 54</h3>
+<pre class="prettyprint linenums">
+import java.util.LinkedList;
+
+public class M5
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		LinkedList list = new LinkedList();
+		list.add(90);
+		list.add(990);
+		list.add(190);
+		list.add(290);
+		list.add(790);
+		System.out.println(list);
+		//poll reading and removing the head element.
+		//through poll method we achieve perfect queue.
+		System.out.println(list.poll());
+		System.out.println(list);
+		System.out.println(list.poll());
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 55</h3>
+<pre class="prettyprint linenums">
+import java.util.LinkedList;
+
+public class M6
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		LinkedList list = new LinkedList();
+		list.add(90);
+		list.add(990);
+		list.add(190);
+		list.add(290);
+		list.add(790);
+		System.out.println(list);
+		//wherever we are achieving queue there we can also achieve stack.
+		//peekLast just reads the last element.
+		System.out.println(list.peekLast());
+		System.out.println(list);
+		System.out.println(list.peekLast());
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 56</h3>
+<pre class="prettyprint linenums">
+//List features as well as Queue features 
+import java.util.LinkedList;
+
+public class M7
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		LinkedList list = new LinkedList();
+		list.add(90);
+		list.add(990);
+		list.add(190);
+		list.add(290);
+		list.add(790);
+		System.out.println(list);
+		//pollLast reads and removes the last element.
+		System.out.println(list.pollLast());
+		System.out.println(list);
+		System.out.println(list.pollLast());
+		System.out.println(list);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 57</h3>
+<pre class="prettyprint linenums">
+//only queue feature not list features.
+import java.util.PriorityQueue;
+
+public class M8
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		PriorityQueue queue = new PriorityQueue();
+		queue.add(90);
+		queue.add(990);
+		queue.add(190);
+		queue.add(290);
+		queue.add(790);
+		queue.add(10);
+		queue.add(2);
+		//PriorityQueue has default sorting that default sorting	
+		  //that default sorting only applies to the head element.
+		  //it gurantees to sort first element.
+		System.out.println(queue.peek());
+		System.out.println(queue);
+		System.out.println(queue.peek());
+		System.out.println(queue);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 58</h3>
+<pre class="prettyprint linenums">
+//pure queue
+import java.util.PriorityQueue;
+
+public class M9
+{
+	@SuppressWarnings("unchecked")
+	public static void main(String args[])
+	{
+		PriorityQueue queue = new PriorityQueue();
+		queue.add(90);
+		queue.add(990);
+		queue.add(190);
+		queue.add(20);
+		queue.add(290);
+		queue.add(790);
+		queue.add(10);
+		queue.add(15);
+		System.out.println(queue);
+		//becase of head element is sorted one the name is priority queue
+		//removing the first element
+		System.out.println(queue.poll());
+		System.out.println(queue);
+		System.out.println(queue.poll());
+		//second element is not guranteed to sort, even we get sorted element.
+		System.out.println(queue);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app3</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 59</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+class A
+{
+	int i;
+	A(int i)
+	{
+		this.i = i;
+	}
+	public String toString()
+	{
+		return "(i = " + i + ")";
+	}
+}
+public class M1 
+{
+	public static void main(String[] args)
+	{
+		HashSet set = new HashSet();
+		
+		set.add(new A(90));
+		set.add(new A(90));
+		set.add(new A(90));
+		set.add(new A(900));
+		set.add(new A(10));
+		//unable to find out the duplicates
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 60</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+class D
+{
+	int i;
+	D(int i)
+	{
+		this.i = i;
+	}
+	public String toString()
+	{
+		return "(" + i + ")";
+	}
+}
+
+class M10 
+{
+	public static void main(String[] args) 
+	{
+		D d1 = new D(90);
+		D d2 = new D(910);
+		D d3 = new D(90);
+		D d4 = new D(9);
+		D d5 = new D(10);
+		HashSet set = new HashSet();
+		set.add(d1);
+		set.add(d2);
+		set.add(d3);
+		set.add(d4);
+		set.add(d5);
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 61</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+class E
+{
+	int i;
+	E(int i)
+	{
+		this.i = i;
+	}
+	public String toString()
+	{
+		System.out.println("----------------from toString-----------------------");
+		
+		return "address: " + super.hashCode() + " and state: (" + i + ")"+"from the return of toString method";
+	}
+	
+	public int hashCode()
+	{
+		System.out.println("-------------start hashcode--------------------------");
+		int hash = Integer.toString(i).hashCode();
+		System.out.println("hashCode for " + this + "is " + hash);
+		System.out.println("--------------end hashcode-------------------------");
+		return hash;
+	}
+	public boolean equals(Object obj)
+	{
+		System.out.println("--------------start equals-------------------------");
+		boolean b1 = (i == ((E)obj).i); 
+		System.out.println("equals b/w " + this + "	and " + obj + " is " + b1);
+		System.out.println("----------------end equals-----------------------");
+		return b1;
+	}
+}
+
+class M11 
+{
+	public static void main(String[] args) 
+	{
+		E e1 = new E(90);
+		E e2 = new E(90);
+		HashSet set = new HashSet();
+		System.out.println("adding status of " + e1  + " is :" + set.add(e1));
+		System.out.println("---------------------------------------------");
+		System.out.println("adding status of " + e2 + " is :" + set.add(e2));
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 62</h3>
+<pre class="prettyprint linenums">
+import java.util.LinkedHashSet;
+class M12 
+{
+	public static void main(String[] args) 
+	{
+		//in case of LinkedList order is preserved
+		LinkedHashSet set = new LinkedHashSet();
+		set.add(90);
+		set.add(92);
+		set.add(93);
+		set.add(90);
+		set.add(900);
+		set.add(800);
+		set.add(800);
+		set.add(80);
+		set.add(660);
+		set.add(76);
+		set.add(98);
+		//avoiding duplicates and maintaining order of addition.
+		System.out.println(set);
+	}
+}
+/*
+No, in Java, the Set interface does not provide methods to access elements by index. Sets are collections that do not allow duplicate elements, and they do not guarantee the order of elements. Therefore, it doesn't make sense to access elements in a Set by index because there is no defined order of elements in a Set.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 63</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+import java.util.TreeSet;
+class M13 
+{
+	public static void main(String[] args) 
+	{
+		HashSet set = new HashSet();
+		set.add(90);
+		set.add(92);
+		set.add(93);
+		set.add(90);
+		set.add(900);
+		set.add(800);
+		set.add(800);
+		set.add(80);
+		set.add(660);
+		set.add(76);
+		set.add(98);
+		System.out.println(set);
+		
+		//in order to sort the set
+		//under Set stream if you want to sort go for TreeSet
+		TreeSet tset = new TreeSet();
+		tset.addAll(set);
+		System.out.println(tset);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 64</h3>
+<pre class="prettyprint linenums">
+import java.util.TreeSet;
+class M14 
+{
+	public static void main(String[] args) 
+	{
+		//directly we can use TreeSet for sorted order
+		//avoiding duplicates, sorted order
+		TreeSet set = new TreeSet();
+		set.add(90);
+		set.add(92);
+		set.add(93);
+		set.add(90);
+		set.add(900);
+		set.add(800);
+		set.add(800);
+		set.add(80);
+		set.add(660);
+		set.add(76);
+		set.add(98);
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 65</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+class A
+{
+	int i;
+	A(int i)
+	{
+		this.i = i;
+	}
+	public String toString()
+	{
+		return "(i = " + i + ")";
+	}
+	public int hashCode()
+	{
+		System.out.println("Hashcode of " + this + "is: " + i);
+		return i;
+	}
+	public boolean equals(Object obj)
+	{
+		return i == ((A)obj).i;
+	}
+}
+public class M2
+{
+	public static void main(String[] args) 
+	{
+		HashSet set = new HashSet();
+		System.out.println(set.add(new A(90)));
+		System.out.println(set.add(new A(90)));
+		System.out.println(set.add(new A(90)));
+		System.out.println(set.add(new A(90)));
+		System.out.println(set.add(new A(90)));
+		//becase of hashCode and equals method we get the unique element.	
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 66</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+public class M3 
+{
+	public static void main(String[] args)
+	{
+		HashSet set = new HashSet();
+		//these are objects of wrapper class not the objects of A class
+		set.add(90);
+		set.add(900);
+		set.add(9);
+		set.add(9);
+		set.add(10);
+		set.add(90);
+		set.add(90);
+		set.add(0);
+		//in every wrapper class both hascode and equals method got overrided.
+		  //that is why can able to identify duplicates.
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 67</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+public class M4 
+{
+	public static void main(String[] args)
+	{
+		HashSet set = new HashSet();
+		//add method returns boolean value if success returns true.	
+		System.out.println(set.add(90));
+		System.out.println(set.add(90));
+		System.out.println(set.add(90));
+		System.out.println(set.add(90));
+		System.out.println(set.add(90));
+
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 68</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+public class M5 
+{
+	public static void main(String[] args) 
+	{
+		HashSet set = new HashSet();
+		//add method returns boolean value if success returns true.	
+		//in string class also hashcode and equals method got overrided
+		//order will be random not the inserted order.
+		System.out.println(set.add("abc"));
+		System.out.println(set.add("abc"));
+		System.out.println(set.add("xyz"));
+		System.out.println(set.add("xyz"));
+		System.out.println(set.add("vijay"));
+	
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 69</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+public class M6
+{
+	public static void main(String[] args) 
+	{
+		HashSet set = new HashSet();
+		//in case of StringBuffer hashcode and equals method not overrided.
+		System.out.println(set.add(new StringBuffer("abc")));
+		System.out.println(set.add(new StringBuffer("abc")));
+		System.out.println(set.add(new StringBuffer("abc")));
+		System.out.println(set.add(new StringBuffer("xyz")));
+		System.out.println(set.add(new StringBuffer("xyz")));
+		System.out.println(set.add(new StringBuffer("vijay")));
+		System.out.println(set.add(new StringBuffer("vijay")));
+	
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 70</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+public class M7
+{
+	public static void main(String[] args)
+	{
+		HashSet set = new HashSet();
+		//in case of StringBuilder hashcode and equals method not overrided.
+		System.out.println(set.add(new StringBuilder("abc")));
+		System.out.println(set.add(new StringBuilder("abc")));
+		System.out.println(set.add(new StringBuilder("abc")));
+		System.out.println(set.add(new StringBuilder("xyz")));
+		System.out.println(set.add(new StringBuilder("xyz")));
+		System.out.println(set.add(new StringBuilder("xyz")));
+		System.out.println(set.add(new StringBuilder("vijay")));
+		System.out.println(set.add(new StringBuilder("vijay")));
+		System.out.println(set.add(new StringBuilder("vijay")));
+
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 71</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+class B
+{
+	int i, j;
+
+	B(int i, int j)
+	{
+		this.i = i;
+		this.j = j;
+	}
+	public String toString()
+	{
+		return "(i = " + i + "," + "j = " + j + ")";
+	}
+	public int hashCode()
+	{
+		//String s1 = Integer.toString(i);
+		//String s2 = Integer.toString(j);
+		//int hash = s1.hashCode();
+		//hash += s2.hashCode();
+		//this.i = 10;
+		//this.j = 20;
+		return i + j;
+	}
+	public boolean equals(Object obj)
+	{
+		return i == ((B)obj).i && j == ((B)obj).j;
+	}
+}
+public class M8 
+{
+	public static void main(String[] args)
+	{
+		HashSet set = new HashSet();
+
+		System.out.println(set.add(new B(90, 10)));
+		System.out.println(set.add(new B(90, 10)));
+		System.out.println(set.add(new B(90, 10)));
+		System.out.println(set.add(new B(90, 10)));
+		System.out.println(set.add(new B(90, 11)));
+		System.out.println(set.add(new B(90, 11)));
+		System.out.println(set.add(new B(91, 10)));
+		System.out.println(set.add(new B(91, 10)));
+		System.out.println(set.add(new B(91, 10)));
+		System.out.println(set.add(new B(10, 91)));
+		
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 72</h3>
+<pre class="prettyprint linenums">
+import java.util.HashSet;
+
+class C
+{
+	int i, j, k;
+
+	C(int i, int j, int k)
+	{
+		this.i = i;
+		this.j = j;
+		this.k = k;
+	}
+	public String toString()
+	{
+		return "(" + i + "," +  j + "," + k + ")";
+	}
+	public int hashCode()
+	{
+		String s1 = Integer.toString(i);
+		String s2 = Integer.toString(j);
+		String s3 = Integer.toString(k);
+		int hash = s1.hashCode();
+		hash += s2.hashCode();
+		hash += s3.hashCode();
+		System.out.println("hashCode for " + this + "is " + hash);
+		return hash;
+	}
+	public boolean equals(Object obj)
+	{
+		boolean b1 = (i == ((C)obj).i && j == ((C)obj).j && k == ((C)obj).k);
+		System.out.println("equals b/w " + this + "	and " + obj + " is " + b1);
+		return b1;
+	}
+}
+public class M9 
+{
+	public static void main(String[] args) 
+	{
+		HashSet set = new HashSet();
+		System.out.println(set.add(new C(10, 20, 30)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(10, 20, 30)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(10, 20, 30)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(20, 10, 30)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(20, 10, 30)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(20, 100, 30)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(20, 100, 30)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(100, 20, 300)));
+		System.out.println("------------------------");
+		System.out.println(set.add(new C(300, 100, 20)));
+		System.out.println("------------------------");
+		
+		System.out.println(set);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app4</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 73</h3>
+<pre class="prettyprint linenums">
+//Map
+import java.util.HashMap;
+class M1 
+{
+	public static void main(String[] args) 
+	{
+		HashMap map1 = new HashMap();
+		//put(key, value) method both two arguments are object datatype
+		//while storing key and value it is storing in the form of entry object.
+		//any datatype for the key and value
+		map1.put("abc", 777);
+		map1.put(555, "xyz");
+		map1.put(99.2, true);
+		map1.put('a', false);
+		//key and value as one entry.
+		//order of addition not preserved for that go for LinkedHashMap.
+		System.out.println(map1);
+	}
+}
+
+//
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 74</h3>
+<pre class="prettyprint linenums">
+import java.util.HashMap;
+class M2 
+{
+	public static void main(String[] args) 
+	{
+		//HashMap is allowing null as a key and null as a value
+		//inside a HashMap one bucket is allocating for the null entry
+		  //if at all the key is null that is storing in the seperate bucket.
+		  //it wont call hashcode and equals method and	
+		  //while storing in the hashbucket it is calling hashcode and equals
+		   //method only on keys not values to identify duplicates
+
+		HashMap map1 = new HashMap();
+		map1.put(null, 777);
+		map1.put(null, 888);
+		map1.put(555, "xyz");
+		map1.put(555, "abac");
+		map1.put(99.2, true);
+		map1.put('a', null);
+		map1.put('b', null);
+		map1.put(null, null);
+		//one bucket is reserved for null already one null entry is there in
+		  //the bucked, it will replace that null with this null entry.
+		  //without calling hashcode or equals.
+		map1.put(null, 999);
+		System.out.println(map1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 75</h3>
+<pre class="prettyprint linenums">
+import java.util.HashMap;
+class M3 
+{
+	public static void main(String[] args) 
+	{
+		HashMap map1 = new HashMap();
+		map1.put(null, 777);
+		map1.put(555, "xyz");
+		map1.put(99.2, true);
+		map1.put('a', null);
+		map1.put(null, 888);
+		System.out.println(map1);
+		//get method argument and return types are Object type.
+		String s1 = (String) map1.get(555);
+		System.out.println(s1);
+
+		//if key is not available it returns a null
+		String s2 = (String) map1.get(111);
+		System.out.println(s2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 76</h3>
+<pre class="prettyprint linenums">
+import java.util.HashMap;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.HashSet;
+class M4
+{
+	public static void main(String[] args) 
+	{
+		HashMap map1 = new HashMap();
+		map1.put(null, 777);
+		map1.put(555, "xyz");
+		map1.put(99.2, true);
+		map1.put('a', null);
+		map1.put(null, 888);
+		
+		//to get all the keys, 
+		//all the keys are unique
+		//keySet method return type is a Set
+		//Set is a interface
+		//keySet internaly using anonymous innerclass in order to implement subclass to Set type.
+		Set keys = map1.keySet();
+		System.out.println(keys);
+
+		/*
+		HashSet set = new HashSet();
+		set.add(10);
+		set.add(20);
+		set.add(0);
+		set.add(40);
+		System.out.println(set);*/
+
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 77</h3>
+<pre class="prettyprint linenums">
+import java.util.HashMap;
+import java.util.Set;
+class M5
+{
+	public static void main(String[] args) 
+	{
+		HashMap map1 = new HashMap();
+		map1.put(null, "abc");
+		map1.put(555, "xyz");
+		map1.put(99.2, true);
+		map1.put('a', null);
+		map1.put(null, 888);
+		
+		//keys is Set which contains all the keys whichever stored in the HashMap.
+		Set keys = map1.keySet();
+
+		//iterating through for-each
+		for(Object key : keys)
+		{
+			System.out.print(key + "     ");
+		}
+
+		System.out.println();
+
+		Object value;
+
+		for(Object key : keys)
+		{
+			value = map1.get(key);
+			System.out.print(value + "     ");
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 78</h3>
+<pre class="prettyprint linenums">
+//Map
+import java.util.LinkedHashMap;
+class M6
+{
+	public static void main(String[] args) 
+	{
+		//order of addition go for LinkedHashMap.
+		LinkedHashMap map1 = new LinkedHashMap();
+		
+		map1.put("abc", 777);
+		map1.put("xyz", 777);
+		map1.put("xyz", 777);
+		map1.put(555, "xyz");
+		map1.put(99.2, true);
+		map1.put(99.2, true);
+		map1.put('a', false);
+		//key and value as one entry.
+		
+		System.out.println(map1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Flexbox</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			.flex-container {
+				height: calc(100vh - 40px);
+				width: 100vw;
+				display: flex;
+				background-color: #f4f4f4;
+				justify-content: space-between;
+				flex-wrap: wrap;
+			}
+			.item {
+				width: 300px;
+				height: 300px;
+				background: #254de4;
+				border: 4px solid black;
+				border-radius: 5%;
+				color: #fff;
+				margin: 10px;
+			}
+
+			.item:nth-of-type(1) .image {
+				background: url("https://rb.gy/krx21") center / cover no-repeat;
+				width: 100%;
+				height: 60%;
+				background-position: top;
+			}
+			.item:nth-of-type(1) .name {
+				color: black;
+				background-color: whitesmoke;
+				position: relative;
+				top: 0;
+				text-align: center;
+				text-transform: capitalize;
+			}
+			.item:nth-of-type(1) .edu {
+				height: 2.5rem;
+				background-color: tomato;
+				position: relative;
+				top: 0;
+				text-align: center;
+				text-transform: capitalize;
+			}
+			.item:nth-of-type(1) h2 {
+				transform: translateY(0.5rem);
+			}
+			.item:nth-of-type(1) .year {
+				height: 2.5rem;
+				color: white;
+				position: relative;
+				top: 0;
+				text-align: center;
+				text-transform: capitalize;
+				background-color: black;
+				/* border-radius: 15%; */
+				/* display: block; */
+			}
+
+			.item2 .image {
+				background: url("https://rb.gy/krx21") center / cover no-repeat;
+				width: 100%;
+				height: 60%;
+				background-position: top;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="flex-container">
+			<div class="item">
+				<div class="image"></div>
+				<div class="name"><h1>John Doe</h1></div>
+				<div class="edu">
+					<h2>BE</h2>
+				</div>
+				<div class="year">
+					<br />
+					<h3>2014</h3>
+				</div>
+			</div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</body>
+</html>

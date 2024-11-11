@@ -1,0 +1,613 @@
+<br />
+<article class="topic app">
+<h2>01-interface-feature-enhancement</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	void test1();
+	void test2();
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+interface B
+{
+	void test1()
+	{
+	}
+
+	void test2()
+	{
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+interface C
+{
+	static void test1()
+	{
+	}
+
+	static void test2()
+	{
+	}
+}
+//in Java JDK 8 Interface got enhanced to have any no. of static concrete methods.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+interface D
+{
+	default void test1()
+	{
+	}
+
+	default void test2()
+	{
+	}
+}
+//in Java JDK 8 Interface got enhanced to have any no. of default concrete methods.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+//interface doesnt have to depend on any other classes for the abstract method implementations.
+//because it have its own method implementations using static and default methods.
+interface E
+{
+	//these static methods are not inherited to the sub-class
+	static void test1()
+	{
+		System.out.println("test1()");
+	}
+
+	static void test2()
+	{
+		System.out.println("test2()");
+	}
+
+	default void test3()
+	{
+		System.out.println("test3()");
+	}
+
+	default void test4()
+	{
+		System.out.println("test4()");
+	}
+	//void test5();
+}
+class F implements E
+{
+	public static void main(String[] args) 
+	{
+		E.test1();
+		E.test2();
+	
+		F obj = new F();
+		obj.test3();
+		obj.test4();
+
+		//these static methods are not inherited to the sub-class
+		//obj.test1();
+		//obj.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>02-functional-interface</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	void test1();
+	void test2();
+	void test3();
+	void test4();
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+@FunctionalInterface
+interface B
+{
+	void test1();
+	void test2();
+	void test3();
+	void test4();
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+@FunctionalInterface
+interface C
+{
+	void test1();
+
+	static void test11()
+	{
+		System.out.println("test11()");
+	}
+
+	static void test2()
+	{
+		System.out.println("test2()");
+	}
+
+	default void test3()
+	{
+		System.out.println("test3()");
+	}
+
+	default void test4()
+	{
+		System.out.println("test4()");
+	}
+}
+
+/*
+- functional interfaces were introduced in java JDK 1.8. 
+- A functional interface is an interface that contains only one abstract method. but it can have any number of default and static methods.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+@FunctionalInterface
+interface D
+{
+	void test1();
+}
+class E implements D
+{
+	public void test1()
+	{
+		System.out.println("test1()");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>03-lamda-expressions</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	void test1();
+	//void test2();
+}
+class M1 
+{
+	public static void main(String[] args) 
+	{
+		/*
+		A a1 = new A()
+		{
+			public void test()
+			{
+				System.out.println("from test AIC");
+			}
+		};
+		a1.test();
+		System.out.println("--------------");
+		*/
+		
+		
+		A a2 = () -> System.out.println("from test from LE");
+		a2.test1();
+		//a2.test2();
+	}
+}
+//lambda expressions 1.8
+
+
+
+
+
+
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+//this annotation is only allowed for only single method interfaces
+@FunctionalInterface
+interface A
+{
+	int test(int i, int j);
+}
+
+class M10
+{
+	public static void main(String[] args) 
+	{
+		A a2 = (x, y) -> {
+							System.out.println("from test");					
+							return	x + y;
+						 };
+		int i = a2.test(10, 20);
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+@FunctionalInterface
+interface A
+{
+	int test(int i, int j);
+	int test(int i);
+}
+class M11
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+@FunctionalInterface
+interface F
+{
+	void test1();
+}
+class G //implements F
+{
+	public static void main(String[] args) 
+	{
+		F ref = () -> System.out.println("from test1() implementation");
+		ref.test1();
+	}
+}
+class H implements F
+{
+	public void test1()
+	{
+		System.out.println("from H test1() implementation");
+	}
+
+	public static void main(String[] args) 
+	{
+		F f1 = new H();
+		f1.test1();
+
+		H h1 = new H();
+		h1.test1();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+@FunctionalInterface
+interface A   // Functional interface
+{
+	void test();
+}
+class M2
+{
+	public static void main(String[] args) 
+	{
+		//lambda expressions are only for single method interfaces.
+		//if multiple statements use braces
+		A a2 = () -> {
+						System.out.println("from test LE");
+						System.out.println("from test LE");
+						System.out.println("from test LE");
+					 };
+		a2.test();
+	}
+}
+//if more than one method is there we can go for AIC
+//if an interface contains no members then its called marker interface.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	void test(int i);
+}
+class M3
+{
+	public static void main(String[] args) 
+	{
+		A a2 = (int x) -> {
+						System.out.println("from test: LE: " + x);
+						for (int i = 1; i <= 5; i++)
+						{
+							System.out.println("from test: LE for loop: " + i);
+						}
+						System.out.println("from test: LE");
+						System.out.println("from test: LE");
+					 };
+		a2.test(20);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	void test(int i);
+}
+class M4
+{
+	public static void main(String[] args) 
+	{
+		//if it is overloading then dataype is required 
+		//but here only one method so there is no need of specifying dataype
+		//just we can supply identifier to the argument
+		A a2 = (x) -> {
+						System.out.println("from test: LE: " + x);
+						System.out.println("from test: LE");
+						System.out.println("from test LE");
+					 };
+		a2.test(20);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	void test(int i, double j);
+}
+class M5
+{
+	public static void main(String[] args) 
+	{
+		A a2 = (x, y) -> {
+						System.out.println("from test:LE " + x);
+						System.out.println("from test:LE " + y);
+						System.out.println("from test");
+					 };
+		a2.test(20, 3.4);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	int test();
+}
+class M6
+{
+	public static void main(String[] args) 
+	{
+		//if method body contains only return value then return statement is not allowed
+		A a2 = () -> 2000;
+		int i = a2.test();
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	int test();
+}
+class M7
+{
+	public static void main(String[] args) 
+	{
+		//if multiple statements then braces if braces are there then return statement is madatory
+		A a2 = () ->
+					{
+						System.out.println("from test:LE");
+						return 2000;
+					};
+		int i = a2.test();
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	int test(int i, int j);
+}
+class M8
+{
+	public static void main(String[] args) 
+	{
+		A a2 = (x, y) -> x + y;
+		int i = a2.test(10, 20);
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+interface A
+{
+	int test(int i, int j);
+}
+class M9
+{
+	public static void main(String[] args) 
+	{
+		A a2 = (x, y) -> {
+							System.out.println("from test:LE");					
+							return	x + y;
+						 };
+		int i = a2.test(10, 20);
+		System.out.println(i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

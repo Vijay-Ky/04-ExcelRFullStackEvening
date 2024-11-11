@@ -1,0 +1,500 @@
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A
+{
+	public static void main(String[] args)
+	{
+		StringBuffer sb = new StringBuffer();
+		sb.append("hello");
+		sb.append("test");
+		sb.append("123");
+		System.out.println(sb);
+	}
+}
+/*
+1. using String class we can manage multiple characters
+like that we can also do in StringBuffer.
+2. using append method any no. of characters you can add
+3.StringBuffer is mutable. you can replace, remove, add.
+4.toString() method got overrided- you ge content
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class B
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = "hello";
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer();
+		sb.concat("test");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class D
+{
+	public static void main(String[] args)
+	{
+		StringBuffer sb1 = new StringBuffer();
+		sb1.append("hello");
+			
+		StringBuffer sb2 = new StringBuffer();
+		sb2.append("hello");
+			
+		System.out.println(sb1 == sb2);
+		System.out.println(sb1.equals(sb2));
+	}
+}
+/* inside StringBuffer object 
+String class
+------------
+toString()
+equals()
+hashCode()
+
+StringBuffer class
+-----------
+toString()
+
+ */
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	public static void main(String[] args)
+	{
+		String s1 = new String();
+		System.out.println(s1.length());
+		s1 = s1.concat("hello");
+		System.out.println(s1.length());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class F
+{
+	public static void main(String[] args)
+	{
+		StringBuffer sb = new StringBuffer();
+		sb.append("hello");
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+	}
+}
+/*
+ * the default capacity is 16. after adding 16 characters size will be 
+   automatically increasing.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class G 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer();
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+		System.out.println("---------------------------");
+		sb.append("0123456789112345");
+		for (int i = 0; i < sb.length(); i++)
+		{
+			if(i == 15)
+			{
+				System.out.println(sb.charAt(i));
+			}
+		}
+		System.out.println(sb.length());	
+		System.out.println(sb.capacity());
+		sb.append("6");
+		System.out.println(sb.length());	
+		System.out.println(sb.capacity());
+	}
+}
+/*
+ * capacity will be automatically increased
+ * bcz of this StringBuffer is mutable.
+
+ new capcity = old capacity * 2 + 2
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class H 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer(20);
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+		System.out.println("---------------------------");
+		sb.append("123456789112345678921");
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+	}
+}
+/*
+ * default capacity is 16 but we can specify the capacity explicitley	
+ 
+ *StringBuffer
+public StringBuffer(int capacity)
+Constructs a stringbuffer with no characters in it and the specified initial capacity.
+Parameters:
+capacity - the initial capacity.
+Throws:
+NegativeArraySizeException - if the capacity argument is less than 0.
+ *
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class I 
+{
+	public static void main(String[] args) 
+	{
+		//adding 4 characters
+		StringBuffer sb = new StringBuffer("1234567891123456");
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+		System.out.println("---------------------------");
+		sb.append("123456789112345678921234567893123");
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+		System.out.println("---------------------------");
+		//removes extra capacity 
+		//length and capacity becomes same
+		//unoccupied locations will be removed and length and capacity bcms same 
+		sb.trimToSize();
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class J 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer("test");
+		System.out.println(sb);
+		//built-in method
+		sb.reverse();
+		System.out.println(sb);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class K 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer("vijay  kumar");
+		System.out.println(sb);//vijay  kumar
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+		sb.deleteCharAt(5);
+		System.out.println(sb);//vijay kumar
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+		sb.replace(6, 8, "excelr");
+		System.out.println(sb);//vijay kumar
+							   //01234567891  
+		System.out.println(sb.length());
+		System.out.println(sb.capacity());
+	}                         
+
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class K1 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";
+		StringBuffer sb = new StringBuffer("hello");
+		System.out.println(s1 == sb);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class L
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer("hellotoall");
+		System.out.println(sb);          // 0123456789
+		sb.delete(2, 6);
+		System.out.println(sb);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class M 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer("hellotoall");
+		System.out.println(sb);          // 0123456789
+		sb.delete(2, 9000);
+		System.out.println(sb);
+		System.out.println(sb.length());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+class N 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer("hellotoall");
+		String str = sb.substring(0, 5);
+		System.out.println(sb);
+		System.out.println(str);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+class O 
+{
+	public static void main(String[] args) 
+	{
+		StringBuffer sb = new StringBuffer("hellotoall");
+		System.out.println(sb);          // 0123456789
+		//sb.delete(20, 30);
+		//sb.delete(4, 2);
+		//sb.delete(-4, 2);
+		sb.delete(2, -4);
+		System.out.println(sb);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+class P
+{
+	public static void main(String[] args)
+	{
+		StringBuilder sb1 = new StringBuilder("hellotoall");
+		StringBuilder sb2 = new StringBuilder("hellotoall");
+		System.out.println(sb1.capacity());
+		System.out.println(sb1 == sb2);
+		//A a1 = new A();
+		//A a2 = new A();
+		//B b1 = new B();
+		//System.out.println(a1 == a2);
+		//Integer i = new Integer(10);
+		//Character ch = new Character('a');
+		//System.out.println(i == ch);
+	}
+}
+//class A
+//{
+//}
+//class B
+//{
+//}
+/*
+ * every method of StringBuffer is available in the StringBuilder
+ * StringBuffer is a synchronized and StringBuilder is not synchronized
+ * StringBuffer - equals, hashcode not overrided
+   we cant compare two strings based on the content bcz of this
+ * String is implementing Comparable interface, but not stringbuffer
+ * bcz of Comparable we can achieve sorting based on the content
+ * bcz StringBuffer not implementing comparable we cant sort two
+   stringbuffer objects based on the content
+ * we can create a string object without a new operator but we cant in 
+   StringBuffer
+ * + operator only overloaded with String but not wrt StringBuffer
+ * String we use concat in StringBuffer we use append method
+ * inside String there is no reverse method but in SB we have
+ * in String class delete method not there but in SB we have
+ * in case of String class there is no concept of capacity its one time object
+ * similarity both are used for managing multiple characters
+    toString method got override in both
+    both the classes are implementing serializable interface.
+ * serialization is the concept of file handling 
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class Q 
+{
+	int i;
+
+	public String toString()
+	{
+		return "" + i;
+	}
+
+	public static void main(String[] args) 
+	{
+		Q q1 = new Q();
+		System.out.println(q1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

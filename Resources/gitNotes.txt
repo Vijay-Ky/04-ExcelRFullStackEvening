@@ -1,0 +1,73 @@
+Git or GitHub
+---------------------------------
+- Git tool developed by Linus Torvalds(creator of Linux).
+- Git is a cross platform tool.
+- Git is a tool for version control.
+- GitHub is a version control system that works by the use of git tool in the backend.
+- GitHub is a Open-Source code hosting platform.
+- GitHub Available as free and paid services.
+- Any developers can able to contribute to the public repositories of the GitHub platform.
+
+major.monor.patches/updates
+1.0
+1.1
+2.0
+2.1
+2.1.2
+2.2.0
+.......
+9.1.8
+9.1.9
+9.1.10 ==> without wallet ==> production
+9.2.0 ==> wallet ==> production
+10.0.0 ==> celebrity channels ==> production
+
+Software products should be maitained throgh versions
+
+By using Git tool we can develop large projects systematically by involving many developers from different modules(front-end, backend). i, e So many developers can work on the same projects different modules at the same time while git keep tracks of the changes made my all the developers.
+
+Advatages
+----------------------------
+1. Easily we can go back to the previous version of the software.
+2. Central Repository that makes integration easy.
+3. There is no chance of loosing data. All the developers would be having a seperate copy of the project's source code.
+4. Git keeps track of every move that made by any developer. like(add, update, delete).
+5. Others can easily suggest code changes for the developers.
+6. Security. Before other developers are ready to commit to the master branch the repository owner should approve or  even can reject the changes after reviewing it.
+
+
+
+create an account on github.com -> create a repository
+
+- git-scm.com/download -> download for windows
+- right click in the project folder and select git-bash here
+- cntr + scrollup for increasing the font size
+
+first setup->configuring your git-software with remote git-hub account
+-----------
+git config --global user.name "Vijay-Ky"
+git config --global user.email vijayky007@gmail.com
+
+
+Note: Do not keep any unnecessary files(Movie, Music files) it wont upload
+- git init == to initialize this folder as a git repository, so that the remote git system can able to interact with your local git repository.
+- git add . == adding all the files in that folder to the staging area.
+- git commit -m "message_goes_here" == commiting the changes to the files which are currently in the staging area. (-m is the flag (represents message))
+- git remote add origin "your remote repository address goes here" -> making a connection from your local repository to the remote repository.
+- git branch -M main -> there are mainly two branches available by default which are 
+1.main
+2.master
+you can able to create any no. of branches you want with any name for a single repository itself.
+
+-git push -u origin main ==> sending (updating or uploading) the changes to the remote repository from the local repository. (-u stands for update)
+
+after this step for the first time you will get an authenticatio dialouge, you need to click on sign in with your browser then browser will be opening then you need to click on authorize git-eco system. then automatically changes will be updated to your remote repository. 
+
+for allowing long paths
+git config --system core.longpaths true
+
+if you are getting dubious ownership error
+$ git config --global --add safe.directory F:/MegaCloud/VijaySirJavaNotesandExamples
+ 
+
+

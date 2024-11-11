@@ -1,0 +1,2435 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+//basics
+public class M1
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Hello World!");
+		System.out.println("Hello World!");
+		System.out.println("Hello World!");
+	}
+}
+
+/*
+ Multitasking
+ ----------------------
+Multitasking is a process of executing multiple tasks 
+simultaneously. We use multitasking to utilize the CPU. 
+
+Multitasking can be achieved in two ways:
+-------------------------------------------
+
+Process-based Multitasking (Multiprocessing)
+Thread-based Multitasking (Multithreading)
+
+1) Process-based Multitasking (Multiprocessing)
+Each process has an address in memory. In other words,
+each process allocates a separate memory area.
+A process is heavyweight.
+Cost of communication between the process is high.
+Switching from one process to another requires some time for saving and loading registers, memory maps, updating lists, etc.
+
+2) Thread-based Multitasking (Multithreading)
+- Threads share the same address space.
+- A thread is lightweight.
+- Cost of communication between the thread is low.
+
+Note: At least one process is required for each thread.
+
+ What is Multithreading in Java?
+Multithreading in Java is a process of executing multiple threads 
+simultaneously.
+
+A thread is a lightweight sub-process, the smallest unit of 
+processing. Multiprocessing and multithreading, both are used to 
+achieve multitasking.
+
+However, we use multithreading than multiprocessing because 
+threads use a shared memory area. They don't allocate separate 
+memory area so saves memory, and context-switching between the 
+threads takes less time than process.
+
+Advantages of Java Multithreading
+1) It doesn't block the user because threads are independent 
+and you can perform multiple operations at the same time.
+
+2) You can perform many operations together, so it saves time.
+
+3) Threads are independent, so it doesn't affect other threads
+ if an exception occurs in a single thread.
+ 
+ 
+What is Thread in java
+A thread is a lightweight subprocess, the smallest unit 
+of processing. It is a separate path of execution.
+
+Threads are independent. If there occurs exception in one thread, it doesn't affect other threads. It uses a shared memory area.
+
+Java Multithreading is mostly used in games, animation, etc.
+ 
+ 
+ MULTITHREADING in Java is a process of executing two or more
+ threads simultaneously to maximum utilization of CPU. 
+ Multithreaded applications execute two or more threads run 
+ concurrently. Hence, it is also known as Concurrency in Java.
+ Each thread runs parallel to each other. Mulitple threads don't 
+ allocate separate memory area, hence they save memory. Also, 
+ context switching between threads takes less time.
+ 
+ 1.Multiple threads involving in the execution.
+ 2. By default core java program executing through a single thread.
+ 3. By default entire execution of core java will be done by the main thread.	
+ 
+ */
+
+
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class M10 
+{
+	public static void main(String[] args)
+	{
+		Thread t1 = Thread.currentThread();
+		//we can change the name of any thread including the main thread
+		System.out.println(t1.getName());
+		t1.setName("a new name to main thread");
+		System.out.println(t1.getName());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+public class M11 
+{
+	public static void main(String[] args)
+	{
+		Thread  t1 = Thread.currentThread();
+		System.out.println(t1.isDaemon());
+		//before starting only we can convert it to daemon 
+		 //trying to convert after starting resulting in Exception.
+		//RE - ITSE
+		t1.setDaemon(true);
+		System.out.println(t1.isDaemon());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+public class M12
+{
+	public static void main(String[] args)
+	{
+		Thread  t1 = Thread.currentThread();
+		System.out.println(t1.getPriority());
+		//we can change the priority after starting no issues.
+		//but change is allowed b/w 1 to 10
+		//t1.setPriority(100);
+		t1.setPriority(1);
+		System.out.println(t1.getPriority());
+	}
+
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+public class M13
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Thread.MIN_PRIORITY);
+		System.out.println(Thread.NORM_PRIORITY);
+		System.out.println(Thread.MAX_PRIORITY);
+
+		System.out.println("------------------------");
+
+		Thread t1 = Thread.currentThread();
+		System.out.println(t1.getPriority());
+		
+		t1.setPriority(Thread.MIN_PRIORITY);
+		System.out.println(t1.getPriority());
+		
+		t1.setPriority(Thread.NORM_PRIORITY);
+		System.out.println(t1.getPriority());
+		
+		t1.setPriority(Thread.MAX_PRIORITY);
+		System.out.println(t1.getPriority());
+
+		t1.setPriority(9);
+		System.out.println(t1.getPriority());
+		
+		//Exception - IAE
+		//t1.setPriority(0);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class K extends Thread
+{
+	@Override
+	public void run()
+	{
+		System.out.println("from run method of K class");
+		Thread t1 = Thread.currentThread();
+		System.out.println("child thread priority: " + t1.getPriority() + " from run method");
+		System.out.println("from child: " + t1.getName() + " from run method");
+	}
+}
+public class M14
+{
+	public static void main(String[] args)
+	{
+		K k1 = new K();
+		k1.start();//two threads are involved
+		System.out.println(k1.getName() + " from main method");
+		k1.setName("first child");
+		System.out.println(k1.getName() + " from main method");
+		Thread t1 = Thread.currentThread();
+		System.out.println("main thread priority: " + t1.getPriority() + " from main method");
+		System.out.println("from main: " + t1.getName() + " from main method");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class L implements Runnable
+{
+	@Override
+	public void run()
+	{
+		System.out.println("child thread");
+	}
+}
+public class M15
+{
+	public static void main(String[] args)
+	{
+		L l1 = new L();
+		Thread t1 = new Thread(l1);
+		t1.start();
+		System.out.println(t1.getName());
+		t1.setName("first child");
+		System.out.println(t1.getName());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class M extends Thread
+{
+	M(String name)
+	{
+		super(name);
+	}
+
+	@Override
+	public void run()
+	{
+		System.out.println("---------------------");
+	}
+}
+public class M16
+{
+	public static void main(String[] args) {
+		//through constructor specifying the name
+		M m1 = new M("my first thread");
+		m1.start();
+		System.out.println(m1.getName());
+		m1.setName("first child");
+		System.out.println(m1.getName());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class N implements Runnable
+{
+	@Override
+	public void run()
+	{
+		System.out.println("-----------------------------");
+	}
+}
+public class M17
+{
+	public static void main(String[] args)
+	{
+		N obj = new N();
+		//several constructors are available
+		//reference to the runnable, name to the thread
+		Thread t1 = new Thread(obj, "my first thread");
+		t1.start();
+		System.out.println(t1.getName());
+		t1.setName("first child");
+		System.out.println(t1.getName());
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class O extends Thread
+{
+	@Override
+	public void run()
+	{
+		System.out.println("from O thread: " + getPriority());
+	}
+}
+class P extends Thread
+{
+	@Override
+	public void run()
+	{
+		//default priority of the child thread is the priority of the parent thread
+		System.out.println("from P thread: " + getPriority());
+		setPriority(7);
+		//creating another thread
+		//now O is child thread to P
+		//now O gets the priority of the Parent thread P
+		O th1 = new O();
+		th1.start();
+	}
+}
+public class M18
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Initial Priority main: " + Thread.currentThread().getPriority());
+		Thread.currentThread().setPriority(10);
+		P p1 = new P();
+		p1.start();
+	}
+}
+/*
+ * only main thread priority is 5
+ * child thread priority is the priority of its parent thread
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class Q extends Thread
+{
+	@Override
+	public void run()
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println(i);
+		}
+	}
+}
+public class M19
+{
+	public static void main(String[] args)
+	{
+		Q q1 = new Q();
+		q1.start();
+		System.out.println("done");
+	}
+}
+
+/*
+- child thread is the user thread. user thread is not depending on its
+parent.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+public class M2
+{
+	public static void main(String[] args)
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println("loop1: " + i);
+		}
+		//after completing first for loop
+		for(int i = 200; i <= 300; i++)
+		{
+			System.out.println("loop2: " + i);
+		}
+		//after completing second for loop
+		for(int i = 400; i <= 500; i++)
+		{
+			System.out.println("loop3: " + i);
+		}
+	}
+}
+//only one thread executing this program so sequential output.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class R extends Thread
+{
+	@Override
+	public void run() 
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println(i);
+		}
+	}
+}
+public class M20 
+{
+	public static void main(String[] args)
+	{
+		R r1 = new R();
+		r1.setDaemon(true);
+		r1.setDaemon(false);
+		r1.start();
+		System.out.println("done");
+	}
+}
+/*
+ * whenever parent is leaving child also leaving from the execution
+ because child is a daemon thread.
+ we can convert a thread to deamon before starting.
+ -child thread life depends on the parent thread life
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class S extends Thread
+{
+	@Override
+	public void run()
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println(i);
+		}
+	}
+}
+public class M21
+{
+	public static void main(String[] args)
+	{
+		S s1 = new S();
+		s1.start();
+		try
+		{
+			//main thread keeps on waiting for the s1 to finish.
+			//after starting it going to the waiting state keeps on waiting till child thread completely gets over.
+			//once the child thread gets over it will resume back.
+			//main is calling join on s1.
+			s1.join();
+		}
+		catch(InterruptedException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("done");
+		System.out.println("done");
+		System.out.println("done");
+		System.out.println("done");
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+public class M22
+{
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println(i);
+			try
+			{
+				//sleep method is a static method
+				Thread.sleep(1000);
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+public class M23
+{
+	public static void main(String[] args)
+	{
+		System.out.println("main begin");
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println(i);
+			try
+			{
+				//sleep method is a static method
+				//sleep method is a overloaded method.
+				//milliseconds and nano seconds
+				Thread.sleep(2000, 500);
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+class T extends Thread
+{
+	public void run()
+	{
+		System.out.println("run begin");
+		for(int i = 100; i <= 110; i++)
+		{
+			System.out.println(i);
+			try
+			{
+				//we can call straight away bcz T extends Thread
+				sleep(5000, 500);
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		System.out.println("run end");
+	}
+}
+public class M24
+{
+	public static void main(String[] args)
+	{
+		T obj = new T();
+		obj.start();
+		System.out.println("main begin");
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println(i);
+			try
+			{
+				Thread.sleep(2000, 500);
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class U extends Thread
+{
+	@Override
+	public void run()
+	{
+		System.out.println("run begin");
+		for(int i = 100; i <= 110; i++)
+		{
+			System.out.println(i);
+			Util.sleep(5000);
+		}
+			System.out.println("run end");
+	}
+}
+public class M25
+{
+	public static void main(String[] args)
+	{
+		U obj = new U();
+		obj.start();
+		System.out.println("main begin");
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println(i);
+			Util.sleep(5000, 500);
+		}
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+class V extends Thread
+{
+	@Override
+	public void run() 
+	{
+		System.out.println("run begin");
+		Util.sleep(10000);
+		System.out.println("run end");
+		System.out.println("run end");
+		System.out.println("run end");
+		System.out.println("run end");
+	}
+}
+public class M26
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		V obj = new V();
+		obj.start();
+		Util.sleep(2000);
+		//sleeping thread can be interrupted
+		//when the thread is in sleep if we call interrupt coming away from the sleep with the exception
+		obj.interrupt();
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println(i);
+		}
+		System.out.println("main end");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+class W extends Thread
+{
+	@Override
+	public void run()
+	{
+		System.out.println("run begin");
+		int i = 10 / 0;
+		System.out.println("run end");
+	}
+}
+
+public class M27
+{
+	// main thread executes succesfully
+	// only child thread received unhandled exception object child thread only
+	// terminating
+	public static void main(String[] args)
+	{
+		W obj = new W();
+		obj.start();
+		for (int i = 1; i <= 100; i++)
+		{
+			System.out.println(i);
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+class X extends Thread
+{
+	X()
+	{
+		start();
+	}
+	@Override
+	public void run() 
+	{
+		System.out.println("run begin");
+		System.out.println("run end");
+	}
+}
+public class M28
+{
+	public static void main(String[] args)
+	{
+		//while creating the thread itself it is starting in the constructor
+		//we can call it as auto-start
+		X x1 = new X();
+		for(int i = 0; i <= 10; i++)
+		{
+			System.out.println(i);
+		}
+	}
+
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+class Y extends Thread
+{
+	Y()
+	{
+		start();
+	}
+	@Override
+	public void run() {
+		System.out.println("run begin");
+		System.out.println("run end");
+	}
+}
+public class M29
+{
+	public static void main(String[] args)
+	{
+		System.out.println(1);
+		//while creating the thread itself it is stating in the constructor
+		//we can call it as auto-start
+		Y y1 = new Y();
+		//Exception we are calling start 2 times.
+		y1.start();
+		System.out.println(2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+//first approach of creating a thread
+class A extends Thread
+{
+	public void run()
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println("first thread: " + i);
+		}
+	}
+}
+class B extends Thread
+{
+	public void run()
+	{
+		for(int i = 200; i <= 300; i++)
+		{
+			System.out.println("second thread: " + i);
+		}
+	}
+}
+public class M3
+{
+	public static void main(String[] args)
+	{
+		
+		//while creating an object to A class for Thread is creating.
+		//bcz A is a subclass to Thread now.
+		//we can call class A is specialized to Thread.
+		//while creating a thread it is getting all the default properties.
+		A a1 = new A();// new thread got created and having all the properties but this not knowing to the thread scheduler
+		//we cant use the thread straight away.
+		//after creating a thread we have to call start method.
+		//we should not call run method even though we have overrided run method.
+		//start method will take care of giving a call to run method internally
+		//start method also inherited method from the Thread class.
+		//totally three threads are involved in the execution. 
+		//main thread is parent
+		//thread A is child
+		//main thread only calling child thread
+		//child thread goes to execute run method and main thread continues to execute the main method.
+		//processor allocating to all three threads.
+		//some milsec to each thread.
+		//there is a concept of thread scheduler, it is taking care of scheduling processor time to all the registered threads.
+		//thread scheduler assign available processor time for each thread randomly thats why we cant able to predict the o/p order.
+		//generally execution is from top to bottom if execution is from top to bottom o/p also from top to bottom. 
+		//some times we require o/p simultaneously, one from one block another from another block
+		//customer might require output like that.
+		//example of multi threads simultaneously audio and video playing.
+		//assign one thread for one o/p another thread for another o/p
+		// thread is a piece of code executing independent and parallel to another thread.
+		//The Java Virtual Machine allows an application to have multiple threads of execution running concurrently.
+		//to develop a thread in java there are two approaches 
+		  //1. extending Thread class
+		  //2. implementing Runnable interface.
+		//main thread only creating child threads, registering with the thread scheduler and allocating to execute run method.
+		a1.start();//while calling start method it is registering newly created thread with the thread scheduler.
+		B b1 = new B();
+		b1.start();
+		//after this point main thread continues to execute remaining portion of the main thread.
+		 // by the time two child threads also went into execute corresponding run methods.
+		for(int i = 300; i <= 400; i++)
+		{
+			System.out.println("main thread: " + i);
+		}
+	}
+}
+
+
+
+
+
+
+//we cant able to predict the o/p
+/*
+1. Thread is a concrete class in java.lang package.
+2. run method is a inherited method.
+3. while overriding the run method we need to incorporate thread task.
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class Z extends Thread
+{
+	Z()
+	{
+		start();
+	}
+	@Override
+	public void run()
+	{
+		System.out.println("run begin");
+		//child thread receiving abnormal condition
+		start();
+		System.out.println("run end");
+	}
+}
+public class M30
+{
+	public static void main(String[] args)
+	{
+		System.out.println(1);
+		Z z1 = new Z();
+		System.out.println(2);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+//second approach of creating a thread(best)
+//Runnable is an interface which is available in java.lang package.
+  //it contains only one single method i,e run().
+//single method interfaces are also called as functional interfaces.
+//now C class contains Object class members and Runnable interface members
+//C class doesn't have methods like Thread class start() and some other methods
+//now C is subclass to both Object class and Runnable interface.
+class C implements Runnable
+{
+	public void run()
+	{
+		for(int i = 201; i <= 300; i++)
+		{
+			System.out.println("first child: " + i);
+		}
+	}
+}
+class D implements Runnable
+{
+	public void run()
+	{
+		for(int i = 401; i <= 500; i++)
+		{
+			System.out.println("second child: " + i);
+		}
+	}
+}
+public class M4
+{
+	public static void main(String[] args)
+	{
+		//while creating object to C thread is not creating
+		C c1 = new C();
+		//once we create an object to C, create an object to Thread
+		  //by supplying reference of C to the constructor of Thread.
+		//Thread class has some constructors among them one is taking runnable type.
+		  //c1 is a C type and it is runnable type.
+		Thread t1 = new Thread(c1);//creating child thread
+		t1.start();
+		
+		D d1 = new D();
+		Thread t2 = new Thread(d1);//creating child thread
+		t2.start();
+		
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println("main thread: " + i);
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+//E is a sub class to Thread from Thread class several methods are inheriting.
+//overriding run() method.
+class E extends Thread
+{
+	@Override
+	public void run()
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			//getName() is the method available in Thread class
+			System.out.println(getName() + ":" + i);
+		}
+	}
+}
+public class M5 {
+
+	public static void main(String[] args) {
+		
+		//we are creating two objects of E class i,e two threads E class
+		//both the threads are allocated to execute the run method of class E
+		//both the threads are using different copies of same run method.
+		E e1 = new E();
+		e1.start();
+		//main thread receives unhandled exception object
+		//main thread only terminating abnormally, not the child threads.
+		//if main thread is terminated remaining portions of the main thread will not be executed.
+		//e1.start();//Exception(ITSE(IllegalThreadStateException)) one thread can be started only one time, one thread cant be started second time.
+		
+		E e2 = new E();
+		e2.start();
+		
+		for(int i = 501; i <= 600; i++)
+		{
+			//in M5 there is no getName method
+			//we need to get one thread reference to the current thread
+			//in order to get the reference to current thread go for Thread.currentThread()
+			//if this statement executed by main thread then main thread reference will be returning
+			//through that reference call getName() method
+			//this can be done on any thread
+			System.out.println(Thread.currentThread().getName() + ":" + i);
+		}
+
+	}
+
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+class E extends Thread
+{
+	@Override
+	public void run()
+	{
+		F f1 = new F();
+		f1.start();
+
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println(getName() + ":" + i);
+		}
+	}
+}
+class F extends Thread
+{
+	@Override
+	public void run()
+	{
+		start();
+
+		for(int i = 20; i <= 30; i++)
+		{
+			System.out.println(getName() + ":" + i);
+		}
+	}
+}
+public class M55
+{
+	public static void main(String[] args)
+	{		
+		E e1 = new E();
+		e1.start();
+
+		for(int i = 501; i <= 510; i++)
+		{
+			System.out.println(Thread.currentThread().getName() + ":" + i);
+		}
+	}
+}
+//in M5 there is no getName method
+			//we need to get one thread reference to the current thread
+			//in order to get the reference to current thread go for Thread.currentThread()
+			//if this statement executed by main thread then main thread reference will be returning
+			//through that reference call getName() method
+			//this can be done on any thread
+			//we are creating two objects of E class i,e two threads E class
+		//both the threads are allocated to execute the run method of class E
+		//both the threads are using different copies of same run method.
+		//main thread receives unhandled exception object
+		//main thread only terminating abnormally, not the child threads.
+		//if main thread is terminated remaining portions of the main thread will not be executed.
+		//e1.start();//Exception(ITSE(IllegalThreadStateException)) one thread can be started only one time, one thread cant be started second time.
+		
+		//E e2 = new E();
+		//e2.start();
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+class F implements Runnable
+{
+	public void run()
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println(Thread.currentThread().getName() + ":" + i);
+		}
+	}
+}
+public class M6
+{
+	public static void main(String[] args)
+	{
+		F f1 = new F();
+		Thread t1 = new Thread(f1);
+		t1.start();
+		
+		//we can create multiple Thread object by using same F object
+		Thread t2 = new Thread(f1);
+		//both the threads are going to same run method of F 
+		//we can create multiple threads by using same Runnable object.
+		t2.start();
+		
+		for(int i = 501; i <= 600; i++)
+		{
+			System.out.println(Thread.currentThread().getName() + ":" + i);
+		}
+	}
+}
+//for the first child thread the default name is starts with Thread:0
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+class G extends Thread
+{
+	public void run()
+	{
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println(getName() + ":" + i);
+		}
+	}
+}
+public class M7
+{
+	public static void main(String[] args)
+	{
+		G g1 = new G();
+		g1.run();
+		for(int i = 201; i <= 300; i++)
+		{
+			System.out.println(Thread.currentThread().getName() + ":" + i);
+		}
+	}
+}
+//even getName is available in Thread we are using this syntax
+//currentThread() method always returns the thread whichever executing currentThread() method.
+//g1.start();
+//instead of calling start method if we call run method
+//main thread only goes to run method not the child thread
+//we dont get multithreaded output we get sequential o/p
+//first executes entirely run method then only remaining portion of run method.
+//even though child Thread created it is not registered with the thread scheduler.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+public class M8
+{
+	public static void main(String[] args)
+	{
+		//executed by main thread
+		Thread t1 = Thread.currentThread();
+		//reading default properties of main thread
+		System.out.println(t1.getName());
+		System.out.println(t1.isDaemon());
+		System.out.println(t1.getId());
+		System.out.println(t1.getPriority());
+	}
+}
+/*
+ * we can change the name of a thread
+ * Daemon thread is thread which is purely depending on parent thread.
+   when parent is leaving from the execution demon also leaving from the execution.
+   even though daemon thread having some more execution.  
+ *The opposite of Daemon thread is user thread even though parent thread is
+  leaving from the execution, child finishing its execution.
+ *by default in java we get all the threads as user threads only.
+ * user thread is not Daemon thread. 
+ *any thread can be converted user to daemon and daemon to user before calling
+  the start method.
+ *main thread cant be converted into daemon, bcz its already started by the JVM.
+ *priority is an integer number from 1 to 10
+  1 is min, 5 is normal, 10 is max priority. 
+ * the default priority of the main thread is normal priority.
+ * we just make a request to thread scheduler through priority
+ * we cant say every time only high priority thread only executes.
+   it depends on the thread scheduler. but most of the times it considers
+   the request.
+ * every thread will be having a unique id. particular thread can be referred
+   through its id. two threads will not be having the same id.
+   id is a long number and random.we just read the id but we cant modify.
+ * */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+class J extends Thread
+{
+	public void run()
+	{
+		//straight away you can call all these methods
+		System.out.println(getName());
+		System.out.println(isDaemon());
+		System.out.println(getId());
+		System.out.println(getPriority());
+	}
+}
+public class M9
+{
+	public static void main(String[] args)
+	{
+		J ref = new J();
+		ref.start();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+//if we have more thread to set sleep it will be lengthy development
+//instead create one util class
+public class Util
+{
+	public static void sleep(long millis) 
+	{
+		try
+		{
+			Thread.sleep(millis);
+		}
+		catch(InterruptedException ex)  
+		{
+			//System.out.println("Sleeping got interrupted and Exception handled successfully, flow is normal");
+			ex.printStackTrace();
+		}
+	}
+	public static void sleep(long millis, int nano)
+	{
+		try
+		{
+			Thread.sleep(millis, nano);
+		}
+		catch(InterruptedException ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+class Resource
+{
+	void waterTap()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 1; i <= 50; i++)
+		{
+			System.out.println("from water: " + "consumed by " + t1.getName());
+			//modifications for the attribute
+		}
+	}
+}
+class UserOne extends Thread
+{
+	Resource resource;
+	UserOne(Resource resource)
+	{
+		this.resource = resource;
+	}
+	@Override
+	public void run()
+	{
+		//resource is a Resource type
+		resource.waterTap();
+	}
+}
+class UserTwo extends Thread
+{
+	Resource resource;
+	UserTwo(Resource resource)
+	{
+		this.resource = resource;
+	}
+	@Override
+	public void run()
+	{
+		//resource is a Resource type
+		resource.waterTap();
+	}
+}
+public class M1
+{
+	public static void main(String[] args)
+	{
+		Resource r1 = new Resource();
+		
+		UserOne u1 = new UserOne(r1);
+		UserTwo u2 = new UserTwo(r1);
+		
+		//three threads accessing one object
+		//only one copy of test1 method
+		
+		u1.start();
+		u2.start();
+		
+		r1.waterTap();
+	}
+}
+/* 
+//Shared s2 = new Shared();
+//Thread2 t2 = new Thread2(s1);
+//s1.test1();
+//s2.test2();
+		
+ * always advisable to share one object to more threads
+ * if we share one object to more threads then the object
+   usage will be increasing
+ * but if more threads access one object at a time simultaneously
+   data corruption will occur.
+ * if multiple thread access the same object simultaneously
+   object scope will increase but data corruption happens
+   that is why we should not allow simultaneously accessing
+   one object by multiple threads.
+   that is why we use synchronization to avoid access on the same resource 
+   by multiple threads.
+   we can achieve synchronization by synchronize keyword.
+* synchronized keyword avoiding multiple threads accessing one object simultaneously.
+
+* same shared object more than one synchronized method cannot execute simultaneously.
+* on any of the object more than one synchronized method will not be executing.
+* there is a concept called object lock. whenever any object creating for any class
+  object lock is created. while creating object to shared class one lock is created, while 
+  creating another object to shared class again lock is created.
+  thread has to take the lock then only it is eligible to enter the synchronized method.
+  
+* synchronized is the object wise.
+*
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+//inter thread communication
+
+//class A is empty we are using A class only for wait and notifyAll purpose.
+class A
+{
+}
+class Thread1 extends Thread
+{
+	A obj;
+	Thread1(A obj)
+	{
+		this.obj = obj;
+	}
+	@Override
+	public void run() 
+	{
+		synchronized(obj)
+		{
+			System.out.println("wait on " + obj + " begin by " + Thread.currentThread().getName());
+			try
+			{
+				obj.wait();
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+			System.out.println("wait on " + obj + " end by " + Thread.currentThread().getName());
+			
+		}
+	}
+}
+class Thread2 extends Thread
+{
+	A obj;
+	Thread2(A obj)
+	{
+		this.obj = obj;
+	}
+	@Override
+	public void run() 
+	{
+		synchronized(obj)
+		{
+			System.out.println("wait on " + obj + " begin by " + Thread.currentThread().getName());
+			try
+			{
+				obj.wait();
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+			System.out.println("wait on " + obj + " end by " + Thread.currentThread().getName());
+		}
+	}
+}
+public class M10
+{
+	public static void main(String[] args) throws InterruptedException
+	{
+		A obj1 = new A();
+		//A obj2 = new A();
+		
+		//both thread are using obj1
+		Thread t1 = new Thread1(obj1);
+		t1.start();
+		
+		Thread t2 = new Thread2(obj1);
+		t2.start();
+		
+		Thread.sleep(10000);
+		
+		System.out.println("main after 10 sec sleep");
+		
+		//whaterver we were achiving through test2 method we acheivin via main method
+		synchronized(obj1)
+		{
+			System.out.println("test2 on " + obj1 + " begin by " + Thread.currentThread().getName());
+			//main thread calling notifyAll() on the obj1
+			obj1.notifyAll();
+			System.out.println("test2 on " + obj1 + " end by " + Thread.currentThread().getName());
+		}
+	}
+}
+/*
+ 
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+//inter thread communication
+
+//without using a seperate class 
+class Thread1 extends Thread
+{
+	@Override
+	public void run() 
+	{
+		synchronized(this)
+		{
+			System.out.println("wait on " + this + " begin by " + Thread.currentThread().getName());
+			try
+			{
+				this.wait();
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+			System.out.println("wait on " + this + " end by " + Thread.currentThread().getName());
+		}
+	}
+}
+class Thread2 extends Thread
+{
+	@Override
+	public void run() 
+	{
+		synchronized(this)
+		{
+			System.out.println("wait on " + this + " begin by " + Thread.currentThread().getName());
+			try
+			{
+				this.wait();
+			}
+			catch(InterruptedException ex)
+			{
+				ex.printStackTrace();
+			}
+			System.out.println("wait on " + this + " end by " + Thread.currentThread().getName());		
+		}
+	}
+}
+public class M11
+{
+	public static void main(String[] args) throws InterruptedException
+	{	
+		Thread t1 = new Thread1();//Thread-0
+		t1.start();
+		
+		Thread t2 = new Thread2();//Thread-1
+		t2.start();
+		
+		Thread.sleep(10000);
+		
+		System.out.println("main after 10 sec sleep");
+		
+		//t1 thread going to the waiting state by using t1 iteself
+		synchronized(t1)
+		{
+			System.out.println("test2 on " + t1 + " begin by " + Thread.currentThread().getName());
+			//only single thread so just notify
+			t1.notify();
+			System.out.println("test2 on " + t1 + " end by " + Thread.currentThread().getName());
+		}
+		
+		//t2 thread going to the waiting state by using t2 iteself
+		synchronized(t2)
+		{
+			System.out.println("test2 on " + t2 + " begin by " + Thread.currentThread().getName());
+			//only single thread so just notify
+			t2.notify();
+			System.out.println("test2 on " + t2 + " end by " + Thread.currentThread().getName());
+		}
+	}
+}
+/*
+  it not compulsary that only main thread should send the notification.
+  any thread can send the notification.
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+class Shared
+{
+	synchronized void test1()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println("from test1: " + i + " by " + t1.getName());
+			//modifications for the attribute
+		}
+	}
+
+	synchronized void test2()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 20; i <= 40; i++)
+		{
+			System.out.println("from test2: " + i + " by " + t1.getName());
+			//modifications for the attribute
+		}
+	}
+
+	synchronized void test3()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 60; i <= 80; i++)
+		{
+			System.out.println("from test3: " + i + " by " + t1.getName());
+			//modifications for the attribute
+		}
+	}
+}
+class Thread1 extends Thread
+{
+	Shared s1;
+	Thread1(Shared s1)
+	{
+		this.s1 = s1;
+	}
+	@Override
+	public void run() {
+		//s1 is a shared type
+		s1.test1();
+	}
+}
+class Thread2 extends Thread
+{
+	Shared s1;
+	Thread2(Shared s1)
+	{
+		this.s1 = s1;
+	}
+	@Override
+	public void run() {
+		//s1 is a shared type
+		s1.test2();
+	}
+}
+public class M2
+{
+	public static void main(String[] args)
+	{
+		Shared s1 = new Shared();
+		//Shared s2 = new Shared();
+		
+		Thread1 t1 = new Thread1(s1);
+		Thread2 t2 = new Thread2(s1);
+	
+		t1.start();
+		t2.start();
+		
+		s1.test3();	
+	}
+}
+/* 
+ * always advisable to share one object to more threads
+ * if we share one object to more threads then the object
+   usage will be increasing
+ * but if more threads access one object at a time simultaneously
+   data corruption will occur.
+ * if multiple thread access the same object simultaneously
+   object scope will increase but data corruption happens
+   that is why we should not allow simultaneously accessing
+   one object by multiple threads.
+   that is why we use synchronization to avoid access on the same resource 
+   by multiple threads.
+   we can achieve synchronization by synchronize keyword.
+* synchronized keyword avoiding multiple threads accessing one object simultaneously.
+
+* same shared object more than one synchronized method cannot execute simultaneously.
+* on any of the object more than one synchronized method will not be executing.
+* there is a concept called object lock. whenever any object creating for any class
+  object lock is created. while creating object to shared class one lock is created, while 
+  creating another object to shared class again lock is created.
+  thread has to take the lock then only it is eligible to enter the synchronized method.
+  
+* synchronized is the object wise.
+*
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+class Shared
+{
+	synchronized void test1()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 1; i <= 50; i++)
+		{
+			System.out.println("from test1: " + i  + " by " + t1.getName());
+			//modifications for the attribute
+		}
+	}
+
+	synchronized void test2()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 1; i <= 100; i++)
+		{
+			System.out.println("from test2: " + i + " by " + t1.getName());
+		}
+	}
+
+	synchronized void test3()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 60; i <= 80; i++)
+		{
+			System.out.println("from test3: " + i + " by " + t1.getName());
+			//modifications for the attribute
+		}
+	}
+}
+class Thread1 extends Thread
+{
+	Shared s1;
+	Thread1(Shared s1)
+	{
+		this.s1 = s1;
+	}
+	@Override
+	public void run() {
+		//s1 is a shared type
+		s1.test2();
+	}
+}
+class Thread2 extends Thread
+{
+	Shared s1;
+	Thread2(Shared s1)
+	{
+		this.s1 = s1;
+	}
+	@Override
+	public void run() {
+		//s1 is a shared type
+		s1.test2();
+	}
+}
+public class M3
+{
+	public static void main(String[] args)
+	{
+		Shared s1 = new Shared();
+		Shared s2 = new Shared();
+		Shared s3 = new Shared();
+		
+		Thread1 t1 = new Thread1(s1);
+		Thread2 t2 = new Thread2(s2);
+		
+		t1.start();
+		t2.start();
+	
+		s3.test3();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+class Shared
+{
+	//instead of synchronizing the entire method just make a portion of the
+	 //method as synchronized.
+	void test1()
+	{
+		Thread t1 = Thread.currentThread();
+		System.out.println("this is from non-synchronized block: " + t1.getName());
+		
+		synchronized(this)//mutex(mutually exclusive)
+		{
+			for(int i = 1; i <= 100; i++)
+			{
+				System.out.println("from test1: " + i + " by " + t1.getName());
+			}
+		}	
+	}
+}
+class Thread1 extends Thread
+{
+	Shared s1;
+	Thread1(Shared s1)
+	{
+		this.s1 = s1;
+	}
+	@Override
+	public void run() {
+		//s1 is a shared type
+		//s1.test1();
+		s1.test1();
+	}
+}
+class Thread2 extends Thread
+{
+	Shared s1;
+	Thread2(Shared s1)
+	{
+		this.s1 = s1;
+	}
+	@Override
+	public void run()
+	{
+		//s1 is a shared type
+		s1.test1();
+	}
+}
+public class M4
+{
+	public static void main(String[] args)
+	{
+		Shared s1 = new Shared();
+		
+		Thread1 t1 = new Thread1(s1);
+		Thread2 t2 = new Thread2(s1);
+		
+		t1.start();
+		t2.start();
+
+		s1.test1();
+	}
+}
+/* 
+
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+//static methods in synchronization
+class Shared
+{
+	//as it is static method required class lock
+	//every class will be having only one class lock
+	synchronized static void test1()
+	{
+		Thread t1 = Thread.currentThread();
+		for(int i = 1; i <= 10; i++)
+		{
+			System.out.println("from test1: " + i + " by " + t1.getName());
+		}
+	}
+}
+class Thread1 extends Thread
+{
+	@Override
+	public void run()
+	{
+		Shared.test1();
+	}
+}
+class Thread2 extends Thread
+{
+	@Override
+	public void run()
+	{
+		Shared.test1();
+	}
+}
+public class M5
+{
+	public static void main(String[] args)
+	{	
+		Thread1 t1 = new Thread1();
+		t1.start();
+		
+		Thread2 t2 = new Thread2();
+		t2.start();
+
+		Shared.test1();
+	}
+}
+
+//class lock is only one for one class.
+//object lock is different for different objects of the same class.
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+class TrackResource
+{
+	synchronized void track1(TrackResource obj)
+	{
+		Thread t1 = Thread.currentThread();
+		System.out.println("test1 begin by " + t1.getName());
+		obj.track2(this);
+		System.out.println("test1 end by " + t1.getName());
+	}
+
+	synchronized void track2(TrackResource obj)
+	{
+		Thread t1 = Thread.currentThread();
+		System.out.println("test2 begin by " + t1.getName());
+		obj.track1(this);
+		System.out.println("test2 end by " + t1.getName());
+	}
+}
+class Train1 extends Thread
+{
+	TrackResource key1, key2;
+	Train1(TrackResource key1, TrackResource key2)
+	{
+		this.key1 = key1;
+		this.key2 = key2;
+	}
+	
+	@Override
+	public void run()
+	{
+		key1.track1(key2);
+	}
+}
+class Train2 extends Thread
+{
+	TrackResource key1, key2;
+	Train2(TrackResource key1, TrackResource key2)
+	{
+		this.key1 = key1;
+		this.key2 = key2;
+	}
+	
+	@Override
+	public void run()
+	{
+		key2.track2(key1);
+	}
+}
+public class M6
+{
+	public static void main(String[] args)
+	{
+		TrackResource key1 = new TrackResource();
+		TrackResource key2 = new TrackResource();
+		
+		Train1 train1 = new Train1(key1, key2);
+		train1.start();
+		
+		Train2 train2 = new Train2(key1, key2);
+		train2.start();
+	}
+}
+
+/*
+ * demonstration of dead lock
+ * always avoid calling of synchronized method from another synchronized method.
+   by using different reference variable.
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadMXBean;
+import java.util.Arrays;
+
+class Shared
+{
+	synchronized void test1(Shared obj)
+	{
+		Thread t1 = Thread.currentThread();
+		System.out.println("test1 begin by " + t1.getName() +  " : " + t1.getId());
+		//Util.sleep(1000);
+		obj.test2(this);
+		System.out.println("test1 end by " + t1.getName()+  " : " + t1.getId());
+		
+	}
+	synchronized void test2(Shared obj)
+	{
+		Thread t1 = Thread.currentThread();
+		System.out.println("test2 begin by " + t1.getName() +  " : " + t1.getId());
+		//Util.sleep(1000);
+		obj.test1(this);
+		System.out.println("test2 end by " + t1.getName() +  " : " + t1.getId());
+	}
+}
+/*
+class Util
+{
+	static void sleep(long millis)
+	{
+		try
+		{
+			Thread.sleep(millis);
+		}
+		catch(InterruptedException ex)
+		{
+			ex.printStackTrace();
+		}
+	}
+}*/
+class Thread1 extends Thread
+{
+	Shared s1, s2;
+	Thread1(Shared s1, Shared s2)
+	{
+		this.s1 = s1;
+		this.s2 = s2;
+	}
+	
+	@Override
+	public void run()
+	{
+		s1.test1(s2);
+	}
+}
+class Thread2 extends Thread
+{
+	Shared s1, s2;
+	Thread2(Shared s1, Shared s2)
+	{
+		this.s1 = s1;
+		this.s2 = s2;
+	}
+	
+	@Override
+	public void run()
+	{
+		s2.test2(s1);
+	}
+}
+public class M7
+{
+	public static void main(String[] args)
+	{
+		Shared s1 = new Shared();
+		Shared s2 = new Shared();
+		
+		Thread1 t1 = new Thread1(s1, s2);
+		t1.start();
+		
+		//Util.sleep(100);
+		
+		Thread2 t2 = new Thread2(s1, s2);
+		t2.start();
+		
+		
+		//Util.sleep(2000);
+		//getThreadMXBean() - a ThreadMXBean object for the Java virtual machine.
+		ThreadMXBean tmx = ManagementFactory.getThreadMXBean();
+		long[] ids = tmx.findDeadlockedThreads();
+		
+		if(ids != null)
+		{
+			System.out.println("Threads are under dead lock");
+			//toString(long[] a) Returns a string representation of the contents of the specified array.
+			System.out.println("dead locked thread ids: " + Arrays.toString(ids));
+		}
+		else
+		{
+			System.out.println("no threads are under dead lock: " + ids);
+		}
+	}
+}
+/*
+ * demonstration of dead lock
+ * always avoid calling of synchronized method from another synchronized method.
+   by using different reference variable.
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+//inter thread communication
+class A
+{
+	synchronized void test1()
+	{
+		System.out.println("test1 on " + this + " begin by " + Thread.currentThread().getName());
+		try
+		{
+			//while the current thread is going to waiting state the lock will be 
+			//release because it doesnt know how much time it is going wait.
+			wait();
+		}
+		catch(InterruptedException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("test1 on " + this + " end by " + Thread.currentThread().getName());
+	}
+
+	synchronized void test2()
+	{
+		System.out.println("test2 on " + this + " begin by " + Thread.currentThread().getName());
+		//notify doest required interrupted exception.
+		//in case of notify it doesnt release lock until it executes the method
+		//in case of notify only one thread will be notified randomly.
+		//in case of notify only one thread notified and will be finishing execution others keep on waiting
+		//notify();
+		//in case of notifyAll() all the waiting threads will be notified and finishing the execution.
+		notifyAll();
+		System.out.println("test2 on " + this + " end by " + Thread.currentThread().getName());
+	}
+}
+class Thread1 extends Thread
+{
+	A obj;
+	Thread1(A obj)
+	{
+		this.obj = obj;
+	}
+	@Override
+	public void run()
+	{
+		obj.test1();
+	}
+}
+class Thread2 extends Thread
+{
+	A obj;
+	Thread2(A obj)
+	{
+		this.obj = obj;
+	}
+	@Override
+	public void run() 
+	{
+		obj.test1();
+	}
+}
+public class M8
+{
+	public static void main(String[] args) throws InterruptedException
+	{
+		A obj1 = new A();
+		
+		Thread t1 = new Thread1(obj1);
+		t1.start();
+		
+		Thread t2 = new Thread2(obj1);
+		t2.start();
+		
+		Thread.sleep(5000);
+		
+		System.out.println("main after 5 sec sleep");
+		
+		obj1.test2();
+		
+		
+		//test2 is for notifying all the threads.
+		//child threads are going to the waiting state by using obj1
+		//main thread calling test2 on obj2
+		//no thread went into waiting by using obj2 object
+		//thats why no threads will be receiving the notification hence keeps on waiting
+		//obj2.test2();
+	}
+}
+/*
+ * Object
+ * --------
+ * wait()
+ * notify()
+ * notifyAll()
+ * all these methods are non-synchronized, non-static methods 
+   are available in every class. even in Thread class also.	
+ * all these should be used on same object
+ * all these should be called from the synchronized block.
+ * inter thread communication is object wise.
+ * object should be having lock in order to call these methods.
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+//inter thread communication
+class A
+{
+	synchronized void test1()
+	{
+		System.out.println("test1 on " + this + " begin by " + Thread.currentThread().getName());
+		try
+		{
+			wait();
+		}
+		catch(InterruptedException ex)
+		{
+			ex.printStackTrace();
+		}
+		System.out.println("test1 on " + this + " end by " + Thread.currentThread().getName());
+	}
+}
+class Thread1 extends Thread
+{
+	A obj;
+	Thread1(A obj)
+	{
+		this.obj = obj;
+	}
+	@Override
+	public void run() 
+	{
+		obj.test1();
+	}
+}
+class Thread2 extends Thread
+{
+	A obj;
+	Thread2(A obj)
+	{
+		this.obj = obj;
+	}
+	@Override
+	public void run() 
+	{
+		obj.test1();
+	}
+}
+public class M9
+{
+	public static void main(String[] args) throws InterruptedException
+	{
+		A obj1 = new A();
+		
+		
+		Thread t1 = new Thread1(obj1);
+		t1.start();
+		
+		Thread t2 = new Thread2(obj1);
+		t2.start();
+		
+		Thread.sleep(10000);
+		
+		System.out.println("main after 10 sec sleep");
+		
+		//whaterver we were achiving through test2 method we acheivin via main method
+		synchronized(obj1)
+		{
+			System.out.println("test2 on " + obj1 + " begin by " + Thread.currentThread().getName());
+			obj1.notifyAll();
+			System.out.println("test2 on " + obj1 + " end by " + Thread.currentThread().getName());
+		}
+	}
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+//static methods in synchronization
+class A
+{
+	//as it is static method required class lock
+	//every class will be having only one class lock
+	//static void test1()
+	synchronized static void test1()
+	{
+		Thread t1 = Thread.currentThread();
+		System.out.println("from test1 non-synchronized statement: " + " by " + t1.getName());
+		synchronized(A.class)
+		{
+			for(int i = 1; i <= 5; i++)
+			{
+				System.out.println("from test1: " + i + " by " + t1.getName());
+			}
+		}
+	}
+}
+class Thread1 extends Thread
+{
+	@Override
+	public void run()
+	{
+		A.test1();
+	}
+}
+class Thread2 extends Thread
+{
+	@Override
+	public void run()
+	{
+		A.test1();
+	}
+}
+public class MM5
+{
+	public static void main(String[] args)
+	{	
+		Thread1 t1 = new Thread1();
+		t1.start();
+		
+		Thread2 t2 = new Thread2();
+		t2.start();
+
+		A.test1();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

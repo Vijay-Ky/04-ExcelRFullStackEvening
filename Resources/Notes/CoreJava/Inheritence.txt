@@ -1,0 +1,39 @@
+Basic Pillars of Object Oriented Programming Language
+1. Inheritence
+2. Abstraction
+3. Encapsulation
+4. Polymorphism
+
+Inheritence
+-----------
+ - Aquiring the properties and behaviours of another class.
+ - A class can inherit properties(variables) and behaviours(methods) from another class.
+ - BASE class == PARENT class == SUPER class
+   DERIVED class == CHILD class == SUB class
+ - We can achieve inheritence using `extends` keyword in case of classes.
+ - In case of extends the indication would be a solid line towards pointing to super type. 
+ - We can inherite non-static variables
+ - We can inherite non-static methods
+ - We can inherite static variables
+
+Can we inherit main method also?
+----------------------------------
+Yes. main method also inherits to the sub-class but:
+1. If the sub-class is having its own main method, then if we call the main method from the sub-class it will be always calling the sub-class main method only.
+2. If the sub-class doesnt have its own main method, then if we call the main method from the sub-class it will be always calling the super-class main method only.
+
+
+
+
+ - There are 5 types of Inheritence
+   -----------------------------------
+   1. Single Inheritence
+   2. Multi-level Inheritence
+   3. Multiple Inheritence
+   4. Hierarchical Inheritence
+   5. Hybrid Inheritence
+
+- The main use of Inheritence is code re-usability. 
+
+
+

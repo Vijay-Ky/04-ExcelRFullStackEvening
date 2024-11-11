@@ -1,0 +1,502 @@
+<br />
+<article class="topic app">
+<h2>pack1</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack11</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack2</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack22</h2>
+</article>
+<br />
+<article class="topic app">
+<h2>pack1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+public class A
+{
+    public static void main(String[] args)
+    {
+        System.out.println("begin");
+        assert false;
+        System.out.println("end");
+    }
+}
+/*
+* assert is a keyword that got introduced in java JDK 1.4
+* assertion helps developers catch logical errors during development and testing phases
+* by using assertion we are making statement that "I believe this condition should always be true at this point in my code" if the condition is false, it means there is a bug in the program
+* assertions are particularly useful for debugging and testing purposes. they provide a way to detect and handle unexpected conditions early in the development process.
+* By default assertions are disabled for performance reasons
+* in simple words, whenever a business logic fails we can raise AssertionError
+*
+* 2 types of assert statements
+   1.VSA (very simple assert statement)
+     assert boolean_result;
+   2.SA(simple assert statement)
+     assert boolean_result:some_message;
+* */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+public class B
+{
+    public static void main(String[] args)
+    {
+        System.out.println("begin");
+        assert true;
+        System.out.println("end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class C
+{
+    public static void main(String[] args)
+    {
+        System.out.println("begin");
+        assert true : "something went wrong";
+        System.out.println("end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class D
+{
+    public static void main(String[] args)
+    {
+        System.out.println("begin");
+        assert false : "something went wrong";
+        System.out.println("end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class E
+{
+    public static void main(String[] args)
+    {
+        System.out.println("begin");
+        int i = 0;
+        assert i == 10;
+        System.out.println("end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class F
+{
+	public static double test()
+	{
+		return 90.0;
+	}
+    public static void main(String[] args)
+    {
+        System.out.println("begin");
+        int i = 10;
+        /*
+        after colon you must supply something -> literal, valid variable, method calling which is other than void
+         */
+		int j = 10;
+        assert i == 10 : "string";
+        assert true : j;
+        assert false : test();
+        System.out.println("end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class G
+{
+    public static void main(String[] args)
+    {
+        System.out.println("begin");
+        assert true : 10;
+		assert true : 999999999999L;
+        assert true : 90.0D;
+        assert true : 90.0F;
+        assert true : 'a';
+        assert true : "hello";
+        assert false : true;
+        System.out.println("end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class H
+{
+    public static void main(String[] args)
+    {
+        System.out.println("main begin");
+        assert test();
+        System.out.println("main end");
+    }
+    public static boolean test()
+    {
+        return false;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class I
+{
+    public static void main(String[] args)
+    {
+        System.out.println("main begin");
+        assert test();
+        System.out.println("main end");
+    }
+    public static int test()
+    {
+        return 10;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class J
+{
+    public static void main(String[] args)
+    {
+        System.out.println("main begin");
+        assert test();
+        System.out.println("main end");
+    }
+    public static void test()
+    {
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class K
+{
+    public static void main(String[] args)
+    {
+        System.out.println("main begin");
+		assert true : test();
+        System.out.println("main end");
+    }
+    public static int test()
+    {
+        return 100;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class L
+{
+    public static void main(String[] args)
+    {
+        System.out.println("main begin");
+        assert true : test();
+        System.out.println("main end");
+    }
+    public static void test()
+    {
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class M
+{
+    public static void main(String[] args)
+    {
+        System.out.println("main begin");
+        assert false : test();
+        System.out.println("main end");
+    }
+    public static M test()
+    {
+        M m1 = new M();
+        return m1;
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+package pack1;
+
+class N
+{
+    public static void main(String[] args)
+    {
+        int assert = 10;
+    }
+}
+//from command prompt : java -ea A
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+package pack1;
+import pack2.M;
+import pack1.pack11.L;
+import pack2.pack22.N;
+class O
+{
+    public static void main(String[] args)
+    {
+        System.out.println("one");
+        assert false;
+        System.out.println("two");
+        L.test2();
+        System.out.println("three");
+        N.test4();
+        System.out.println("four");
+        M.test3();
+        System.out.println("five");
+    }
+}
+/*
+class wise -> -ea
+for the sub-packages of that package -> -ea:pack2...
+for different package particular class -> -ea:pack2.M
+first we are enabling everywhere then disabling in the package's sub-packages -> -ea -da:pack1...
+* first we are enabling everywhere then disabling in pack1 and subpackages of pack1 and disabling only for the pack2.pack22.N class, so the only class assertion is enabled as of now is pack2.M class which is why we get the error from pack2.M class -> -ea -da:pack1... -da:pack2.pack22.N
+ */
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>pack11</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+package pack1.pack11;
+
+public class L
+{
+	public static void test2()
+	{
+		System.out.println("pack1.pack11.L.test2 begin");
+		assert false;
+		System.out.println("pack1.pack11.L.test2 end");
+	}
+
+	public static void main(String[] args)
+    {
+		test2();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>pack2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+package pack2;
+
+public class M
+{
+    public static void test3()
+    {
+        System.out.println("pack2.M.test3 begin");
+        assert false;
+        System.out.println("pack2.M.test3 end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>pack22</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+package pack2.pack22;
+
+public class N
+{
+    public static void test4()
+    {
+        System.out.println("pack2.pack22.N.test4 begin");
+        assert false;
+        System.out.println("pack2.pack22.N.test4 end");
+    }
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

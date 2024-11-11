@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Interactive Dropdown Manipulation</title>
+		<style>
+			table {
+				border-collapse: collapse;
+			}
+			table,
+			th,
+			td {
+				border: 1px solid black;
+				padding: 5px;
+			}
+			@keyframes highlight {
+				0% {
+					background-color: white;
+				}
+				50% {
+					background-color: yellow;
+				}
+				100% {
+					background-color: white;
+				}
+			}
+			.highlighted {
+				animation: highlight 2s;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					Available: <br />
+					<select id="from" multiple>
+						<option value="1">Value1</option>
+						<option value="2">Value2</option>
+						<option value="3">Value3</option>
+						<option value="4">Value4</option>
+						<option value="5">Value5</option>
+					</select>
+				</td>
+				<td>
+					<input type="button" value=">>" onclick="addOptions()" /><br />
+					<input type="button" value="<<" onclick="removeOptions()" /><br />
+					<input type="button" value="UP" onclick="moveToUp()" /><br />
+					<input type="button" value="DOWN" onclick="moveToDown()" /><br />
+				</td>
+				<td>
+					Selected <br />
+					<select id="to" multiple></select>
+				</td>
+			</tr>
+		</table>
+
+		<script>
+			function addOptions() {
+				var from = document.getElementById('from');
+				var to = document.getElementById('to');
+				var fromOptions = from.options;
+				for (var i = 0; i < fromOptions.length; i++) {
+					if (fromOptions[i].selected) {
+						to.add(fromOptions[i]);
+						highlightOption(fromOptions[i]);
+						i--;
+					}
+				}
+			}
+			function removeOptions() {
+				var from = document.getElementById('from');
+				var to = document.getElementById('to');
+				var toOptions = to.options;
+				for (var i = 0; i < toOptions.length; i++) {
+					if (toOptions[i].selected) {
+						from.add(toOptions[i]);
+						highlightOption(toOptions[i]);
+						i--;
+					}
+				}
+			}
+			function moveToUp() {
+				var from = document.getElementById('from');
+				var to = document.getElementById('to');
+				var fromOptions = from.options;
+				var toOptions = to.options;
+				if (fromOptions.length > 0 && !fromOptions[0].selected) {
+					moveToUpElement(fromOptions);
+				}
+				if (toOptions.length > 0 && !toOptions[0].selected) {
+					moveToUpElement(toOptions);
+				}
+			}
+			function moveToUpElement(allOptions) {
+				var preOption = allOptions[0];
+				var currentOption;
+				for (var i = 1; i < allOptions.length; i++) {
+					currentOption = allOptions[i];
+					if (currentOption.selected) {
+						swapOptionsTextAndValue(currentOption, preOption);
+						highlightOption(currentOption);
+					}
+					preOption = currentOption;
+				}
+			}
+			function swapOptionsTextAndValue(option1, option2) {
+				var tempText = option1.text;
+				var tempValue = option1.value;
+				option1.text = option2.text;
+				option1.value = option2.value;
+				option2.text = tempText;
+				option2.value = tempValue;
+			}
+			function highlightOption(option) {
+				option.classList.add('highlighted');
+				setTimeout(function () {
+					option.classList.remove('highlighted');
+				}, 2000);
+			}
+		</script>
+	</body>
+</html>

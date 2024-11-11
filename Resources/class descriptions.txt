@@ -1,0 +1,4 @@
+06-11-23
+Core Java Part - 6 |Identifiers | literals | comments | basic arithmetic operators	
+07-11-23
+Core Java Part - 7 | working with primitve and String datatypes | local variable | compound assignments

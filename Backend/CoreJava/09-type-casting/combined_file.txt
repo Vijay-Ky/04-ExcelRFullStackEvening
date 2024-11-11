@@ -1,0 +1,1234 @@
+<br />
+<article class="topic app">
+<h2>01-primitive</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+class A 
+{
+	public static void main(String[] args) 
+	{
+		int i = 10;
+		double d = i; 
+		System.out.println("i: " + i + ", " + "d: " + d);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+class B 
+{
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		int i = b;
+		System.out.println("b: " + b + ", " + "i: " + i);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+class C
+{
+	public static void main(String[] args) 
+	{
+		short s = 10;
+		double d = s;
+		System.out.println("s: " + s + ", " + "d: " + d);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class D
+{
+	public static void main(String[] args) 
+	{
+		int i = 10;
+		long l = i;
+		System.out.println("i: " + i + ", " + "l: " + l);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	public static void main(String[] args) 
+	{
+		int i = 10;
+		float f = i;
+		System.out.println("i: " + i + ", " + "f: " + f);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class F
+{
+	public static void main(String[] args) 
+	{
+		float f = 10.0f;
+		double d = f;
+		System.out.println("f: " + f + ", " + "d: " + d);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class G 
+{
+	static void test(double d)
+	{
+		System.out.println("test(double): " + d);
+	}
+
+	public static void main(String[] args) 
+	{
+		int i = 100;
+		test(i);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class H
+{
+	static int test()
+	{
+		int i = 10;
+		return i;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(test() + " done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class I
+{
+	static int test(byte b)
+	{
+		return b;
+	}
+
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		System.out.println(test(b) + " done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class J
+{
+	static int test(short s)
+	{
+		return s;
+	}
+
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		double d = test(b);
+		System.out.println("d: " + d + " done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class K 
+{
+	static float test1(short s)
+	{
+		return test2(s);
+	}
+
+	static long test2(int i)
+	{
+		return i;
+	}
+
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		double d = test1(b);
+		System.out.println("d: " + d + " done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class L 
+{
+	public static void main(String[] args) 
+	{
+		int i = 10;
+		double j = (double)i;
+		System.out.println("i: " + i + ", " + "j: " + j);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class M 
+{
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		int i = b;
+		int j = (int)b;
+		double d = (double)i;
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+class N 
+{
+	static void test1(double d)
+	{
+		System.out.println("from test(double)");
+	}
+
+	public static void main(String[] args) 
+	{
+		int i = 10;
+		test1(i);
+		System.out.println("-----------");
+		test1((double)i);
+		System.out.println("-----------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+class O 
+{
+	static int test1()
+	{
+		byte b = 10;
+		return b;
+	}
+
+	static int test2()
+	{
+		byte b = 10;
+		return (int)b;
+	}
+
+	public static void main(String[] args) 
+	{
+		double d1 = test1();
+		double d2 = (double)test2();
+		System.out.println("d1: " + d1 + ", " + "d2: " + d2 + " done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+class P 
+{
+	public static void main(String[] args) 
+	{
+		double d = 10.0;
+		int i = d;
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+class Q
+{
+	public static void main(String[] args) 
+	{
+		double d = 10.0;
+		int i = (int)d;
+		System.out.println("d: " + d + ", " + "i: " + i + " done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class R 
+{
+	static void test(int i)
+	{
+		System.out.println("test(int): " + i);
+	}
+
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		test(b);
+		double d = 10.0;
+		test(d);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+class S
+{
+	static void test(int i)
+	{
+		System.out.println("test(int): " + i);
+	}
+
+	public static void main(String[] args) 
+	{
+		byte b = 10;
+		test(b);
+		double d = 10.0;
+		test((int)d);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+class U 
+{
+	public static void main(String[] args) 
+	{
+		double d = 10.0;
+		float f = (float)d;
+		long l = (long)f;
+		int i = (int)l;
+		short s = (short)i;
+		byte b = (byte)s;
+		System.out.println("d: " + d + ", " + "f: " + f + ", " + "l: " + l + ", " + "i: " + i + ", " + "s: " + s + ", " + "b: " + b);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+class V 
+{
+	public static void main(String[] args) 
+	{
+		double d = 20.9;
+		short f = (short)(int)(double)(byte)(short)(int)(long)(double)(float)(double)d;
+		System.out.println("f: " + f);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+class W 
+{
+	public static long test(double d)
+	{
+		return (long)d;
+	}
+
+	public static void main(String[] args) 
+	{
+		double d = 10.2;
+		float f = test((byte)(double)(byte)(short)(int)(long)(double)(float)(double)d);
+		System.out.println("f: " + f);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+class X 
+{
+	public static void main(String[] args) 
+	{
+		int i = 97;
+		char ch = (char)i;
+		System.out.println("i: " + i + ", " + "ch: " + ch);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class Y
+{
+	public static void main(String[] args) 
+	{
+		char ch = 'a';
+		int i = ch;
+		System.out.println("i: " + i + ", " + "ch: " + ch);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>02-reference-casting</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+class A
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+class Ancestor
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+class B extends A
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+class C extends B
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+class D extends C
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+class Father extends GrandFather
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+class GrandFather extends Ancestor
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+class M1 
+{
+	public static void main(String[] args) 
+	{
+		Object obj = new Object();
+		A a1 = new A();
+		B b1 = new B();
+		C c1 = new C();
+		D d1 = new D();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+class M10
+{
+	static Object test1()
+	{
+		Son son = new Son();
+		return son;//(Object) son;
+	}
+	public static void main(String[] args)
+	{
+		Object obj = test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+class M11
+{
+	public static void main(String[] args)
+	{
+		Ancestor ancestor1 = (Ancestor) new GrandFather();//doing explicitly
+		Ancestor ancestor2 = new GrandFather();
+		Father father1 = new Father();
+		Father father2 = (Father) new Son();//doing explicitly
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+class M12
+{
+	public static void main(String[] args)
+	{
+		Ancestor ancestor = new GrandFather();
+		GrandFather grandFather = ancestor;
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+class M13
+{
+	public static void main(String[] args)
+	{
+		Ancestor ancestor = new GrandFather();
+		GrandFather grandFather = (GrandFather)ancestor;
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+class M14
+{
+	static void test1(GrandFather grandFather)
+	{
+		System.out.println("from test(GrandFather)");
+	}
+	public static void main(String[] args)
+	{
+		Ancestor ancestor = new GrandFather();
+		test1((GrandFather)ancestor);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+class M15
+{
+	static Father test()
+	{
+		Ancestor ancestor = new Son();
+		return ancestor;
+	}
+	public static void main(String[] args)
+	{
+		Son son = test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+class M16
+{
+	static Father test()
+	{
+		Ancestor ancestor = new Son();
+		return (Father)ancestor;
+	}
+	public static void main(String[] args)
+	{
+		Son son = (Son)test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+class M17
+{
+	public static void main(String[] args)
+	{
+		Ancestor ancestor1 = new GrandFather();
+		GrandFather grandFather1 = (GrandFather)ancestor1;
+		System.out.println("--------");
+		Ancestor ancestor2 = new Ancestor();
+		GrandFather grandFather2 = (GrandFather)ancestor2;
+		System.out.println("--------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+class M18
+{
+	public static void main(String[] args)
+	{
+		Ancestor ancestor = new Father();
+		System.out.println(11);
+		GrandFather grandFather = (GrandFather)ancestor;
+		System.out.println(22);
+		Father father = (Father)ancestor;
+		System.out.println(33);
+		Son son = (Son)ancestor;
+		System.out.println(44);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+class M19
+{
+	public static void main(String[] args)
+	{
+		Ancestor ancestor = new GrandFather();
+		System.out.println(ancestor instanceof Ancestor);
+		System.out.println(ancestor instanceof GrandFather);
+		System.out.println(ancestor instanceof Father);
+		System.out.println(ancestor instanceof Son);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+class M2
+{
+	public static void main(String[] args) 
+	{
+		Object obj = null;
+		A a1 = null;
+		B b1 = null;
+		C c1 = null;
+		D d1 = null;
+		System.out.println("obj: " + obj + ", " + "a1: " + a1 + ", " + "b1: " + b1 + ", " + "c1: " + c1 + ", " + "d1: " + d1);
+		System.out.println("-------------------------------------------");
+		obj = new Object();
+		a1 = new A();
+		b1 = new B();
+		c1 = new C();
+		d1 = new D();
+		System.out.println("obj: " + obj + ", " + "a1: " + a1 + ", " + "b1: " + b1 + ", " + "c1: " + c1 + ", " + "d1: " + d1);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+class M20
+{
+	public static void test(Object object)
+	{
+		if(object instanceof Object)
+		{
+			if(object instanceof Object)
+			{
+				Object obj = (Object) object;
+				System.out.println("casting to Object");
+			}
+
+			if(object instanceof Ancestor)
+			{
+				Ancestor obj = (Ancestor) object;
+				System.out.println("casting to Ancestor");
+			}
+
+			if(object instanceof GrandFather)
+			{
+				System.out.println("casting to GrandFather");
+				GrandFather obj = (GrandFather) object;
+			}
+
+			if(object instanceof Father)
+			{
+				System.out.println("casting to Father");
+				Father obj = (Father) object;
+			}
+			if(object instanceof Son)
+			{
+				System.out.println("casting to Son");
+				Son obj = (Son) object;
+			}
+		}
+	}
+
+	public static void main(String[] args) 
+	{
+		Object obj1 = new Object();
+		test(obj1);
+		System.out.println("-------------------------");
+		Object obj2 = new Ancestor();
+		test(obj2);
+		System.out.println("-------------------------");
+		Object obj3 = new GrandFather();
+		test(obj3);
+		System.out.println("-------------------------");
+		Object obj4 = new Father();
+		test(obj4);
+		System.out.println("-------------------------");
+		Object obj5 = new Son();
+		test(obj5);
+		System.out.println("-------------------------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 45</h3>
+<pre class="prettyprint linenums">
+class M3 
+{
+	public static void test1(A obj)//A objs = a1;
+	{
+		System.out.println("test1(A)");
+	}
+
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		test1(a1);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 46</h3>
+<pre class="prettyprint linenums">
+class M4 
+{
+	static D test1()
+	{
+		D d1 = new D();
+		return d1;
+	}
+
+	static A test2()
+	{
+		return new A();
+	}
+
+	public static void main(String[] args) 
+	{
+		D d1 = test1();
+		A a1 = test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 47</h3>
+<pre class="prettyprint linenums">
+class M5
+{
+	public static void main(String[] args) 
+	{
+		//if you are supplying sub type to the super type then auto-upcating will happen
+		//type promotion
+		//super class reference can hold sub-class object
+		A a1 = new B();//a1 = (A) new B(); --> auto-upcasting
+		B b1 = new C();
+		C c1 = new D();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 48</h3>
+<pre class="prettyprint linenums">
+class M6
+{
+	public static void main(String[] args) 
+	{
+		Object obj1 = new A();//obj1 = (Object) new A();
+		Object obj2 = new B();
+		Object obj3 = new C();
+		Object obj4 = new D();
+		Object obj5 = new M6();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 49</h3>
+<pre class="prettyprint linenums">
+class M7
+{
+	public static void main(String[] args)
+	{
+		A a1 = null;
+		B b1 = null;
+		C c1 = null;
+		D d1 = null;
+		a1 = b1;//(A) b1;
+		b1 = c1;//(B) c1;
+		c1 = d1;//(C) d1;
+		Object o1 = c1;
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 50</h3>
+<pre class="prettyprint linenums">
+class M8
+{
+	public static void main(String[] args)
+	{
+		Ancestor ancestor = null;
+		GrandFather grandFather = null;
+		Father father = null;
+		Son son = null;
+
+		ancestor =(Ancestor) grandFather;
+		grandFather = father;
+		father = son;
+		Object object = father;
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 51</h3>
+<pre class="prettyprint linenums">
+class M9
+{
+	static void test(Ancestor ancestor)
+	{
+		System.out.println("from test");
+	}
+
+	public static void main(String[] args)
+	{
+		test(new GrandFather());
+		test(new Father());
+		test(new Son());
+		GrandFather grandFather = new GrandFather();
+		test(grandFather);
+		Son son = new Son();
+		test(son);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 52</h3>
+<pre class="prettyprint linenums">
+class Son extends Father
+{
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 53</h3>
+<pre class="prettyprint linenums">
+class A
+{
+}
+class B 
+{
+}
+class C 
+{
+}
+class D 
+{
+}
+class Test
+{
+	static int i;
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

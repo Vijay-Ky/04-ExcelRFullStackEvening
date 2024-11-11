@@ -1,0 +1,772 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+public class A
+{
+	public static void main(String[] args)
+	{
+		int i = 0, j = 0, k = 0, l = 0, m = 0;
+		int[] array = new int[5];
+		array[0] =  0;
+		array[1] =  1;
+		array[2] =  2;
+		array[3] =  3;
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+public class B
+{
+	public static void main(String[] args)
+	{
+		int[] x;
+		x = new int[4];
+		//default values
+		System.out.println(x[0]);
+		System.out.println(x[1]);
+		System.out.println(x[2]);
+		System.out.println(x[3]);
+		x[0] = 10;
+		x[1] = 20;
+		x[2] = 30;
+		x[3] = 40;
+		//recently assigned values
+		System.out.println(x.length);
+		System.out.println(x[0]);//10
+		System.out.println(x[1]);//20
+		System.out.println(x[2]);//30
+		System.out.println(x[3]);//40
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+public class C
+{
+	public static void main(String []args)
+	{
+		int[] x;
+		x = new int[3];
+		System.out.println(x[0]);
+		System.out.println(x[1]);
+		System.out.println(x[2]);
+		x[0] = 100;
+		x[1] = 200;
+		x[2] = 300;
+		x = null;
+		System.out.println(x.length);
+		System.out.println(x[0]);
+		System.out.println(x[1]);
+		System.out.println(x[2]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+public class D
+{
+	public static void main(String []args)
+	{
+		int x[] = new int[2];
+		int []y = new int[2];
+		int[] z = new int[2];
+		int[]p = new int[2];
+		//ints[] = new int[2];
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+public class E
+{
+	public static void main(String []args)
+	{
+		int x[] = new int[2];
+		System.out.println(x[0]);
+		System.out.println(x[1]);
+		System.out.println(x.length);
+		System.out.println(x[2]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+public class F
+{
+	public static void main(String []args)
+	{
+		int x[] = new int[4];
+		System.out.println(x.length);
+		System.out.println("------");
+		for(int i = 0; i < x.length; i++)
+		{
+			System.out.println(x[i]);
+		}
+		System.out.println("------");
+		x[3] = 300;
+		for(int i : x)
+		{
+			if (i == x[3])
+			{
+				System.out.println(i);
+			}
+			
+		}
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+public class G
+{
+	public static void main(String[] args)
+	{
+		int i = +10;
+		String []x = new String[i];
+		System.out.println(x.length);
+		System.out.println("------");
+		i = +0;
+		String []y = new String[i];
+		System.out.println(y.length);
+		System.out.println("------");
+		i = -2;
+		String []z = new String[i];
+		System.out.println(z.length);
+		System.out.println("------");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class Student
+{
+}
+class Employee
+{
+}
+class H
+{
+	public static void main(String[] args)
+	{
+		byte[] elements1 = new byte[3];
+		short[] elements2 = new short[3];
+		int[] elements3 = new int[3];
+		long[] elements4 = new long[3];
+		float[] elements5 = new float[3];
+		double[] elements6 = new double[3];
+		char[] elements7 = new char[3];
+		boolean[] elements8 = new boolean[3];
+		String[] elements9 = new String[3];
+		Student[] elements10 = new Student[3];
+		Employee[] elements11 = new Employee[3];
+		Object[] elements12 = new Object[3];
+		H[] elements13 = new H[3];
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+public class I
+{
+	public static void main(String[] args)
+	{
+		int[] x = new int[5];
+		System.out.println(x[-1]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+public class J
+{
+	public static void main(String[] args)
+	{
+		int[] x = new int[0];
+		System.out.println("-----------------");
+		System.out.println(x[0]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+public class K
+{
+	public static void main(String[] args)
+	{
+		int[] x, y, z;
+		x = new int[2];
+		y = new int[20];
+		z = new int[12];
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+public class L
+{
+	public static void main(String[] args)
+	{
+		int[] x = new int[2], y, z = new int[12];
+		y = new int[20];
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class Laddoose 
+{
+	public String toString()
+	{
+		return "speacialDryfrootLaddoo";
+	}
+
+	public static void main(String[] args) 
+	{
+		Laddoose[] laddoose = new Laddoose[4];
+		laddoose[0] = new Laddoose();
+		laddoose[1] = new Laddoose();
+		laddoose[2] = new Laddoose();
+		laddoose[3] = new Laddoose();
+		System.out.println(laddoose[0]);
+		System.out.println(laddoose[1]);
+		System.out.println(laddoose[2]);
+		System.out.println(laddoose[3]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+public class M
+{
+	public static void main(String[] args)
+	{
+		int x[] = new int[2], y = 9, z[] = new int[12];
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+public class N
+{
+	public static void main(String[] args)
+	{
+		int []x = new int[5];
+		x[0] = 10;
+		x[1] = 20;
+		x[2] = 30;
+		x[3] = 40;
+		x[4] = 50;
+		System.out.println(Arrays.toString(x));//collection
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+class Employee
+{
+}
+public class O
+{
+	public static void main(String[] args)
+	{
+		Employee[] emp = new Employee[2];
+		String s1 = "abc", s2[] = new String[4], s3 = "xyz";
+		System.out.println(s1 + ", " + s3 + ", " + s2[0]);
+		System.out.println(emp[0] + ", " + emp[1]);
+		System.out.println(Arrays.toString(s2));
+		System.out.println(Arrays.toString(emp));
+
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+public class P
+{
+	public static void main(String[] args) 
+	{
+		double[] elements = new double[(int)10.0];
+		System.out.println(elements[0]);
+		System.out.println(elements[(int)2.0]);
+	}
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+public class Q
+{
+	public static void main(String[] args) 
+	{
+		short b1 = 100; //byte b1 = 100;
+		double[] elements = new double[b1];//upcasting
+		byte b2 = 50; //short b1 = 100;
+		System.out.println(elements[b2]);
+	}
+}
+//byte short int long float double boolean char
+//byte < short < int < long  < float < double
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+class R
+{
+	public static void main(String[] args)
+	{
+		int[] x = new int[2];
+		
+		x[0] = 10;
+		x[1] = 20;
+
+		System.out.println("x array: " + Arrays.toString(x));
+		test(x);
+		System.out.println("x array: " + Arrays.toString(x));
+	}
+
+	public static void test(int[] z)
+	{
+		int i = z[0];
+		z[0] = z[1];
+		z[1] = i;
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+
+public class S
+{
+	public static void main(String[] args)
+	{
+		int[] x = new int[] {10, 20, 30, 40};
+		System.out.println(x.length);
+		System.out.println(Arrays.toString(x));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+
+public class T
+{
+	public static void main(String[] args)
+	{
+		int[] x = new int[4] {10, 20, 30, 40};
+		System.out.println(x.length);
+		System.out.println(Arrays.toString(x));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+
+public class U
+{
+	public static void main(String[] args)
+	{
+		int[] x = {10, 20, 30, 40};
+		int[] y = {200, 400};
+		System.out.println(x.length);
+		System.out.println(Arrays.toString(x));
+		System.out.println(y.length);
+		System.out.println(Arrays.toString(y));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+public class V
+{
+	public static void main(String[] args)
+	{
+		int[] x = new int[10];
+		int[] y = new int[20];
+		x = y;
+		System.out.println(x.length);
+		System.out.println(y.length);
+		y = x;
+		System.out.println(y == x);
+		System.out.println(x == y);
+
+		System.out.println(x[19]);
+		System.out.println(y[19]);
+		System.out.println(x.length);
+		System.out.println(y.length);
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class W 
+{
+	public static void main(String[] args) 
+	{
+		int[] x = new byte[4];
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+class Y 
+{
+	public static void main(String[] args) 
+	{
+		int[][] x = new int[4][4];
+		x[0][0] = 10;
+		x[0][1] = 20;
+		x[0][2] = 30;
+		x[0][3] = 40;
+		x[1][0] = 50;
+		x[1][1] = 60;
+		x[1][2] = 70;
+		x[1][3] = 80;
+		x[2][0] = 90;
+		x[2][1] = 100;
+		x[2][2] = 110;
+		x[2][3] = 120;
+		x[3][0] = 130;
+		x[3][1] = 140;
+		x[3][2] = 150;
+		x[3][3] = 160;
+		System.out.println(x[3][0]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+import java.util.Arrays;
+class Z
+{
+	public static void main(String[] args) 
+	{
+		int[][] z = {{10, 20, 30, 40}, {50, 60, 70, 80}, {90, 100, 110, 120}, {130, 140, 150, 160}};
+		System.out.println(z[3][2]);
+		System.out.println(z.length);
+		System.out.println(Arrays.deepToString(z));
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+class Z2
+{
+	public static void main(String[] args) 
+	{
+		int[][] z = {{10, 20}, {50}, {90, 100}, {130, 140, 150}};
+		System.out.println(z[2][1]);
+		System.out.println(z.length);
+		
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+class A 
+{
+	public static void main(String[] args) 
+	{
+		int[][][] a = new int[2][][];
+		
+		a[0] = new int[2][];
+		a[0][0] = new int[3];
+		a[0][1] = new int[2];
+
+		a[1] = new int[2][];
+		a[1][0] = new int[2];
+		a[1][1] = new int[3];
+
+		
+		
+
+		a[1][0][0] = 100;
+
+		System.out.println("Hello World!: " + a[1][0][0]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+class B 
+{
+	public static void main(String[] args) 
+	{
+		int[][][] a = new int[2][3][2];
+
+		a[1][1][0] = 500;
+
+		System.out.println("Hello World!: " + a[1][1][0]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+class C 
+{
+	public static void main(String[] args) 
+	{
+		int[][][] a = {{{10, 20}, {30, 40, 50, 60}, {70, 80, 90}}};
+
+		System.out.println("Hello World!: " + a[0][2][1]);
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

@@ -1,0 +1,1310 @@
+<br />
+<article class="topic app">
+<h2>app1</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 1</h3>
+<pre class="prettyprint linenums">
+//non-static, static, local inner classes
+
+//outer class cant be static
+//static is applied to the only members of a class
+class A 
+{
+	//inner class
+	//non-static member of A
+	class B
+	{
+	}
+	//another inner class
+	//static memeber of A
+	static class C
+	{
+	}
+	public static void main(String[] args) 
+	{
+		A a1 = null;
+		//even though B is non-static we are using B inside static main method
+		//in general we cant able to use non-static inside static without reference
+		//any class can be used any where if usage is datatype usage
+		B b1 = null;
+		C c1 = null;
+		System.out.println("done");
+	}
+}
+/*
+1. class inside a class is inner class
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 2</h3>
+<pre class="prettyprint linenums">
+//non-static, static, local inner classes
+
+//outer class cant be static
+//static is applied to the only members of a class
+class D
+{
+	//inner class
+	//non-static member of A
+	class B
+	{
+	}
+	//another inner class
+	//static memeber of A
+	static class C
+	{
+	}
+	public static void main(String[] args) 
+	{
+		//cant use B inside main method to create the object inside the main method
+		//we can only use B for specifying the datatype.
+		//B b1 = new B();
+		C c1 = new C();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 3</h3>
+<pre class="prettyprint linenums">
+//non-static, static, local inner classes
+
+//outer class cant be static
+//static is applied to the only members of a class
+class E
+{
+	//inner class
+	//non-static member of A
+	class B
+	{
+	}
+	//another inner class
+	//static memeber of A
+	static class C
+	{
+	}
+	public static void main(String[] args) 
+	{
+		E e1 = new E();
+		//using reference of E class then its fine
+		B b1 = e1.new B();
+		C c1 = new C();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 4</h3>
+<pre class="prettyprint linenums">
+class F
+{
+	class B
+	{
+	}
+	static class C
+	{
+	}
+	public static void main(String[] args) 
+	{
+		//we can supply reference of outer class or object to create B class object
+		//reference will be pointing to object only
+		B b1 = new F().new B();
+		C c1 = new C();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 5</h3>
+<pre class="prettyprint linenums">
+class G
+{
+	class B
+	{
+	}
+	static class C
+	{
+	}
+	public static void main(String[] args) 
+	{
+		//we can supply reference of outer class or object to create B class object
+		//reference will be pointing to object only
+		B b1 = new G().new B();
+		//C is a static member this can be accesses through class name
+		G.C c1 = new G.C();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 6</h3>
+<pre class="prettyprint linenums">
+class H	
+{
+	class B
+	{
+	}
+	static class C
+	{
+	}
+}
+
+class Manager
+{
+	public static void main(String[] args) 
+	{
+		H.B b1 = new H().new B();
+		H.C c1 = new H.C();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 7</h3>
+<pre class="prettyprint linenums">
+class I	
+{
+	class B
+	{
+	}
+	static class C
+	{
+	}
+}
+class J
+{
+	public static void main(String[] args) 
+	{
+		//compulsary we should use the reference of I because it is outside the J class now.
+		I.B b1 = new I().new B();
+		I.C c1 = new I.C();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 8</h3>
+<pre class="prettyprint linenums">
+class K 
+{
+	public static void main(String[] args) 
+	{
+		//3rd type of inner class
+		//we can develop an inner class inside a method,constructor,IIB,SIB
+		//it is the local inner class
+		//class A visibility now within the main method
+		class A
+		{
+			void test()
+			{
+				System.out.println("from A");
+			}
+		}
+		A a1 = new A();
+		a1.test();
+		System.out.println("done");
+	}
+}
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 9</h3>
+<pre class="prettyprint linenums">
+class L 
+{
+	public static void main(String[] args) 
+	{
+		//method inside method is not possible in java
+		//method cant be inside method,SIB,IIB,constructor
+		void test()
+		{
+			System.out.println("from A");
+			System.out.println("from A");
+			System.out.println("from A");
+			System.out.println("from A");
+		}
+		test();
+		test();
+		test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 10</h3>
+<pre class="prettyprint linenums">
+class M
+{
+	public static void main(String[] args) 
+	{
+		class A
+		{
+			void test()
+			{
+				System.out.println("from A");
+				System.out.println("from A");
+				System.out.println("from A");
+				System.out.println("from A");
+			}
+		}
+		A a1 = new A();
+		a1.test();
+		a1.test();
+		a1.test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 11</h3>
+<pre class="prettyprint linenums">
+class N
+{
+	N()
+	{
+		//local in the constructor
+		class A	
+		{
+		}
+	}
+
+	static
+	{
+		class A
+		{
+		}
+	}
+	
+	{
+		//local in the IIB
+		class A
+		{
+		}
+	}
+	public static void main(String[] args) 
+	{
+		//local in the main method
+		class A
+		{
+		}
+		for (int i = 1; i <= 2; i++)
+		{
+			class B
+			{
+			}
+		}
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 12</h3>
+<pre class="prettyprint linenums">
+class O 
+{
+	public static void main(String[] args) 
+	{
+		 int i = 10;
+		 int j = 10;
+		class A
+		{
+			void test()
+			{
+				//i is allowed to use in the class A if i is not modified anywhere
+				//i is non final there might be a chance of modifying somewhere
+				//class A should not depend on changes of i and j
+				System.out.println(i);
+				System.out.println(j);//we can use final j
+			}
+		}
+		A a1 = new A();
+		a1.test();
+		System.out.println(i);
+		System.out.println(j);
+		//i = 20;
+		a1.test();
+		System.out.println("done");
+	}
+}
+/*
+
+O.java:14: error: local variables referenced from an inner class must be final or effectively final
+                                System.out.println(i);
+                                                   ^
+1 error
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 13</h3>
+<pre class="prettyprint linenums">
+class P 
+{
+	public static void main(String[] args) 
+	{
+
+		int i = 10;
+		final int j = 10;
+		class A
+		{
+			void test()
+			{
+				System.out.println(i);
+				System.out.println(j);
+			}
+		}
+		A a1 = new A();
+		a1.test();
+		//we get different value for i to avoid that compiler wont allow i to modify
+		//i = 20;
+		a1.test();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<br />
+<article class="topic app">
+<h2>app2</h2>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 14</h3>
+<pre class="prettyprint linenums">
+//anonymous inner class
+class A 
+{
+	void test1()
+	{
+		System.out.println("from A.test1");
+	}
+	void test2()
+	{
+		System.out.println("from A.test2");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 15</h3>
+<pre class="prettyprint linenums">
+class B 
+{
+	B()
+	{
+		System.out.println("B()");
+	}
+	B(int i)
+	{
+		System.out.println("B(int)");
+	}
+	B(boolean k)
+	{
+		System.out.println("B(boolean)");
+	}
+	{
+		System.out.println("B-IIB");
+	}
+	void test1()
+	{
+		System.out.println("B-test1");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 16</h3>
+<pre class="prettyprint linenums">
+abstract class C 
+{
+	void test1()
+	{
+		System.out.println("from C.test1()");
+	}
+	abstract void test2();
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 17</h3>
+<pre class="prettyprint linenums">
+interface D
+{
+	void test1();
+	void test2();
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 18</h3>
+<pre class="prettyprint linenums">
+class E
+{
+	void method1(A a1)
+	{
+		a1.test1();
+		a1.test2();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 19</h3>
+<pre class="prettyprint linenums">
+class F 
+{
+	static void method1(C c1)
+	{
+		c1.test1();
+		c1.test2();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 20</h3>
+<pre class="prettyprint linenums">
+class G 
+{
+	static void method1(D d1)
+	{
+		d1.test1();
+		d1.test2();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 21</h3>
+<pre class="prettyprint linenums">
+/*
+interface H
+{
+}
+class I implements H
+{
+}*/
+
+/*
+interface J
+{
+}
+interface K extends J 
+{
+}*/
+/*
+class L
+{
+}
+interface M extends L 
+{
+}*/
+/*
+abstract class N
+{
+}
+interface O extends N 
+{
+}*/
+
+class P
+{
+	class Q
+	{
+		class R
+		{
+		}
+	}
+}
+
+
+
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 22</h3>
+<pre class="prettyprint linenums">
+class M1 
+{
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		a1.test1();
+		a1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 23</h3>
+<pre class="prettyprint linenums">
+class M10 
+{
+	public static void main(String[] args) 
+	{
+		C c1 = new C();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 24</h3>
+<pre class="prettyprint linenums">
+class M11
+{
+	public static void main(String[] args) 
+	{
+		C c1 = new C()
+		{
+			void test2()
+			{
+				System.out.println("from AIC.test2()");
+			}
+		};
+		c1.test1();
+		c1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 25</h3>
+<pre class="prettyprint linenums">
+class M12
+{
+	public static void main(String[] args) 
+	{
+		C c1 = new C()
+		{
+			void test1()
+			{
+				System.out.println("from AIC.test1()");
+			}
+			void test2()
+			{
+				System.out.println("from AIC.test2()");
+			}
+		};
+		c1.test1();
+		c1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 26</h3>
+<pre class="prettyprint linenums">
+class M13
+{
+	public static void main(String[] args) 
+	{
+		C c1 = new C()
+		{
+			void test1()
+			{
+				System.out.println("from AIC.test1()");
+			}
+		};
+		c1.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 27</h3>
+<pre class="prettyprint linenums">
+class M14 
+{
+	public static void main(String[] args) 
+	{
+		D d1 = new D();
+		System.out.println("Hello World!");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 28</h3>
+<pre class="prettyprint linenums">
+class M15
+{
+	public static void main(String[] args) 
+	{
+		D d1 = new D()
+		{
+			public void test1()
+			{
+				System.out.println("from test1");
+			}
+			public void test2()
+			{
+				System.out.println("from test2");
+			}
+		};
+		d1.test1();
+		d1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 29</h3>
+<pre class="prettyprint linenums">
+class M16
+{
+	public static void main(String[] args) 
+	{
+		D d1 = new D()
+		{
+			public void test2()
+			{
+				System.out.println("from test2");
+			}
+		};
+		d1.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 30</h3>
+<pre class="prettyprint linenums">
+class M17 
+{
+	public static void main(String[] args) 
+	{
+		E e1 = new E();
+		e1.method1(new A());
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 31</h3>
+<pre class="prettyprint linenums">
+class M18
+{
+	public static void main(String[] args) 
+	{
+		E e1 = new E();
+		e1.method1(new A()
+				   {
+						void test2()
+						{
+							System.out.println("from A.AIC.test2");
+						}
+				   });
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 32</h3>
+<pre class="prettyprint linenums">
+class M19
+{
+	public static void main(String[] args) 
+	{
+		E e1 = new E();
+		e1.method1(new A()
+				   {
+						void test1()
+						{
+							System.out.println("from A.AIC.test1");
+						}
+						void test2()
+						{
+							System.out.println("from A.AIC.test2");
+						}
+				   });
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 33</h3>
+<pre class="prettyprint linenums">
+class M2 
+{
+	public static void main(String[] args) 
+	{
+		//this is the class construction
+		//for this class there is no name, for this class super class is A
+		//super class constructor is a no-arg constructor
+		//sub-class doesnt have a name bcz of that we are calling it as anonymous-inner class
+		//a1 is pointing to an object of sub-class to A
+		//for this anonymous inner class we only specifying what is the super class
+		  //and what is the super class constructor
+		//from class A two methods got inherited between two only one got overrided.
+		//anonymous inner class developing for only one time usage
+		//anonymous inner class cant be an abstract class
+		//for the aic we cant develop constructor bcz there is no name to the aic.
+		A a1 = new A()
+		{
+			void test1()
+			{
+				System.out.println("AIC.test1()");
+			}
+		};
+		a1.test1();
+		a1.test2();
+	}
+}
+/*
+A a1 = new A()
+		{
+			void test1()
+			{
+				System.out.println("AIC.test1()");
+			}
+		};
+
+here we are not creating an object to A but an object to subclass of A
+
+*/
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 34</h3>
+<pre class="prettyprint linenums">
+class M20 
+{
+	public static void main(String[] args) 
+	{
+		F.method1(new C()
+			      {
+					void test2()
+					{
+						System.out.println("from AIC test2");
+					}
+				  });
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 35</h3>
+<pre class="prettyprint linenums">
+class M21 
+{
+	public static void main(String[] args) 
+	{
+		G.method1(new D()
+				  {
+					public void test1()
+					{
+						System.out.println("D.AIC.test1()");
+					}
+					public void test2()
+					{
+						System.out.println("D.AIC.test2()");
+					}
+				  });
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 36</h3>
+<pre class="prettyprint linenums">
+class M22 
+{
+	static D method1()
+	{
+		D d1 = new D()
+		{
+			public void test1()
+			{
+				System.out.println("from test1 AIC");
+			}
+			public void test2()
+			{
+				System.out.println("from test2 AIC");
+			}
+		};
+		return d1;
+	}
+	public static void main(String[] args) 
+	{
+		D obj = method1();
+		obj.test1();
+		obj.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 37</h3>
+<pre class="prettyprint linenums">
+class M23 
+{
+	static D method1()
+	{
+		return new D()
+			   {
+					public void test1()
+					{
+						System.out.println("from test1 AIC");
+					}
+					public void test2()
+					{
+						System.out.println("from test2 AIC");
+					}
+			   };
+	}
+	public static void main(String[] args) 
+	{
+		D obj = method1();
+		obj.test1();
+		obj.test2();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 38</h3>
+<pre class="prettyprint linenums">
+class M3
+{
+	public static void main(String[] args) 
+	{
+		A a1 = new A()
+		{
+			void test2()
+			{
+				System.out.println("AIC.test2()");
+			}
+		};
+		a1.test1();
+		a1.test2();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 39</h3>
+<pre class="prettyprint linenums">
+class M4
+{
+	public static void main(String[] args) 
+	{
+		A a1 = new A()
+		{
+			void test1()
+			{
+				System.out.println("AIC.test1()");
+			}
+			void test2()
+			{
+				System.out.println("AIC.test2()");
+			}
+		};
+		a1.test1();
+		a1.test2();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 40</h3>
+<pre class="prettyprint linenums">
+class M5
+{
+	public static void main(String[] args) 
+	{
+		A a1 = new A()
+		{
+			void test1()
+			{
+				System.out.println("AIC.test1()");
+			}
+			void test2()
+			{
+				System.out.println("AIC.test2()");
+			}
+			void test3()
+			{
+				System.out.println("AIC.test3()");
+			}
+		};
+		a1.test1();
+		a1.test2();
+		a1.test3();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 41</h3>
+<pre class="prettyprint linenums">
+class M6
+{
+	public static void main(String[] args) 
+	{
+		A a1 = new A()
+		{
+			void test1()
+			{
+				System.out.println("AIC.test1()");
+			}
+			void test2()
+			{
+				System.out.println("AIC.test2()");
+				test3();//we can from inside
+			}
+			void test3()
+			{
+				System.out.println("AIC.test3()");
+			}
+		};
+		a1.test1();
+		a1.test2();
+		//a1.test3();
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 42</h3>
+<pre class="prettyprint linenums">
+class M7 
+{
+	public static void main(String[] args) 
+	{
+		B b1 = new B(true)
+		{
+		};
+		b1.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 43</h3>
+<pre class="prettyprint linenums">
+class M8
+{
+	public static void main(String[] args) 
+	{
+		B b1 = new B()
+		{
+			{
+				System.out.println("AIC-IIB");
+			}
+		};
+		b1.test1();
+		b1.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>
+<article class="topic">
+<h3 class="topic-title" id="introduction">Example No. 44</h3>
+<pre class="prettyprint linenums">
+class M9
+{
+	public static void main(String[] args) 
+	{
+		B b1 = new B(90)
+		{
+			{
+				System.out.println("AIC-IIB");
+			}
+		};
+		b1.test1();
+		System.out.println("done");
+	}
+}
+</pre>
+<br />
+<pre class="output"><b>o/p: </b>
+</pre>
+<br />
+<pre class="output"><b>Explanation: </b>
+</pre>
+</article>

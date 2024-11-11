@@ -1,0 +1,18 @@
+<web-app>
+    <welcome-file-list>
+    <!-- whichever the available welcome-file is mentioned in the begging that file will be given the first preference -->
+    <!-- if the welcome file is not available then it will be looking for the next available welcome-file -->
+        <welcome-file>test2.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>s7</servlet-name>
+        <servlet-class>com.excelr.main.Servlet7</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s7</servlet-name>
+        <url-pattern>/servletSeven</url-pattern>
+    </servlet-mapping>
+</web-app>
